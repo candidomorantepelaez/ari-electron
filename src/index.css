@@ -12,3 +12,9 @@ body {
 .boton-tarjeta{
   margin-left: 10px;
 }
+
+.icono{
+  margin: 5px;
+  cursor: pointer;
+  color: blue;
+}

@@ -1,19 +1,10 @@
-import { REQUEST_LISTADO_CLIENTES,
-  SUCCESS_LISTADO_CLIENTES,
-  ERROR_LISTADO_CLIENTES,
-  REQUEST_BUSCAR_CLIENTE,
-  SUCCESS_BUSCAR_CLIENTE,
-  ERROR_BUSCAR_CLIENTE,
-  REQUEST_GUARDAR_CLIENTE,
-  SUCCESS_GUARDAR_CLIENTE,
-  ERROR_GUARDAR_CLIENTE,
-  REQUEST_EDITAR_CLIENTE,
-  SUCCESS_EDITAR_CLIENTE,
-  ERROR_EDITAR_CLIENTE,
-  REQUEST_BORRAR_CLIENTE,
-  SUCCESS_BORRAR_CLIENTE,
-  ERROR_BORRAR_CLIENTE } from "./../actions/cliente-actions";
+import { REQUEST_LISTADO_CLIENTES, SUCCESS_LISTADO_CLIENTES, ERROR_LISTADO_CLIENTES } from "./../actions/cliente/listado-clientes";
+import { REQUEST_BUSCAR_CLIENTE, SUCCESS_BUSCAR_CLIENTE, ERROR_BUSCAR_CLIENTE } from "./../actions/cliente/buscar-cliente";
+import { REQUEST_GUARDAR_CLIENTE, SUCCESS_GUARDAR_CLIENTE, ERROR_GUARDAR_CLIENTE } from "./../actions/cliente/guardar-cliente";
+import { REQUEST_EDITAR_CLIENTE, SUCCESS_EDITAR_CLIENTE, ERROR_EDITAR_CLIENTE } from "./../actions/cliente/editar-cliente";
+import { REQUEST_BORRAR_CLIENTE, SUCCESS_BORRAR_CLIENTE, ERROR_BORRAR_CLIENTE } from "./../actions/cliente/borrar-cliente";
 import { combineReducers } from 'redux';
+import { SUCCESS } from "./../actions/globales/success";
 
 const initialState = {
   cliente: {
@@ -29,7 +20,8 @@ const initialState = {
     clienteEditado: {},
     clienteParaBorrar: {},
     borrando: false,
-    clienteBorrado: {}
+    clienteBorrado: {},
+    success: "",
   },
 };
 
@@ -166,7 +158,7 @@ export function clienteEditado(state=initialState.cliente.clienteEditado, { type
 export function clienteParaBorrar(state=initialState.cliente.clienteParaBorrar, { type, payload }) {
   switch(type){
     case REQUEST_BORRAR_CLIENTE:
-      return payload;
+      return state;
     case SUCCESS_BORRAR_CLIENTE:
       return state;
     case ERROR_BORRAR_CLIENTE:
@@ -202,6 +194,15 @@ export function clienteBorrado(state=initialState.cliente.clienteBorrado, { type
   }
 }
 
+export function success(state=initialState.cliente.success, { type, payload }) {
+  switch(type){
+    case SUCCESS:
+      return payload;
+    default:
+      return "";
+  }
+}
+
 export const getBuscando = state => state.buscando;
 export const getResultado = state => state.resultado;
 export const getBuscandoCliente = state => state.buscandoCliente;
@@ -215,6 +216,7 @@ export const getClienteEditado = state => state.clienteEditado;
 export const getClienteParaBorrar = state => state.clienteParaBorrar;
 export const getBorrando = state => state.borrando;
 export const getClienteBorrado = state => state.clienteBorrado;
+export const getSuccess = state => state.success;
 
 export default combineReducers({
   buscando,
@@ -230,6 +232,7 @@ export default combineReducers({
   clienteParaBorrar,
   borrando,
   clienteBorrado,
+  success,
 });
 
 

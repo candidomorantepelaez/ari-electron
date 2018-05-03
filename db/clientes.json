@@ -1,14 +1,28 @@
-{"nombre":"lucia mor","direccion":"la misma de antes","ruta":2,"muestra":true,"numeroBotellas":5,"_id":"4zbgMwDmAYMOgvv7","createdAt":{"$$date":1524237480884},"updatedAt":{"$$date":1524237599697}}
-{"nombre":"fgntyrhjytrhj","direccion":"ytrjtyj","numeroBotellas":"2","muestra":"true","ruta":"1","_id":"9S5GkmgHMNCrJGC5","createdAt":{"$$date":1524844859384},"updatedAt":{"$$date":1524844859384}}
-{"_id":"A0PcdFx4qHexPHmn","createdAt":{"$$date":1524844411578},"updatedAt":{"$$date":1524844411578}}
-{"_id":"Qy1oqFyTFkyoAsaQ","createdAt":{"$$date":1524843959508},"updatedAt":{"$$date":1524843959508}}
-{"_id":"VPcOdZTLwYYreUCR","createdAt":{"$$date":1524843030974},"updatedAt":{"$$date":1524843030974}}
-{"_id":"iLS3VBYVnpJKZDcp","createdAt":{"$$date":1524842366983},"updatedAt":{"$$date":1524842366983}}
-{"_id":"pK4MklMw7T3wNCGW","createdAt":{"$$date":1524844277396},"updatedAt":{"$$date":1524844277396}}
-{"_id":"qs5Hxk6oedo1re7J","createdAt":{"$$date":1524844622611},"updatedAt":{"$$date":1524844622611}}
-{"nombre":"laura","direccion":"no se","ruta":4,"muestra":true,"numeroBotellas":5,"_id":"y0u0bJg5WESUxlLF","createdAt":{"$$date":1524232195583},"updatedAt":{"$$date":1524237300955}}
-{"_id":"A0PcdFx4qHexPHmn","nombre":"laura","direccion":"laura","numeroBotellas":"3","muestra":"true","ruta":"1","createdAt":{"$$date":1524844411578},"updatedAt":{"$$date":1524905648698}}
-{"_id":"Qy1oqFyTFkyoAsaQ","nombre":"lucia morante pelaez","direccion":"trinidad nº10 3º","numeroBotellas":"3","muestra":"false","ruta":"1","createdAt":{"$$date":1524843959508},"updatedAt":{"$$date":1524905757635}}
-{"nombre":"javier fernandez","direccion":"corrida 24 1","numeroBotellas":"1","muestra":"true","ruta":"1","_id":"exfUVqYT5GBnKEFi","createdAt":{"$$date":1524906062202},"updatedAt":{"$$date":1524906062202}}
-{"_id":"VPcOdZTLwYYreUCR","nombre":"carlos manuel","direccion":"marques de casa valdes 56","numeroBotellas":"2","muestra":"false","ruta":"2","createdAt":{"$$date":1524843030974},"updatedAt":{"$$date":1524906097003}}
-{"_id":"pK4MklMw7T3wNCGW","nombre":"trhrth","direccion":"6rue56u56","numeroBotellas":"2","muestra":"true","ruta":"1","createdAt":{"$$date":1524844277396},"updatedAt":{"$$date":1524907819060}}
+{"nombre":"ttt","direccion":"ttt","numeroBotellas":"tt","muestra":"true","ruta":"1","_id":"3YkyFFmOrM3pUPJe","createdAt":{"$$date":1525109181802},"updatedAt":{"$$date":1525109181802}}
+{"nombre":"udt6du6u64u","direccion":"yt6u56eu646u65u56","numeroBotellas":"5u56u56uu56u56u56","muestra":"true","ruta":"1","_id":"vU6q8xA8x78HrjFK","createdAt":{"$$date":1525109176805},"updatedAt":{"$$date":1525109176805}}
+{"$$deleted":true,"_id":"vU6q8xA8x78HrjFK"}
+{"$$deleted":true,"_id":"3YkyFFmOrM3pUPJe"}
+{"nombre":"rthrth","direccion":"rthrth","numeroBotellas":"rere","muestra":"true","ruta":"1","_id":"LTmvgykDhwkq1l20","createdAt":{"$$date":1525167444227},"updatedAt":{"$$date":1525167444227}}
+{"$$deleted":true,"_id":"LTmvgykDhwkq1l20"}
+{"nombre":"tuj5ju","direccion":"7i7jt","numeroBotellas":"ytjtydtyjdytjdtyjdtyj","muestra":"true","ruta":"1","_id":"qelmf9fy2a3e0CGJ","createdAt":{"$$date":1525167637425},"updatedAt":{"$$date":1525167637425}}
+{"$$deleted":true,"_id":"qelmf9fy2a3e0CGJ"}
+{"nombre":"trhtrh","direccion":"rthrth","numeroBotellas":"rtherhreetyhytj","muestra":"true","ruta":"1","_id":"NUkCWC2yngmHQqBc","createdAt":{"$$date":1525167726226},"updatedAt":{"$$date":1525167726226}}
+{"$$deleted":true,"_id":"NUkCWC2yngmHQqBc"}
+{"nombre":"yey54","direccion":"y45ey45y45y","numeroBotellas":"45y45wy46y4w","muestra":"true","ruta":"1","_id":"CbfqlRr8Rhf67eLF","createdAt":{"$$date":1525167842248},"updatedAt":{"$$date":1525167842248}}
+{"$$deleted":true,"_id":"CbfqlRr8Rhf67eLF"}
+{"nombre":"ytdjytj","direccion":"yyd","numeroBotellas":"tyjytjty","muestra":"true","ruta":"1","_id":"5YePj58q75IzWnMy","createdAt":{"$$date":1525167863696},"updatedAt":{"$$date":1525167863696}}
+{"$$deleted":true,"_id":"5YePj58q75IzWnMy"}
+{"nombre":"srthrtsh","direccion":"rthrtrt","numeroBotellas":"rh6e5h56","muestra":"true","ruta":"1","_id":"37KnOdlSkh5lZWty","createdAt":{"$$date":1525167928793},"updatedAt":{"$$date":1525167928793}}
+{"nombre":"srthrtsh","direccion":"rthrtrt","numeroBotellas":"rh6e5h56","muestra":"true","ruta":"1","_id":"htGfmxInz9DGJM0R","createdAt":{"$$date":1525167929892},"updatedAt":{"$$date":1525167929892}}
+{"nombre":"srthrtsh","direccion":"rthrtrt","numeroBotellas":"rh6e5h56","muestra":"true","ruta":"1","_id":"0hnQGEohMPTnRt82","createdAt":{"$$date":1525167930493},"updatedAt":{"$$date":1525167930493}}
+{"$$deleted":true,"_id":"37KnOdlSkh5lZWty"}
+{"$$deleted":true,"_id":"0hnQGEohMPTnRt82"}
+{"$$deleted":true,"_id":"htGfmxInz9DGJM0R"}
+{"nombre":"jdytj","direccion":"dtyjytj","numeroBotellas":"tydjdtyj","muestra":"true","ruta":"1","_id":"bo44BOGE3OlCequY","createdAt":{"$$date":1525168150030},"updatedAt":{"$$date":1525168150030}}
+{"$$deleted":true,"_id":"bo44BOGE3OlCequY"}
+{"nombre":"trshrth","direccion":"rtshrthsrth","numeroBotellas":"srthsrth","muestra":"true","ruta":"1","_id":"idAMWx2ciq3L5Lnu","createdAt":{"$$date":1525168777963},"updatedAt":{"$$date":1525168777963}}
+{"$$deleted":true,"_id":"idAMWx2ciq3L5Lnu"}
+{"nombre":"ytjyt","direccion":"jtydjydt","numeroBotellas":"jtyjtyjd","muestra":"true","ruta":"1","_id":"4ppANQluafhDmHvT","createdAt":{"$$date":1525168811280},"updatedAt":{"$$date":1525168811280}}
+{"$$deleted":true,"_id":"4ppANQluafhDmHvT"}
+{"nombre":"ergyergreger","direccion":"ragregaergraeg","numeroBotellas":"aergergeragaer","muestra":"true","ruta":"1","_id":"W77lvWRJxrYis8Fu","createdAt":{"$$date":1525169020317},"updatedAt":{"$$date":1525169020317}}
+{"$$deleted":true,"_id":"W77lvWRJxrYis8Fu"}

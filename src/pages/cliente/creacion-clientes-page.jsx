@@ -7,5 +7,5 @@ const CreacionClientesPage = () => (
     <FormularioCreacionCliente />
   </div>
 );
-  
+
 export default CreacionClientesPage;

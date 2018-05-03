@@ -4,7 +4,7 @@ import FormularioEdicionCliente from './../../components/cliente/formulario-edic
 const EdicionClientesPage = ({ match }) => (
   <div>
     <h3>Crear Nuevo Cliente</h3>
-    <FormularioEdicionCliente id={match.params.id}/>
+    <FormularioEdicionCliente id={match.params.id} />
   </div>
 );
 

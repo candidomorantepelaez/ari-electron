@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const VolverButton = (props) => (
   <Link
-    className="btn btn-secondary btn-sm boton-tarjeta" 
+    className="btn btn-secondary boton-tarjeta"
     to={props.ruta}
   >
     Volver

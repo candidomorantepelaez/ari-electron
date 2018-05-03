@@ -5,7 +5,7 @@ import FormBasic from './../../components/globals/fields/form-basic';
 import SubmitButton from './../../components/globals/buttons/submit-button';
 import VolverButton from './../../components/globals/buttons/volver-button';
 import { connect } from 'react-redux';
-import { guardarClientes } from "./../../thunks/cliente-thunk";
+import { guardarClientes } from "./../../thunks/cliente/guardar-cliente";
 import PropTypes from "prop-types";
 
 class FormularioCreacionCliente extends Component {

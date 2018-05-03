@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import FilaCliente from "./fila-cliente";
 import { getResultado, getBuscando } from "./../../reducers/cliente-reducers";
-import { listadoClientes } from "./../../thunks/cliente-thunk";
-import TarjetaCliente from "./tarjeta-cliente";
+import { listadoClientes } from "./../../thunks/cliente/listado-clientes";
+import { borrarClientes } from "./../../thunks/cliente/borrar-cliente";
 import { connect } from 'react-redux';
 
 class ListadoTarjetasCliente extends Component {
@@ -19,8 +20,8 @@ class ListadoTarjetasCliente extends Component {
   }
 
   render() {
-    const listaTarjetas = this.props.listado.map((cliente, key) =>
-        <TarjetaCliente cliente={cliente} key={key} />
+    const filas = this.props.listado.map((cliente, key) =>
+      <FilaCliente cliente={cliente} key={key} accion={value => this.props.eliminar(value)} />
     );
 
     return (
@@ -31,11 +32,26 @@ class ListadoTarjetasCliente extends Component {
             className="btn btn-primary btn-lg btn-block tarjeta"
             to="/clientes/crear"
           >
-            Crear Un Nuevo Cliente
+           Crear Un Nuevo Cliente
           </Link>
         </div>
         <div className="row">
-          {listaTarjetas}
+          <table className="table text-center">
+            <thead>
+              <tr>
+                <th scope="col">Nº Identificativo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Ruta</th>
+                <th scope="col">Muestra</th>
+                <th scope="col">Numero Botellas</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              { filas }
+            </tbody>
+          </table>
         </div>
       </div>
     );
@@ -49,6 +65,7 @@ const storeConnect = connect(
   }),
   dispatch => ({
     buscar: () => dispatch(listadoClientes()),
+    eliminar: (id) => dispatch(borrarClientes(id)),
   })
 );
 

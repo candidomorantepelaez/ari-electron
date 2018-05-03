@@ -1,11 +1,12 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router'
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './../node_modules/jquery/dist/jquery.min.js';
 import './../node_modules/popper.js/dist/esm/popper.min.js';
 import './../node_modules/bootstrap/dist/js/bootstrap.min.js';
+import './assets/iconos/fontawesome-all.min.js';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import AppRoutes from './routes';
@@ -15,12 +16,16 @@ import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk'
 import clienteReducers from './reducers/cliente-reducers';
 import { logger } from './reactions/globales/logger-reaction';
+import { cliente } from './reactions/cliente/cliente-reaction';
 import { crashReporter } from './reactions/globales/crash-reporter-reaction';
+import history from "./config/history";
 
-let store = createStore(clienteReducers, 
+
+let store = createStore(clienteReducers,
   applyMiddleware(thunkMiddleware,
-    logger, 
-    crashReporter));
+    logger,
+    crashReporter,
+    cliente));
 
 //bluebird configuration
 window.Promise = Bluebird;
@@ -37,9 +42,9 @@ window.addEventListener('unhandlerrejection', error => {
 
 ReactDOM.render(
   <Provider store={ store }>
-    <BrowserRouter>
+    <Router history={history} >
       <AppRoutes />
-    </BrowserRouter>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );

@@ -5,7 +5,7 @@ import ContenidoPage from "./pages/contenido";
 //const { dialog } = window.require('electron').remote;
 
 class App extends Component {
-  
+
 	static propTypes = {
 		children: PropTypes.object.isRequired
 	};
@@ -15,8 +15,8 @@ class App extends Component {
 			<div className="App">
 				<Menu />
 				<div className="container">
-					<ContenidoPage body={ this.props.children } />	
-				</div>			
+					<ContenidoPage body={ this.props.children } />
+				</div>
 			</div>
 		);
   }
