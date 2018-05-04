@@ -14,14 +14,14 @@ import Bluebird from 'bluebird';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk'
-import clienteReducers from './reducers/cliente';
+import reducers from './reducers';
 import { logger } from './reactions/globales/logger-reaction';
 import { cliente } from './reactions/cliente/cliente-reaction';
 import { crashReporter } from './reactions/globales/crash-reporter-reaction';
 import history from "./config/history";
 import Menu from "./components/globals/menus/menu-principal";
 
-let store = createStore(clienteReducers,
+let store = createStore(reducers,
   applyMiddleware(thunkMiddleware,
     logger,
     crashReporter,

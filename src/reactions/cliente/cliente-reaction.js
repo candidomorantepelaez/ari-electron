@@ -1,13 +1,13 @@
 import { SUCCESS_BORRAR_CLIENTE } from "./../../actions/cliente/borrar-cliente";
 import history from "./../../config/history";
-import { alertSuccess } from "./../../thunks/globales/success";
+import { lanzarMostrarAlerta } from "./../../thunks/globales/alertas";
 
 export const cliente = store => next => action => {
   switch(action.type){
     case SUCCESS_BORRAR_CLIENTE:
       console.log(history.location);
       history.push("/home");
-      alertSuccess("borrado con exito.");
+      lanzarMostrarAlerta({ tipo: "success", mensaje: "Cliente borrado correctamente" });
       console.log(history.location);
       break;
     default:
