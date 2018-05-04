@@ -7,7 +7,7 @@ import VolverButton from './../../components/globals/buttons/volver-button';
 import { connect } from 'react-redux';
 import { editarClientes } from "./../../thunks/cliente/editar-cliente";
 import { buscarCliente } from "./../../thunks/cliente/buscar-cliente";
-import { getCliente, getBuscandoCliente } from "./../../reducers/cliente-reducers";
+import { getCliente, getBuscandoCliente } from "./../../reducers/cliente/buscar-cliente";
 import PropTypes from "prop-types";
 
 

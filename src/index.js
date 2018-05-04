@@ -7,19 +7,19 @@ import './../node_modules/jquery/dist/jquery.min.js';
 import './../node_modules/popper.js/dist/esm/popper.min.js';
 import './../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import './assets/iconos/fontawesome-all.min.js';
-import './index.css';
+import './assets/css/index.css';
 import registerServiceWorker from './registerServiceWorker';
 import AppRoutes from './routes';
 import Bluebird from 'bluebird';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk'
-import clienteReducers from './reducers/cliente-reducers';
+import clienteReducers from './reducers/cliente';
 import { logger } from './reactions/globales/logger-reaction';
 import { cliente } from './reactions/cliente/cliente-reaction';
 import { crashReporter } from './reactions/globales/crash-reporter-reaction';
 import history from "./config/history";
-
+import Menu from "./components/globals/menus/menu-principal";
 
 let store = createStore(clienteReducers,
   applyMiddleware(thunkMiddleware,
@@ -27,7 +27,6 @@ let store = createStore(clienteReducers,
     crashReporter,
     cliente));
 
-//bluebird configuration
 window.Promise = Bluebird;
 
 Bluebird.config({ warnings: false});
@@ -43,7 +42,10 @@ window.addEventListener('unhandlerrejection', error => {
 ReactDOM.render(
   <Provider store={ store }>
     <Router history={history} >
-      <AppRoutes />
+      <div className="App container-fluid">
+        <Menu />
+        <AppRoutes />
+			</div>
     </Router>
   </Provider>,
   document.getElementById('root')

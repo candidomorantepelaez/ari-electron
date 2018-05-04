@@ -1,31 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from "react-redux";
-import { getSuccess } from "./../../reducers/cliente-reducers";
-import Success from "./../../components/globals/alerts/success";
+import React from 'react';
 
-class HomePage extends Component {
-
-  render() {
-		return (
-			<div>
-				{
-					(this.props.success)
-				?
-					<Success texto={this.props.success} />
-				:
-					null
-				}
-				<h3>Pagina Home</h3>
-			</div>
-		);
-	}
-}
-
-const storeConnect = connect (
-	state => ({
-		success: getSuccess(state),
-	}),
-	() => ({}),
+const HomePage = () => (
+	<div>
+		<h3>Pagina Home</h3>
+	</div>
 );
 
 export default HomePage;

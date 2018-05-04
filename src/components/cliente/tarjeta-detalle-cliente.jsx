@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { getCliente, getBuscandoCliente } from "./../../reducers/cliente-reducers";
+import { getCliente, getBuscandoCliente } from "./../../reducers/cliente/buscar-cliente";
 import { buscarCliente } from "./../../thunks/cliente/buscar-cliente";
 import { borrarClientes } from "./../../thunks/cliente/borrar-cliente";
 import { connect } from "react-redux";

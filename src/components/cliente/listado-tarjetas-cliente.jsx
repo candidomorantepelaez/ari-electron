@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import FilaCliente from "./fila-cliente";
-import { getResultado, getBuscando } from "./../../reducers/cliente-reducers";
+import { getResultado, getBuscando } from "./../../reducers/cliente/listado-clientes";
 import { listadoClientes } from "./../../thunks/cliente/listado-clientes";
 import { borrarClientes } from "./../../thunks/cliente/borrar-cliente";
 import { connect } from 'react-redux';
