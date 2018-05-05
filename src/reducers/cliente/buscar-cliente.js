@@ -34,7 +34,7 @@ export function cliente(state=initialState.buscarCliente.cliente, { type, payloa
   }
 }
 
-const getBuscarClienteState = (state) => state.buscarCliente;
+const getBuscarClienteState = (state) => state.clientes.buscarCliente;
 
 export const getBuscandoCliente = state => getBuscarClienteState(state).buscandoCliente;
 export const getCliente = state => getBuscarClienteState(state).cliente;

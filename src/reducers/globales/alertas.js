@@ -7,12 +7,14 @@ const initialState = {
   },
 };
 
-export function alertas(state=initialState.globales.alertas.alertas, { type, payload }) {
+export function alertas(state=initialState.alertas.alertas, { type, payload }) {
   switch(type){
     case MOSTRAR_ALERTA:
-      return payload;
+      let existentes = state.slice();
+      existentes.push(payload);
+      return existentes;
     case CERRAR_ALERTA:
-      return state;
+      return payload;
     default:
       return state;
   }

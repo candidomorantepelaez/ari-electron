@@ -48,7 +48,7 @@ export function clienteGuardado(state=initialState.guardarCliente.clienteGuardad
   }
 }
 
-const getGuardarClienteState = (state) => state.guardarCliente;
+const getGuardarClienteState = (state) => state.clientes.guardarCliente;
 
 export const getClienteParaGuardar = state => getGuardarClienteState(state).clienteParaGuardar;
 export const getGuardando = state => getGuardarClienteState(state).guardando;

@@ -5,10 +5,8 @@ import { lanzarMostrarAlerta } from "./../../thunks/globales/alertas";
 export const cliente = store => next => action => {
   switch(action.type){
     case SUCCESS_BORRAR_CLIENTE:
-      console.log(history.location);
+      store.dispatch(lanzarMostrarAlerta({ tipo: "success", mensaje: "Cliente borrado correctamente" }));
       history.push("/home");
-      lanzarMostrarAlerta({ tipo: "success", mensaje: "Cliente borrado correctamente" });
-      console.log(history.location);
       break;
     default:
       break;

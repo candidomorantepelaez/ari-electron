@@ -34,7 +34,7 @@ export function resultado(state=initialState.listadoClientes.resultado, { type, 
   }
 }
 
-const getListadoClientesState = (state) => state.listadoClientes;
+const getListadoClientesState = (state) => state.clientes.listadoClientes;
 
 export const getBuscando = state => getListadoClientesState(state).buscando;
 export const getResultado = state => getListadoClientesState(state).resultado;

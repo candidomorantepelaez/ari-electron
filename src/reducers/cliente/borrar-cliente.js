@@ -9,7 +9,7 @@ const initialState = {
   },
 };
 
-export function clienteParaBorrar(state=initialState.cliente.borrarCliente.clienteParaBorrar, { type, payload }) {
+export function clienteParaBorrar(state=initialState.borrarCliente.clienteParaBorrar, { type, payload }) {
   switch(type){
     case REQUEST_BORRAR_CLIENTE:
       return state;
@@ -22,7 +22,7 @@ export function clienteParaBorrar(state=initialState.cliente.borrarCliente.clien
   }
 }
 
-export function borrando(state=initialState.cliente.borrarCliente.borrando, { type }) {
+export function borrando(state=initialState.borrarCliente.borrando, { type }) {
   switch(type){
     case REQUEST_BORRAR_CLIENTE:
       return true;
@@ -35,7 +35,7 @@ export function borrando(state=initialState.cliente.borrarCliente.borrando, { ty
   }
 }
 
-export function clienteBorrado(state=initialState.cliente.borrarCliente.clienteBorrado, { type, payload }) {
+export function clienteBorrado(state=initialState.borrarCliente.clienteBorrado, { type, payload }) {
   switch(type){
     case REQUEST_BORRAR_CLIENTE:
       return state;
@@ -48,7 +48,7 @@ export function clienteBorrado(state=initialState.cliente.borrarCliente.clienteB
   }
 }
 
-const getBorrarClienteState = (state) => state.cliente.borrarCliente;
+const getBorrarClienteState = (state) => state.clientes.borrarCliente;
 
 export const getClienteParaBorrar = state => {
   return getBorrarClienteState(state).clienteParaBorrar;

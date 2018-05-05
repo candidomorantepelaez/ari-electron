@@ -20,6 +20,7 @@ import { cliente } from './reactions/cliente/cliente-reaction';
 import { crashReporter } from './reactions/globales/crash-reporter-reaction';
 import history from "./config/history";
 import Menu from "./components/globals/menus/menu-principal";
+import AlertasPage from './pages/globals/alertas-page';
 
 let store = createStore(reducers,
   applyMiddleware(thunkMiddleware,
@@ -43,6 +44,7 @@ ReactDOM.render(
   <Provider store={ store }>
     <Router history={history} >
       <div className="App container-fluid">
+        <AlertasPage />
         <Menu />
         <AppRoutes />
 			</div>
