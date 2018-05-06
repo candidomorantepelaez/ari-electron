@@ -1,9 +1,7 @@
-const clienteRepository = require("./../modelo/cliente-repository");
-
-let index = (req, res, next) => res.send("prueba");		
+const promocionesRepository = require("./../modelo/promocion-repository");
 
 let save = function(req, res, next) {
-	clienteRepository.save(req.body)
+	promocionesRepository.save(req.body)
 	.then(function(data){
 		res.send(data);
 	}, function(err){
@@ -13,9 +11,8 @@ let save = function(req, res, next) {
 };
 
 let update = function(req, res, next) {
-	clienteRepository.update(req.body)
+	promocionesRepository.update(req.body)
 	.then(function(data){
-		console.log('data:'+ data);
 		res.send(data);
 	}, function(err){
 		res.status(500).send(err);
@@ -23,7 +20,7 @@ let update = function(req, res, next) {
 };
 
 let find = function (req, res, next) {
-	clienteRepository.find(req.body)
+	promocionesRepository.find(req.body)
 	.then(function(data){
 		res.send(data);
 	}, function(err){
@@ -32,7 +29,7 @@ let find = function (req, res, next) {
 };
 
 let findOne = (req, res, next) => {
-	clienteRepository.findOne({'_id': req.params.id})
+	promocionesRepository.findOne({'_id': req.params.id})
 	.then(function(data){
 		res.send(data);
 	}).catch(function(err){
@@ -41,7 +38,7 @@ let findOne = (req, res, next) => {
 };
 
 let list = (req, res, next) => {
-	clienteRepository.list()
+	promocionesRepository.list()
 	.then(function(data){
 		res.send(data);
 	}).catch(function(err){
@@ -50,7 +47,7 @@ let list = (req, res, next) => {
 };
 
 let remove = (req, res, next) => {
-	clienteRepository.remove({ '_id': req.params.id })
+	promocionesRepository.remove({ '_id': req.params.id })
 	.then(function(data){
 		res.send(data);
 	}).catch(function(err){
@@ -59,7 +56,6 @@ let remove = (req, res, next) => {
 };
 
 module.exports = {
-	index,
 	save,
 	update,
 	find,
