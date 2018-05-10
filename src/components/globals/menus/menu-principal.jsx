@@ -20,6 +20,15 @@ class Menu extends Component {
             <li className="nav-item active">
                 <Link className="nav-link" to="/productos">Productos <span className="sr-only">(current)</span></Link>
             </li>
+            <li className="nav-item active">
+                <Link className="nav-link" to="/promociones">Promociones <span className="sr-only">(current)</span></Link>
+            </li>
+            <li className="nav-item active">
+                <Link className="nav-link" to="/rutas">Rutas <span className="sr-only">(current)</span></Link>
+            </li>
+            <li className="nav-item active">
+                <Link className="nav-link" to="/ventas">Ventas <span className="sr-only">(current)</span></Link>
+            </li>
           </ul>
         </div>
       </nav>
