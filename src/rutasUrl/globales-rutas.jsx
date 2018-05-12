@@ -1,4 +1,3 @@
-import React from "react";
 import HomePage from "./../pages/home/home-page";
 
 const rutas = [

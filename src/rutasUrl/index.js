@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import clientes from "./cliente-rutas";
 import globales from "./globales-rutas";
 import productos from "./producto-rutas";

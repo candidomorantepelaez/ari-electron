@@ -28,10 +28,25 @@ class TarjetaDetalleCliente extends Component {
        <p>cargando...</p>
       :
       <div className="row">
-        <TarjetaCliente cliente={this.props.cliente} />
-        <Link className="btn btn-primary boton-tarjeta" to={"/clientes/editar/"+this.props.cliente._id}>Editar</Link>
-        <EliminarBotonIcono boton titulo="Eliminar Cliente" texto="Seguro que desea borrar el Cliente?" id={this.props.cliente._id} accion={(value) => this.props.eliminar(value) } />
-        <VolverButton ruta="/clientes" />
+        <TarjetaCliente
+          cliente={this.props.cliente}
+        />
+        <Link
+          className="btn btn-primary boton-tarjeta"
+          to={"/clientes/editar/"+this.props.cliente._id}
+        >
+          Editar
+        </Link>
+        <EliminarBotonIcono
+          boton
+          titulo="Eliminar Cliente"
+          texto="Seguro que desea borrar el Cliente?"
+          id={this.props.cliente._id}
+          accion={(value) => this.props.eliminar(value) }
+        />
+        <VolverButton
+          ruta="/clientes"
+        />
       </div>
     );
   }

@@ -1,8 +1,10 @@
 import React from 'react';
+import FormularioEdicionProducto from './../../components/producto/formulario-edicion-producto';
 
-const EdicionProductosPage = () => (
+const EdicionProductosPage = ({ match }) => (
   <div>
-    <h3>Pagina de edicion de productos</h3>
+    <h3>Edicion Producto</h3>
+    <FormularioEdicionProducto id={match.params.id} />
   </div>
 );
 

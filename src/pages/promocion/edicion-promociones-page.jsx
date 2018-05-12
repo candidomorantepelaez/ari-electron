@@ -1,8 +1,10 @@
 import React from 'react';
+import FormularioEdicionPromocion from "./../../components/promocion/formulario-edicion-promocion";
 
-const EdicionPromocionesPage = () => (
+const EdicionPromocionesPage = ({ match }) => (
   <div>
-    <h3>Pagina de edicion de promociones</h3>
+    <h3>Editar la Promocion</h3>
+    <FormularioEdicionPromocion id={match.params.id} />
   </div>
 );
 

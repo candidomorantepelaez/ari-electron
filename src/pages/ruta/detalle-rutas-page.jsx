@@ -1,8 +1,10 @@
 import React from 'react';
+import TarjetaDetalleRuta from "./../../components/ruta/tarjeta-detalle-ruta";
 
-const DetalleRutasPage = () => (
+const DetalleRutasPage = ({ match }) => (
   <div>
-    <h3>Pagina del detalle de rutas</h3>
+    <h3>Detalle Ruta</h3>
+    <TarjetaDetalleRuta id={match.params.id} />
   </div>
 );
 

@@ -1,8 +1,10 @@
 import React from 'react';
+import FormularioCreacionPromocion from './../../components/promocion/formulario-creacion-promocion';
 
 const CreacionPromocionesPage = () => (
   <div>
-    <h3>Pagina de creacion de promociones</h3>
+    <h3>Crear Promocion</h3>
+    <FormularioCreacionPromocion />
   </div>
 );
 

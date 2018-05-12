@@ -1,10 +1,10 @@
 import React from 'react';
-import ListadoTarjetasCliente from "./../../components/cliente/listado-tarjetas-cliente";
+import ListadoCliente from "./../../components/cliente/listado-cliente";
 
 const ListadoPage = () => (
   <div className="">
     <h3>Mis clientes</h3>
-    <ListadoTarjetasCliente />
+    <ListadoCliente />
   </div>
 );
 

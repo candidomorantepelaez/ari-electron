@@ -1,8 +1,10 @@
 import React from 'react';
+import FormularioEdicionRuta from "./../../components/ruta/formulario-edicion-ruta";
 
-const EdicionRutasPage = () => (
+const EdicionRutasPage = ({match}) => (
   <div>
-    <h3>Pagina de edicion de rutas</h3>
+    <h3>Edicion Ruta</h3>
+    <FormularioEdicionRuta id={match.params.id} />
   </div>
 );
 

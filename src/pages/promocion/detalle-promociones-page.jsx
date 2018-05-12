@@ -1,8 +1,10 @@
 import React from 'react';
+import TarjetaDetallePromocion from './../../components/promocion/tarjeta-detalle-promocion';
 
-const DetallePromocionesPage = () => (
+const DetallePromocionesPage = ({ match }) => (
   <div>
-    <h3>Pagina del detalle de promociones</h3>
+    <h3>Detalle de la Promocion</h3>
+    <TarjetaDetallePromocion id={match.params.id} />
   </div>
 );
 

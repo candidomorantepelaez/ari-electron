@@ -7,7 +7,7 @@ import { listadoClientes } from "./../../thunks/cliente/listado-clientes";
 import { borrarClientes } from "./../../thunks/cliente/borrar-cliente";
 import { connect } from 'react-redux';
 
-class ListadoTarjetasCliente extends Component {
+class ListadoCliente extends Component {
   static propTypes = {
     listado: PropTypes.array,
     buscando: PropTypes.bool,
@@ -69,4 +69,4 @@ const storeConnect = connect(
   })
 );
 
-export default storeConnect(ListadoTarjetasCliente);
+export default storeConnect(ListadoCliente);

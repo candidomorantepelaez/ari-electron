@@ -1,12 +1,12 @@
 import api from './../../api/promocion-api';
-import { requestListadoPromocions, successListadoPromocions, errorListadoPromocions } from "./../../actions/promocion/listado-promocions";
+import { requestListadoPromociones, successListadoPromociones, errorListadoPromociones } from "./../../actions/promocion/listado-promociones";
 
-export function listadoPromocions() {
+export function listadoPromociones() {
   return (dispatch, getState) => {
-    dispatch(requestListadoPromocions());
-    return  api.getAllPromocions()
+    dispatch(requestListadoPromociones());
+    return  api.getAllPromociones()
       .then( response => response.json() )
-      .then( data => dispatch(successListadoPromocions(data)) )
-      .catch( () => dispatch(errorListadoPromocions()) );
+      .then( data => dispatch(successListadoPromociones(data)) )
+      .catch( () => dispatch(errorListadoPromociones()) );
   }
 };

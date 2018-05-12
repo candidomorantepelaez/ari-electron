@@ -1,22 +1,23 @@
 import fetch from 'isomorphic-fetch';
+import constants from "./../config/constants";
 
-const saveVenta = (venta) => fetch('http://localhost:8080/api/venta',{
+const saveVenta = (venta) => fetch(`${constants.apiPath}/api/venta`,{
   method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(venta)
 });
 
-const updateVenta = (venta) => fetch('http://localhost:8080/api/venta',{
+const updateVenta = (venta) => fetch(`${constants.apiPath}/api/venta`,{
   method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(venta)
 });
 
-const getVenta = (id) => fetch('http://localhost:8080/api/venta/'+id,{
+const getVenta = (id) => fetch(`${constants.apiPath}/api/venta/${id}`,{
   method: 'GET', headers: {'Content-Type': 'application/json'}, body: false
 });
 
-const removeVenta = (id) => fetch('http://localhost:8080/api/venta/'+id,{
+const removeVenta = (id) => fetch(`${constants.apiPath}/api/venta/${id}`,{
   method: 'DELETE', headers: {'Content-Type': 'application/json'}, body: false
 });
 
-const getAllVentas = () => fetch('http://localhost:8080/api/ventas/list',{
+const getAllVentas = () => fetch(`${constants.apiPath}/api/ventas/list`,{
   method: 'GET', headers: {'Content-Type': 'application/json'}, body: false
 } );
 

@@ -7,7 +7,7 @@ export const requestListadoPromociones = () => ({
   type: REQUEST_LISTADO_PROMOCIONES
 });
 
-export const successListadoRPromociones = (data) => ({
+export const successListadoPromociones = (data) => ({
   type: SUCCESS_LISTADO_PROMOCIONES,
   payload: data,
 });

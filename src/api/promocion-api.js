@@ -1,22 +1,23 @@
 import fetch from 'isomorphic-fetch';
+import constants from "./../config/constants";
 
-const savePromocion = (promocion) => fetch('http://localhost:8080/api/promocion',{
+const savePromocion = (promocion) => fetch(`${constants.apiPath}/api/promocion`,{
   method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(promocion)
 });
 
-const updatePromocion = (promocion) => fetch('http://localhost:8080/api/promocion',{
+const updatePromocion = (promocion) => fetch(`${constants.apiPath}/api/promocion`,{
   method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(promocion)
 });
 
-const getPromocion = (id) => fetch('http://localhost:8080/api/promocion/'+id,{
+const getPromocion = (id) => fetch(`${constants.apiPath}/api/promocion/${id}`,{
   method: 'GET', headers: {'Content-Type': 'application/json'}, body: false
 });
 
-const removePromocion = (id) => fetch('http://localhost:8080/api/promocion/'+id,{
+const removePromocion = (id) => fetch(`${constants.apiPath}/api/promocion/${id}`,{
   method: 'DELETE', headers: {'Content-Type': 'application/json'}, body: false
 });
 
-const getAllPromociones = () => fetch('http://localhost:8080/api/promocion/list',{
+const getAllPromociones = () => fetch(`${constants.apiPath}/api/promociones/list`,{
   method: 'GET', headers: {'Content-Type': 'application/json'}, body: false
 } );
 

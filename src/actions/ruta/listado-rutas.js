@@ -7,7 +7,7 @@ export const requestListadoRutas = () => ({
   type: REQUEST_LISTADO_RUTAS
 });
 
-export const successListadoRRutas = (data) => ({
+export const successListadoRutas = (data) => ({
   type: SUCCESS_LISTADO_RUTAS,
   payload: data,
 });

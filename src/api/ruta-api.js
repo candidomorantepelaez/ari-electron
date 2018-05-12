@@ -1,22 +1,23 @@
 import fetch from 'isomorphic-fetch';
+import constants from "./../config/constants";
 
-const saveRuta = (ruta) => fetch('http://localhost:8080/api/ruta',{
+const saveRuta = (ruta) => fetch(`${constants.apiPath}/api/ruta`,{
   method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(ruta)
 });
 
-const updateRuta = (ruta) => fetch('http://localhost:8080/api/ruta',{
+const updateRuta = (ruta) => fetch(`${constants.apiPath}/api/ruta`,{
   method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(ruta)
 });
 
-const getRuta = (id) => fetch('http://localhost:8080/api/ruta/'+id,{
+const getRuta = (id) => fetch(`${constants.apiPath}/api/ruta/${id}`,{
   method: 'GET', headers: {'Content-Type': 'application/json'}, body: false
 });
 
-const removeRuta = (id) => fetch('http://localhost:8080/api/ruta/'+id,{
+const removeRuta = (id) => fetch(`${constants.apiPath}/api/ruta/${id}`,{
   method: 'DELETE', headers: {'Content-Type': 'application/json'}, body: false
 });
 
-const getAllRutas = () => fetch('http://localhost:8080/api/rutas/list',{
+const getAllRutas = () => fetch(`${constants.apiPath}/api/rutas/list`,{
   method: 'GET', headers: {'Content-Type': 'application/json'}, body: false
 } );
 

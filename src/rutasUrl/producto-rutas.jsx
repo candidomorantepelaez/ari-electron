@@ -1,8 +1,7 @@
-import React from 'react';
-import CreacionProductosPage from "./../pages/cliente/creacion-productos-page";
-import DetalleProductosPage from "./../pages/cliente/detalle-productos-page";
-import EdicionProductosPage from "./../pages/cliente/edicion-productos-page";
-import ListadoProductosPage from "./../pages/cliente/listado-productos-page";
+import CreacionProductosPage from "./../pages/producto/creacion-productos-page";
+import DetalleProductosPage from "./../pages/producto/detalle-productos-page";
+import EdicionProductosPage from "./../pages/producto/edicion-productos-page";
+import ListadoProductosPage from "./../pages/producto/listado-productos-page";
 
 const rutas = [
   { path: "/productos", component: ListadoProductosPage, exact: true },

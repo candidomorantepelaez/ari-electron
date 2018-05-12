@@ -3,7 +3,7 @@ import TarjetaDetalleCliente from './../../components/cliente/tarjeta-detalle-cl
 
 const CreacionClientesPage = ({ match }) => (
   <div>
-    <h3>Crear Nuevo Cliente</h3>
+    <h3>Detalle Cliente</h3>
     <TarjetaDetalleCliente id={match.params.id} />
   </div>
 );

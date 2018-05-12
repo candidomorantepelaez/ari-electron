@@ -5,7 +5,6 @@ const electron = require('electron');
 var app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const utiles = require('./server/utils/utiles');
-const constantes = require('./server/utils/constantes');
 const bodyParser = require('body-parser');
 
 utiles.mostrarMensajeInicializacion('cargado electron.');
@@ -13,7 +12,7 @@ utiles.mostrarMensajeInicializacion('cargado electron.');
 /**
  * nodejs server
  */
-const express = require("express"); 
+const express = require("express");
 const path = require('path');
 const routes = require('./server/routes');
 const appExpres = express();
@@ -36,7 +35,7 @@ appExpres.use(function(req, res, next) {
   res.status(404).send(err);
 });
 
-let server = appExpres.listen(8080, function () {
+appExpres.listen(8080, function () {
   utiles.mostrarMensajeInicializacion('servidor listo en el puerto 8080');
 });
 
@@ -47,10 +46,10 @@ const desarrollo = true;
 
 /**
  * Creamos la ventana del navegador
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
  */
 const url = require('url');
 // Keep a global reference of the window object, if you don't, the window will

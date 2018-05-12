@@ -1,4 +1,3 @@
-import React from 'react';
 import CreacionClientesPage from "./../pages/cliente/creacion-clientes-page";
 import DetalleClientesPage from "./../pages/cliente/detalle-clientes-page";
 import EdicionClientesPage from "./../pages/cliente/edicion-clientes-page";

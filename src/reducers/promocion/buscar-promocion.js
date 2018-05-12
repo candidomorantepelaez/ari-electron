@@ -34,7 +34,7 @@ export function promocion(state=initialState.buscarPromocion.promocion, { type, 
   }
 }
 
-const getBuscarPromocionState = (state) => state.promocions.buscarPromocion;
+const getBuscarPromocionState = (state) => state.promociones.buscarPromocion;
 
 export const getBuscandoPromocion = state => getBuscarPromocionState(state).buscandoPromocion;
 export const getPromocion = state => getBuscarPromocionState(state).promocion;

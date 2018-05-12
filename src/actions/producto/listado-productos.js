@@ -7,7 +7,7 @@ export const requestListadoProductos = () => ({
   type: REQUEST_LISTADO_PRODUCTOS
 });
 
-export const successListadoRProductos = (data) => ({
+export const successListadoProductos = (data) => ({
   type: SUCCESS_LISTADO_PRODUCTOS,
   payload: data,
 });
