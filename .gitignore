@@ -25,4 +25,3 @@ yarn-error.log*
 public/facturas/*
 server/assets/logoParaño.jpg
 server/assets/logoAri.jpg
-db/clientes.json
