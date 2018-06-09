@@ -19,9 +19,6 @@ const TarjetaProducto = ({ producto }) => (
       <p className="card-text">
         iva: {producto.iva}
       </p>
-      <p className="card-text">
-        Nº Identificativo: {producto._id}
-      </p>
     </div>
   </div>
   </div>

@@ -7,14 +7,38 @@ const TarjetaCliente = ({ cliente }) => (
       {cliente.nombre}
     </div>
     <div className="card-body">
+      <h3>Datos Cliente</h3>
       <p className="card-text">
-        Direccion: {cliente.direccion}
+        Dni/Cif: {cliente.cif}
       </p>
       <p className="card-text">
-        Ruta: {cliente.ruta}
+        Telefono: {cliente.telefono}
+      </p>
+      <p className="card-text">
+        Email: {cliente.email}
+      </p>
+      <h3>Direccion</h3>
+      <p className="card-text">
+        Calle: {cliente.calle}
+      </p>
+      <p className="card-text">
+        Población: {cliente.poblacion}
+      </p>
+      <p className="card-text">
+        Provincia: {cliente.provincia}
+      </p>
+      <p className="card-text">
+        Cod. Postal: {cliente.codigoPostal}
+      </p>
+      <h3>Datos del Servicio</h3>
+      <p className="card-text">
+        Muestra: {cliente.muestra}
       </p>
       <p className="card-text">
         Nº Botellas: {cliente.numeroBotellas}
+      </p>
+      <p className="card-text">
+        Ruta: {cliente.ruta}
       </p>
     </div>
   </div>

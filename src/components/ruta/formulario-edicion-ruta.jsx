@@ -40,22 +40,27 @@ class FormularioEdicionRuta extends Component {
         defaultValue={this.props.ruta}
         onSubmit={ (value) => this.handlerSubmit( value ) }
       >
-        <TextField
-          field="_id"
-          label="Nº Identificador"
-        />
-        <TextField
-          field="dia"
-          label="Dia"
-        />
-        <TextField
-          field="nombre"
-          label="Nombre"
-        />
-        <TextField
-          field="franjaHoraria"
-          label="Franja Horaria"
-        />
+        <fieldset className="col-12">
+          <legend className="col-12">Datos de la Ruta</legend>
+          <hr/>
+          <div className="row">
+            <TextField
+              field="nombre"
+              label="Nombre"
+              css="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+            />
+            <TextField
+              field="dia"
+              label="Dia"
+              css="col-xl-6 col-lg-6 col-md-6 col-sm-12"
+            />
+            <TextField
+              field="franjaHoraria"
+              label="Franja Horaria"
+              css="col-xl-6 col-lg-6 col-md-6 col-sm-12"
+            />
+          </div>
+        </fieldset>
         <SubmitButton />
         <VolverButton ruta="/rutas" />
       </FormBasic>

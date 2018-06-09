@@ -20,6 +20,7 @@ class SelectField extends Component {
     onChange: PropTypes.func,
     options: PropTypes.array.isRequired,
     value: PropTypes.string,
+    css: PropTypes.string
   };
 
   handlerChange(value) {
@@ -31,23 +32,21 @@ class SelectField extends Component {
   render() {
     return (
       <div
-        className="form-group row">
+        className={"form-group "+this.props.css}>
         <label
-          className="col-sm-2 col-form-label"
+          className="col-form-label"
           htmlFor={ this.props.field }>
           { this.props.label }
         </label>
-        <div className="col-sm-10">
-          <select
-            className="form-control Form-input-control"
-            value={this.props.value}
-            name={ this.props.field }
-            id={ this.props.field }
-            required={ this.props.required }
-            onChange={ evento => this.handlerChange(evento.value) } >
-            { this.props.options.map((object, i) => <option value={object.value} key={i} >{object.label}</option>) }
-          </select>
-        </div>
+        <select
+          className="form-control Form-input-control"
+          value={this.props.value}
+          name={ this.props.field }
+          id={ this.props.field }
+          required={ this.props.required }
+          onChange={ evento => this.handlerChange(evento.value) } >
+          { this.props.options.map((object, i) => <option value={object.value} key={i} >{object.label}</option>) }
+        </select>
       </div>
     );
   }

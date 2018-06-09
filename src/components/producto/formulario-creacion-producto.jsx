@@ -26,26 +26,39 @@ class FormularioCreacionProducto extends Component {
       <FormBasic
         onSubmit={ (value) => this.handlerSubmit( value ) }
       >
-        <TextField
-          field="codigo"
-          label="Codigo"
-        />
-        <TextField
-          field="nombre"
-          label="Nombre"
-        />
-        <TextField
-          field="descripcion"
-          label="Descripcion"
-        />
-        <TextField
-          field="precio"
-          label="Precio"
-        />
-        <TextField
-          field="iva"
-          label="Iva"
-        />
+         <fieldset className="col-12">
+          <legend className="col-12">Datos del Producto</legend>
+          <hr/>
+          <div className="row">
+            <TextField
+              field="codigo"
+              label="Codigo"
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+            />
+            <TextField
+              field="precio"
+              label="Precio"
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+            />
+            <TextField
+              field="iva"
+              label="Iva"
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+            />
+          </div>
+          <div className="row">
+            <TextField
+              field="nombre"
+              label="Nombre"
+              css="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+            />
+            <TextField
+              field="descripcion"
+              label="Descripcion"
+              css="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+            />
+          </div>
+        </fieldset>
         <SubmitButton />
         <VolverButton ruta="/productos" />
       </FormBasic>

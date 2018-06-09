@@ -7,14 +7,12 @@ const TarjetaPromocion = ({ promocion }) => (
       {promocion.nombre}
     </div>
     <div className="card-body">
+      <h3>Detalles de la promocion</h3>
       <p className="card-text">
         Descripcion: {promocion.descripcion}
       </p>
       <p className="card-text">
         precio: {promocion.precio}
-      </p>
-      <p className="card-text">
-        Nº identificativo: {promocion._id}
       </p>
     </div>
   </div>

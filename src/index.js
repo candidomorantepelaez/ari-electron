@@ -6,7 +6,6 @@ import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './../node_modules/jquery/dist/jquery.min.js';
 import './../node_modules/popper.js/dist/esm/popper.min.js';
 import './../node_modules/bootstrap/dist/js/bootstrap.min.js';
-import './assets/iconos/fontawesome-all.min.js';
 import './assets/css/index.css';
 import registerServiceWorker from './registerServiceWorker';
 import AppRoutes from './routes';
@@ -17,6 +16,9 @@ import thunkMiddleware from 'redux-thunk'
 import reducers from './reducers';
 import { logger } from './reactions/globales/logger-reaction';
 import { cliente } from './reactions/cliente/cliente-reaction';
+import { producto } from './reactions/producto/producto-reaction';
+import { promocion } from './reactions/promocion/promocion-reaction';
+import { ruta } from './reactions/ruta/ruta-reaction';
 import { crashReporter } from './reactions/globales/crash-reporter-reaction';
 import history from "./config/history";
 import Menu from "./components/globals/menus/menu-principal";
@@ -26,7 +28,12 @@ let store = createStore(reducers,
   applyMiddleware(thunkMiddleware,
     logger,
     crashReporter,
-    cliente));
+    cliente,
+    producto,
+    promocion,
+    ruta
+  )
+);
 
 window.Promise = Bluebird;
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
+import FaTrash from "react-icons/lib/fa/trash";
 
 class EliminarBotonIcono extends Component{
   static propTypes = {
@@ -23,7 +24,7 @@ class EliminarBotonIcono extends Component{
 
   render() {
     return(
-      <a>
+      <a data-toggle="tooltip" data-placement="top" title="Borrar Registro">
         {
         (this.props.boton)
         ?
@@ -31,7 +32,7 @@ class EliminarBotonIcono extends Component{
             Eliminar
           </button>
         :
-          <span className="fas fa-trash-alt icono" data-toggle="modal" data-target={"#"+this.props.id}></span>
+          <FaTrash className="icono" data-toggle="modal" data-target={"#"+this.props.id} />
         }
         <div className="modal fade" id={this.props.id} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog" role="document">

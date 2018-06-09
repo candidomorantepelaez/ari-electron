@@ -18,11 +18,10 @@ const factura = {
   },
   "datosEmpresa": {
       "nombre": "nombre empresa",
-      "direccion": {
-        "calle": "calle",
-        "poblacion": "codpostal poblacion",
-        "provincia": "provincia"
-      },
+      "calle": "calle",
+      "poblacion": "poblacion",
+      "provincia": "provincia",
+      "codigoPostal": "codigoPostal",
       "cif": "cif",
       "telefono": "111111111",
       "email": "email@email.com"

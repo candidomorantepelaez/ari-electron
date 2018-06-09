@@ -8,10 +8,6 @@ class Alerta extends Component {
     id: PropTypes.number,
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let estilo = "alert alert-warning alert-dismissible fade show";
     if (this.props.tipo === "success") {

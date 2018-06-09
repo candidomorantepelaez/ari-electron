@@ -41,34 +41,88 @@ class FormularioEdicionCliente extends Component {
         defaultValue={this.props.cliente}
         onSubmit={ (value) => this.handlerSubmit( value ) }
       >
-        <TextField
-          field="_id"
-          label="Nº Identificador"
-          />
-        <TextField
-          field="nombre"
-          label="Nombre"
-          />
-        <TextField
-          field="direccion"
-          label="Direccion"
-          />
-        <TextField
-          field="numeroBotellas"
-          label="Numero de Botellas"
-          />
-        <SelectField
-          field="muestra"
-          label="Muestra"
-          options={ [ { value: true, label: "Si" },
-            { value: false, label: "No" }] }
-          />
-        <SelectField
-          field="ruta"
-          label="Ruta"
-          options={ [ { value: 1, label: "gijon" },
-            { value: 2, label: "villa" }] }
-          />
+        <fieldset className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <legend className="col-xl-12 col-lg-12 col-md-12 col-sm-12">Datos Cliente</legend>
+          <hr/>
+          <div className="row">
+            <TextField
+              field="_id"
+              label="Nº Identificador"
+              css="col-xl-2 col-lg-02 col-md-12 col-sm-12"
+              />
+            <TextField
+              field="nombre"
+              label="Nombre"
+              css="col-xl-10 col-lg-10 col-md-12 col-sm-12"
+              />
+            <TextField
+              field="cif"
+              label="Dni/Cif"
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+              />
+            <TextField
+              field="telefono"
+              label="Telefono"
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+              />
+            <TextField
+              field="email"
+              label="Email"
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+              />
+          </div>
+        </fieldset>
+        <fieldset className="col-12">
+          <legend className="col-12">Dirección</legend>
+          <hr/>
+          <div className="row">
+            <TextField
+              field="calle"
+              label="Calle"
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+              />
+            <TextField
+              field="poblacion"
+              label="Población"
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+              />
+            <TextField
+              field="provincia"
+              label="Provincia"
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+              />
+            <TextField
+              field="codigoPostal"
+              label="Cod. Postal"
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+              />
+          </div>
+        </fieldset>
+        <fieldset className="col-12">
+          <legend className="col-12">Datos del Servicio</legend>
+          <hr/>
+          <div className="row">
+            <SelectField
+              field="muestra"
+              label="Muestra"
+              options={ [ { value: true, label: "Si" },
+                { value: false, label: "No" }] }
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+              />
+            <TextField
+              field="numeroBotellas"
+              label="Numero de Botellas"
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+              />
+            <SelectField
+              field="ruta"
+              label="Ruta"
+              options={ [ { value: 1, label: "gijon" },
+                { value: 2, label: "villa" }] }
+              css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+              />
+          </div>
+        </fieldset>
         <SubmitButton />
         <VolverButton ruta="/clientes" />
       </FormBasic>

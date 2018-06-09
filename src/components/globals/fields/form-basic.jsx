@@ -45,6 +45,7 @@ class FormBasic extends Component {
   render() {
     return (
       <form
+        className="row"
         onSubmit={ (evento) => this.handlerSubmit(evento) }
       >
         { this.props.children }

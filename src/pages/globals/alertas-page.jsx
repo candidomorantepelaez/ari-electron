@@ -9,10 +9,6 @@ class AlertasPage extends Component {
     alertas: PropTypes.array,
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const filas = this.props.alertas.map((alert, key) =>
       <Alerta tipo={alert.tipo} id={key} mensaje={alert.mensaje} key={key} />

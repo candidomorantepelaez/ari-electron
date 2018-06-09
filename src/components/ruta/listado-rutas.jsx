@@ -39,7 +39,6 @@ class ListadoRutas extends Component {
           <table className="table text-center">
             <thead>
               <tr>
-                <th scope="col">Nº Identificativo</th>
                 <th scope="col">Dia</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Franja Horaria</th>

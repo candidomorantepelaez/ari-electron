@@ -16,6 +16,7 @@ class TextField extends Component {
     label: PropTypes.string.isRequired,
     required: PropTypes.bool,
     value: PropTypes.string,
+    css: PropTypes.string,
   };
 
   handlerChange(value) {
@@ -26,23 +27,20 @@ class TextField extends Component {
 
   render() {
     return (
-      <div
-        className="form-group row">
+      <div className={"form-group "+this.props.css}>
         <label
-          className="col-sm-2 col-form-label"
+          className="col-form-label"
           htmlFor={ this.props.field }>
           { this.props.label }
         </label>
-        <div className="col-sm-10">
-          <input
-            className="form-control Form-input-control"
-            type="text"
-            value={ this.props.value }
-            name={ this.props.field }
-            id={ this.props.field }
-            required={ this.props.required }
-            onChange={ value => this.handlerChange(value.value)}/>
-        </div>
+        <input
+          className="form-control Form-input-control"
+          type="text"
+          value={ this.props.value }
+          name={ this.props.field }
+          id={ this.props.field }
+          required={ this.props.required }
+          onChange={ value => this.handlerChange(value.value)}/>
       </div>
     );
   }

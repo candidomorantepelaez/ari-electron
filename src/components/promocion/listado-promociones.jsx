@@ -39,7 +39,6 @@ class ListadoPromociones extends Component {
           <table className="table text-center">
             <thead>
               <tr>
-                <th scope="col">Nº Identificativo</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Precio</th>
