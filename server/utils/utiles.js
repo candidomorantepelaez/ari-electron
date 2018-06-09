@@ -1,5 +1,3 @@
-'use strict';
-
 function mostrarMensajeInicializacion(mensaje){
     console.log('.');
     console.log('..');

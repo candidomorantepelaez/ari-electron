@@ -6,6 +6,7 @@ var RutasController = require('./../controllers/rutas-controller');
 var ProductosController = require('./../controllers/productos-controller');
 var PromocionesController = require('./../controllers/promociones-controller');
 var VentasController = require('./../controllers/ventas-controller');
+var FacturaController = require('./../controllers/factura-controller');
 
 /* GET home page. */
 router.get('/', ClientesController.index);
@@ -49,4 +50,7 @@ router.delete('/api/venta/:id', VentasController.remove);
 router.post('/api/ventas', VentasController.find);
 router.get('/api/ventas/list', VentasController.list);
 
-module.exports = router;//exportamos las rutas 
+/* RUTAS INFORME */
+router.post('/api/factura', FacturaController.prueba);
+
+module.exports = router;//exportamos las rutas

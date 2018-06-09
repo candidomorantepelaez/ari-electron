@@ -1,8 +1,10 @@
 const facturaUtils = require("./../informes/factura");
 
 let prueba = (req, res, next) => {
-    facturaUtils.crearFactura();
-    facturaUtils.rellenarFactura();
-    facturaUtils.cerrarLibro();
+    facturaUtils.crearFactura(req.body);
     res.send("ok");
-}		
+}
+
+module.exports = {
+	prueba
+};

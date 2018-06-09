@@ -17,6 +17,8 @@ const path = require('path');
 const routes = require('./server/routes');
 const appExpres = express();
 
+appExpres.use(express.static('public'));
+
 appExpres.use(bodyParser.json());
 appExpres.use(bodyParser.urlencoded({extended:true}));
 
