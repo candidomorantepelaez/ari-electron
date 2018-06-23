@@ -7,7 +7,7 @@ import './../node_modules/jquery/dist/jquery.min.js';
 import './../node_modules/popper.js/dist/esm/popper.min.js';
 import './../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import './assets/css/index.css';
-// import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 import AppRoutes from './routes';
 import Bluebird from 'bluebird';
 import { Provider } from 'react-redux';
@@ -60,4 +60,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-//registerServiceWorker();
+registerServiceWorker();
