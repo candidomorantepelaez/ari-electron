@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Pagina404 from "./pages/errores/pagina404";
+import WellcomePage from "./pages/wellcome/wellcome-page";
 import rutasUrls from "./rutasUrl";
 import HomePage from './pages/home/home-page';
 
@@ -11,7 +11,7 @@ const AppRoutes = () => (
       {rutas}
       <Route path="/home" component={ HomePage } exact={ true } />
       <Route path="/" component={ HomePage } exact={ true } />
-      <Route component={ Pagina404 } />
+      <Route component={ WellcomePage } />
     </Switch>
 );
 
