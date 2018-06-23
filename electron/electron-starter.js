@@ -6,12 +6,11 @@ var app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const utiles = require('./server/utils/utiles');
 const bodyParser = require('body-parser');
-require('update-electron-app')({
-  repo: 'github.com/candidomorantepelaez/ari-electron.git',
-  updateInterval: '1 hour',
-});
+const autoUpdater = require("electron-updater").autoUpdater
 
 utiles.mostrarMensajeInicializacion('cargado electron.');
+
+autoUpdater.checkForUpdatesAndNotify();
 
 /**
  * nodejs server
