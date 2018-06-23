@@ -1,16 +1,16 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
+﻿# See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-
-# bbdd
-/db
+/electron/node_modules
+/react-web/node_modules
 
 # testing
 /coverage
 
 # production
-/build
+/electron/build
+/electron/dist
+/react-web/build
 
 # misc
 .DS_Store
@@ -19,9 +19,12 @@
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-public/facturas/*
-server/assets/logoParaño.jpg
-server/assets/logoAri.jpg
+/electron/npm-debug.log*
+/electron/yarn-debug.log*
+/electron/yarn-error.log*
+/electron/public/facturas/*
+/electron/server/assets/logoParaño.jpg
+/electron/server/assets/logoAri.jpg
+/react-web/npm-debug.log*
+/react-web/yarn-debug.log*
+/react-web/yarn-error.log*
