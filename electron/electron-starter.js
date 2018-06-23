@@ -74,6 +74,7 @@ function createWindow () {
         protocol: 'file:',
         slashes: true
       }));
+      mainWindow.webContents.openDevTools();
     }
 
     // Emitted when the window is closed.
