@@ -63,7 +63,7 @@ var mainWindow;
 
 function createWindow () {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 800, height: 600, icon: path.join(__dirname, 'server/assets/favicon.ico')})
+    mainWindow = new BrowserWindow({fullscreen: 'true', icon: path.join(__dirname, 'server/assets/favicon.ico')})
 
     if(desarrollo === true){
       mainWindow.loadURL("http://localhost:3000");
@@ -71,7 +71,7 @@ function createWindow () {
     }else{
       mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'front/index.html'),
-        protocol: 'file:',
+        protocol: 'file',
         slashes: true
       }));
       mainWindow.webContents.openDevTools();
