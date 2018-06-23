@@ -1,10 +1,10 @@
 const utiles = require('./../utils/utiles');
 var Datastore = require('./../../node_modules/nedb');
-
+const rutaDb = "/.ariDb"
 var db = {};
 /*clientes table*/
-db.clientes =  new  Datastore ({
-            filename:  './build/db/clientes.json',
+db.clientes = new Datastore ({
+            filename: rutaDb+'/clientes.json',
             timestampData: true
         });
 db.clientes.loadDatabase ( function ( err ) {
@@ -12,8 +12,8 @@ db.clientes.loadDatabase ( function ( err ) {
    utiles.mostrarMensajeInicializacion('cargada clientes.db');
 });
 /*rutas table*/
-db.rutas =  new  Datastore ({
-    filename:  './build/db/rutas.json',
+db.rutas = new Datastore ({
+    filename: rutaDb+'/rutas.json',
     timestampData: true
 });
 db.rutas.loadDatabase ( function ( err ) {
@@ -21,8 +21,8 @@ if(err) { utiles.mostrarMensajeInicializacion('error al cargar rutas.db: '+err);
 utiles.mostrarMensajeInicializacion('cargada rutas.db');
 });
 /*productos table*/
-db.productos =  new  Datastore ({
-    filename:  './build/db/productos.json',
+db.productos = new Datastore ({
+    filename: rutaDb+'/productos.json',
     timestampData: true
 });
 db.productos.loadDatabase ( function ( err ) {
@@ -30,8 +30,8 @@ if(err) { utiles.mostrarMensajeInicializacion('error al cargar productos.db: '+e
 utiles.mostrarMensajeInicializacion('cargada productos.db');
 });
 /*promociones table*/
-db.promociones =  new  Datastore ({
-    filename:  './build/db/promociones.json',
+db.promociones = new Datastore ({
+    filename: rutaDb+'/promociones.json',
     timestampData: true
 });
 db.promociones.loadDatabase ( function ( err ) {
@@ -39,8 +39,8 @@ if(err) { utiles.mostrarMensajeInicializacion('error al cargar promociones.db: '
 utiles.mostrarMensajeInicializacion('cargada promocones.db');
 });
 /*ventas table*/
-db.ventas =  new  Datastore ({
-    filename:  './build/db/ventas.json',
+db.ventas = new Datastore ({
+    filename: rutaDb+'/ventas.json',
     timestampData: true
 });
 db.ventas.loadDatabase ( function ( err ) {
