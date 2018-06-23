@@ -10,6 +10,7 @@
 # production
 /electron/build
 /electron/dist
+/electron/front
 /react-web/build
 
 # misc
