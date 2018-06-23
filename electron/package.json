@@ -1,7 +1,7 @@
 {
   "name": "ari-distribuciones",
-  "version": "0.0.3",
-  "descripyion": "app para gestion de empresa",
+  "version": "0.0.4",
+  "description": "app para gestion de empresa",
   "author": "Kan",
   "private": true,
   "dependencies": {
