@@ -1,6 +1,8 @@
 {
   "name": "ari-distribuciones",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "descripyion": "app para gestion de empresa",
+  "author": "Kan",
   "private": true,
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -15,6 +17,10 @@
   "scripts": {
     "start": "electron .",
     "dist": "build"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/candidomorantepelaez/ari-electron.git"
   },
   "main": "electron-starter.js",
   "build": {
