@@ -1,0 +1,27 @@
+{
+  "client.menu.label": "Clientes",
+
+  "clients.list.page.title": "Mis Clientes",
+  "clients.create.page.title": "Nuevo Cliente",
+
+  "clients.link.new.client": "Nuevo Cliente",
+
+  "clients.field.name": "Nombre",
+  "clients.field.dni": "Dni/Cif",
+  "clients.field.telefono": "Telefono",
+  "clients.field.email": "Email",
+  "clients.field.direction.street": "Calle",
+  "clients.field.direction.city": "Poblacion",
+  "clients.field.direction.state": "Provincia",
+  "clients.field.direction.codpostal": "Codigo Postal",
+  "clients.field.servicio.demo": "Muestra",
+  "clients.field.route": "Ruta",
+  "clients.field.numberBottles": "Numero de Botellas",
+
+  "clients.field.legend.datos": "Datos Personales",
+  "clients.field.legend.direccion": "Dirección",
+  "clients.field.legend.servicio": "Datos del Servicio",
+
+  "clients.action.confirm.delete.title": "Borrado de cliente",
+  "clients.action.confirm.delete.text": "Desea borrar el clliente?"
+}

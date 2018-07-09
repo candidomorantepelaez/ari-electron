@@ -47,7 +47,7 @@ appExpres.listen(8080, function () {
 /**
  * config para el build.
  */
-const desarrollo = false;
+const desarrollo = true;
 
 /**
  * Creamos la ventana del navegador
@@ -74,7 +74,6 @@ function createWindow () {
         protocol: 'file',
         slashes: true
       }));
-      mainWindow.webContents.openDevTools();
     }
 
     // Emitted when the window is closed.

@@ -1,0 +1,15 @@
+{
+  "core.delete": "Delete",
+  "core.save": "Save",
+  "core.detail": "Detail",
+  "core.edit": "Edit",
+  "core.back": "Back",
+  "core.cancel": "Cancel",
+  "core.confirm": "Confirm",
+  "core.loading": "Loading...",
+  "core.actions": "Actions",
+  "core.yes": "Yes",
+  "core.no": "No",
+
+  "core.app.title": "Ari Distribuciones"
+}

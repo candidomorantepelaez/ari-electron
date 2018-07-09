@@ -84,7 +84,6 @@ let listWithRuta = (req, res, next) => {
 			rutaRepository
 				.list()
 				.then(function(rutas){
-					console.log("hola");
 					res.send(ramda.map(cli => ramda.merge( cli, {ruta: ramda.filter(rut => rut._id === cli.ruta, rutas)[0]}), clientes));
 				}, function(err){
 					res.status(500).send(err);
