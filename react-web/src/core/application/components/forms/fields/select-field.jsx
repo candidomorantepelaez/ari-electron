@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Select } from "informed";
 import { isNil } from "ramda";
+import { injectIntl, intlShape, FormattedMessage } from "react-intl";
+
 
 class SelectField extends Component {
 
@@ -25,12 +27,13 @@ class SelectField extends Component {
     validateOnChange: PropTypes.bool,
     validateOnMount: PropTypes.bool,
     readonly: PropTypes.bool,
+    intl: intlShape.isRequired,
   };
 
   handlerValidate(value) {
     if (this.props.required === true) {
       if (isNil(value) === true || value === "") {
-        return `El campo ${this.props.label} no debe estar vacio`;
+        return `El campo ${this.props.intl.formatMessage({ id: this.props.label })} no debe estar vacio`;
       }
     }
     if (isNil(this.props.validate) === false) {
@@ -69,7 +72,7 @@ class SelectField extends Component {
           className="col-form-label"
           htmlFor={ this.props.field }
         >
-          { this.props.label }
+          <FormattedMessage id={this.props.label} />
         </label>
         <Select
           className={`form-control Form-input-control ${this.handlerCss()}`}
@@ -91,4 +94,4 @@ class SelectField extends Component {
   }
 }
 
-export default SelectField;
+export default injectIntl(SelectField);

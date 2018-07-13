@@ -27,7 +27,7 @@ export function routeSaved(state=initialState.saveRoute.routeSaved, { type, payl
     case requestType(SAVE_ROUTE):
       return state;
     case successType(SAVE_ROUTE):
-      return payload;
+      return payload.response;
     case failureType(SAVE_ROUTE):
       return state;
     default:

@@ -27,7 +27,7 @@ class ListClientsPage extends Component {
 
     return (
       <div>
-        <h1><FormattedMessage id="clients.list.page.title" /></h1>
+        <h3><FormattedMessage id="clients.list.page.title" /></h3>
         <ClientList
           list={this.props.clientsWithRoutes}
           searching={false}

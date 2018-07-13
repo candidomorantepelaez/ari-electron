@@ -1,8 +1,8 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import WellcomePage from "./../../../pages/wellcome/wellcome-page";
-import module from "./../module/index";
-import HomePage from './../../../pages/home/home-page';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import WellcomePage from "core/application/pages/wellcome/wellcome-page";
+import module from "core/application/module/index";
+import HomePage from "core/application/pages/home/home-page";
 
 const rutas = module.getRoutes().map((ruta, key) => <Route path={ruta.path} component={ruta.component} exact={ruta.exact} key={key} />);
 

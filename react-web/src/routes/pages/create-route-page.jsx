@@ -1,9 +1,28 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { FormattedMessage } from "react-intl";
+import CreateRoute from "routes/components/create-route";
+import { saveRoute } from "routes/actions";
 
-const CreateRoutePage = () => (
+const CreateRoutePage = ({getSaveRoute}) => (
   <div>
-    <h3>Nueva Ruta</h3>
+    <h3><FormattedMessage id="routes.create.page.title" /></h3>
+    <CreateRoute
+      onSave={value => getSaveRoute(value)}
+    />
   </div>
 );
 
-export default CreateRoutePage;
+CreateRoutePage.propTypes = {
+  getSaveRoute: PropTypes.func,
+};
+
+const storeConnect = connect(
+  () => ({}),
+  dispatch => ({
+    getSaveRoute: value => dispatch(saveRoute(value)),
+  }),
+);
+
+export default storeConnect(CreateRoutePage);

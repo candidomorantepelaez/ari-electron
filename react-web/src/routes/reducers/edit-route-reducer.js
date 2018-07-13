@@ -27,7 +27,7 @@ export function routeEdited(state=initialState.editRoute.routeEdited, { type, pa
     case requestType(EDIT_ROUTE):
       return state;
     case successType(EDIT_ROUTE):
-      return payload;
+      return payload.response;
     case failureType(EDIT_ROUTE):
       return state;
     default:

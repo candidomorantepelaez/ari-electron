@@ -8,19 +8,20 @@ const Confirm = (props) => (
     open={props.showModal}
     onClose={() => props.onClose()}
     center
+    styles={{ modal: { padding: "70px" } }}
   >
     <h3>{props.title}</h3>
     <p>{props.text}</p>
     <button
       type="button"
-      className="btn btn-secondary"
+      className="btn btn-secondary boton-tarjeta"
       onClick={() => props.onClose()}
     >
       <FormattedMessage id="core.cancel" />
     </button>
     <button
       type="button"
-      className="btn btn-primary"
+      className="btn btn-primary boton-tarjeta"
       onClick={() => props.onConfirm()}
     >
       <FormattedMessage id="core.confirm" />

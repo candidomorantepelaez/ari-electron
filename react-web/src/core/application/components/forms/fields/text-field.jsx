@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Text } from "informed";
 import { isNil } from "ramda";
+import { injectIntl, intlShape, FormattedMessage } from "react-intl";
 
 class TextField extends Component {
 
@@ -25,12 +26,13 @@ class TextField extends Component {
     validateOnChange: PropTypes.bool,
     validateOnMount: PropTypes.bool,
     readonly: PropTypes.bool,
+    intl: intlShape.isRequired,
   };
 
   handlerValidate(value) {
     if (this.props.required === true) {
       if (isNil(value) === true || value === "") {
-        return `El campo ${this.props.label} no debe estar vacio`;
+        return `El campo ${this.props.intl.formatMessage({ id: this.props.label })} no debe estar vacio`;
       }
     }
     if (isNil(this.props.validate) === false) {
@@ -69,7 +71,7 @@ class TextField extends Component {
           className="col-form-label"
           htmlFor={this.props.field}
         >
-          {this.props.label}
+          <FormattedMessage id={this.props.label} />
         </label>
         <Text
           className={`form-control Form-input-control ${this.handlerCss()}`}
@@ -96,4 +98,4 @@ class TextField extends Component {
   }
 }
 
-export default TextField;
+export default injectIntl(TextField);

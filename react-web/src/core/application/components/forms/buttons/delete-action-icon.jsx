@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import FaTrash from "react-icons/lib/fa/trash";
-import Confirm from "./../../modals/confirm";
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import Confirm from "core/application/components/modals/confirm";
+import { injectIntl, intlShape } from "react-intl";
 
-class DeleteButtonIcon extends Component{
+class DeleteActionIcon extends Component{
   static propTypes = {
     action: PropTypes.func,
     title: PropTypes.string,
@@ -34,24 +34,14 @@ class DeleteButtonIcon extends Component{
         data-placement="top"
         title={this.props.intl.formatMessage({ id: "core.delete" })}
       >
-        {(this.props.button === true) ?
-          <button
-            type="button"
-            className="btn btn-primary boton-tarjeta"
-            onClick={() =>this.setState({ show: true })}
-          >
-            <FormattedMessage id="core.delete" />
-          </button>
-          :
-          <FaTrash
-            className="icono"
-            onClick={() => this.setState({ show: true })}
-          />
-        }
+        <FaTrash
+          className="icono"
+          onClick={() => this.setState({ show: true })}
+        />
         <Confirm
           showModal={this.state.show}
-          title={this.props.title}
-          text={this.props.text}
+          title={this.props.intl.formatMessage({ id: this.props.title })}
+          text={this.props.intl.formatMessage({ id: this.props.text })}
           onClose={() => this.setState({ show: false })}
           onConfirm={() => this.handlerEliminar()}
         />
@@ -60,4 +50,4 @@ class DeleteButtonIcon extends Component{
   }
 }
 
-export default injectIntl(DeleteButtonIcon);
+export default injectIntl(DeleteActionIcon);

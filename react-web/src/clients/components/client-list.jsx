@@ -1,15 +1,10 @@
 import React from "react";
 import LinkButtonBlock from "core/application/components/forms/buttons/link-button";
 import PropTypes from "prop-types";
-import { map } from "ramda";
 import ClientFile from "clients/components/client-file";
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
-const getFile = (client, key, onRemove) => (<ClientFile client={client} key={key} action={value => onRemove(value)} />);
-
-const getFiles = (list, onRemove) => map((client, key) => getFile(client, key, onRemove), list);
-
-const ClientList = ({list, searching, onRemove, intl}) => (
+const ClientList = ({list, searching, onRemove}) => (
   (searching === true) ?
     <p><FormattedMessage id="core.loading" /></p>
     :
@@ -17,7 +12,7 @@ const ClientList = ({list, searching, onRemove, intl}) => (
       <div className="row">
         <LinkButtonBlock
           path="/clients/new"
-          text={intl.formatMessage({ id: "clients.link.new.client" })}
+          text="clients.link.new.client"
         />
       </div>
       <div className="row">
@@ -31,7 +26,7 @@ const ClientList = ({list, searching, onRemove, intl}) => (
             </tr>
           </thead>
           <tbody>
-            { getFiles(list) }
+            { list.map((client, key) => (<ClientFile client={client} key={key} action={value => onRemove(value)} />)) }
           </tbody>
         </table>
       </div>
@@ -42,7 +37,6 @@ ClientList.propTypes = {
   list: PropTypes.array,
   searching: PropTypes.bool,
   onRemove: PropTypes.func,
-  intl: intlShape.isRequired,
 }
 
-export default injectIntl(ClientList);
+export default ClientList;

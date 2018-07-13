@@ -30,28 +30,32 @@ const FormCreateClient = ({ loading, routes, onSave, intl }) => (
               <div className="row">
                 <TextField
                   field="nombre"
-                  label={intl.formatMessage({ id: "clients.field.name" })}
+                  label="clients.field.name"
                   css="col-xl-12 col-lg-12 col-md-12 col-sm-12"
                   required
-                  />
+                  errors={formState.errors.nombre}
+                />
                 <TextField
                   field="cif"
-                  label={intl.formatMessage({ id: "clients.field.dni" })}
+                  label="clients.field.dni"
                   css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
                   required
-                  />
+                  errors={formState.errors.cif}
+                />
                 <TextField
                   field="telefono"
-                  label={intl.formatMessage({ id: "clients.field.telefono" })}
+                  label="clients.field.telefono"
                   css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
                   required
-                  />
+                  errors={formState.errors.telefono}
+                />
                 <TextField
                   field="email"
-                  label={intl.formatMessage({ id: "clients.field.email" })}
+                  label="clients.field.email"
                   css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
                   required
-                  />
+                  errors={formState.errors.email}
+                />
               </div>
           </fieldset>
           <fieldset className="col-12">
@@ -62,27 +66,31 @@ const FormCreateClient = ({ loading, routes, onSave, intl }) => (
             <div className="row">
               <TextField
                 field="calle"
-                label={intl.formatMessage({ id: "clients.field.direction.street" })}
+                label="clients.field.direction.street"
                 css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
                 required
-                />
+                errors={formState.errors.calle}
+              />
               <TextField
                 field="poblacion"
-                label={intl.formatMessage({ id: "clients.field.direction.city" })}
+                label="clients.field.direction.city"
                 css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
                 required
-                />
+                errors={formState.errors.poblacion}
+              />
               <TextField
                 field="provincia"
-                label={intl.formatMessage({ id: "clients.field.direction.state" })}
+                label="clients.field.direction.state"
                 css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
-                />
+                errors={formState.errors.provincia}
+              />
               <TextField
                 field="codigoPostal"
-                label={intl.formatMessage({ id: "clients.field.direction.codpostal" })}
+                label="clients.field.direction.codpostal"
                 css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
                 required
-                />
+                errors={formState.errors.codigoPostal}
+              />
             </div>
           </fieldset>
           <fieldset className="col-12">
@@ -93,27 +101,30 @@ const FormCreateClient = ({ loading, routes, onSave, intl }) => (
             <div className="row">
               <SelectField
                 field="muestra"
-                label={intl.formatMessage({ id: "clients.field.service.demo" })}
+                label="clients.field.service.demo"
                 options={[
                   { value: true, label: intl.formatMessage({ id: "core.yes" }) },
                   { value: false, label: intl.formatMessage({ id: "core.no" }) }
                 ]}
                 css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
                 required
-                />
+                errors={formState.errors.muestra}
+              />
               <TextField
                 field="numeroBotellas"
-                label={intl.formatMessage({ id: "clients.field.service.bottles" })}
+                label="clients.field.service.bottles"
                 css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
                 required
-                />
+                errors={formState.errors.numeroBotellas}
+              />
               <SelectField
                 field="ruta"
-                label={intl.formatMessage({ id: "clients.field.service.route" })}
+                label="clients.field.service.route"
                 options={map(obj => ({ label: obj.nombre, value: obj._id }), routes)}
                 css="col-xl-4 col-lg-4 col-md-6 col-sm-12"
                 required
-                />
+                errors={formState.errors.ruta}
+              />
             </div>
           </fieldset>
           <SubmitButton />

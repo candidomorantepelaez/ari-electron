@@ -17,13 +17,13 @@ const deleteRoute = (id) => new Promise((resolve, reject) => {
 });
 
 const editRoute = (route) => new Promise((resolve, reject) => {
-  put(`${apiPath}/api/ruta`, merge(options, { body: JSON.stringify(route) }))
+  put(`${apiPath}/api/ruta`, merge(options, { body: route }))
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
 const saveRoute = (route) => new Promise((resolve, reject) => {
-  post(`${apiPath}/api/ruta`, merge(options, { body: JSON.stringify(route) }))
+  post(`${apiPath}/api/ruta`, merge(options, { body: route }))
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });

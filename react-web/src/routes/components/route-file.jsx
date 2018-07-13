@@ -4,31 +4,31 @@ import DeleteActionIcon from "core/application/components/forms/buttons/delete-a
 import DetailActionIcon from "core/application/components/forms/buttons/detail-action-icon";
 import EditActionIcon from "core/application/components/forms/buttons/edit-action-icon";
 
-const ClientFile = ({ client, action, intl}) => (
+const RouteFile = ({ route, action}) => (
   <tr>
-    <td>{ client.nombre }</td>
-    <td>{ client.ruta.nombre }</td>
-    <td>{ client.numeroBotellas }</td>
+    <td>{ route.dia }</td>
+    <td>{ route.nombre }</td>
+    <td>{ route.franjaHoraria }</td>
     <td>
       <DetailActionIcon
-        path={"/clients/detail/"+client._id}
+        path={"/routes/detail/"+route._id}
       />
       <EditActionIcon
-        path={"/clients/edit/"+client._id}
+        path={"/routes/edit/"+route._id}
       />
       <DeleteActionIcon
-        title="clients.action.confirm.delete.title"
-        text="clients.action.confirm.delete.text"
-        id={ client._id }
-        action={(value) => action(value)}
+        title="routes.action.confirm.delete.title"
+        text="routes.action.confirm.delete.text"
+        id={ route._id }
+        action={value => action(value)}
       />
     </td>
   </tr>
 );
 
-ClientFile.propTypes = {
-  client: PropTypes.object,
+RouteFile.propTypes = {
+  route: PropTypes.object,
   action: PropTypes.func,
-}
+};
 
-export default ClientFile;
+export default RouteFile;

@@ -27,7 +27,7 @@ export function route(state=initialState.searchRoute.route, { type, payload }) {
     case requestType(SEARCH_ROUTE):
       return {};
     case successType(SEARCH_ROUTE):
-      return payload;
+      return payload.response;
     case failureType(SEARCH_ROUTE):
       return {};
     default:

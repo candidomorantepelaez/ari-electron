@@ -17,13 +17,13 @@ const deleteClient = (id) => new Promise((resolve, reject) => {
 });
 
 const editClient = (cliente) => new Promise((resolve, reject) => {
-  put(`${apiPath}/api/cliente`, merge(options, { body: JSON.stringify(cliente) }))
+  put(`${apiPath}/api/cliente`, merge(options, { body: cliente }))
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
 const saveClient = (cliente) => new Promise((resolve, reject) => {
-  post(`${apiPath}/api/cliente`, merge(options, { body: JSON.stringify(cliente) }))
+  post(`${apiPath}/api/cliente`, merge(options, { body: cliente }))
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });

@@ -35,7 +35,7 @@ export function routes(state=initialState.searchRoutes.routes, { type, payload }
   }
 }
 
-const getSearchRoutesState = (state) => state.rutas.searchRoutes;
+const getSearchRoutesState = (state) => state.routes.searchRoutes;
 
 export const getSearchingRoutes = state => getSearchRoutesState(state).searchingRoutes;
 export const getRoutes = state => getSearchRoutesState(state).routes;

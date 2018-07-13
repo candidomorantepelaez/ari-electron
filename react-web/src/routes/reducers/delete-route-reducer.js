@@ -27,7 +27,7 @@ export function routeDeleted(state=initialState.deleteRoute.routeDeleted, { type
     case requestType(DELETE_ROUTE):
       return state;
     case successType(DELETE_ROUTE):
-      return payload;
+      return payload.response;
     case failureType(DELETE_ROUTE):
       return state;
     default:

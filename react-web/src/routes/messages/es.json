@@ -3,6 +3,15 @@
 
   "routes.list.page.title": "Mis Rutas",
   "routes.create.page.title": "Nueva Ruta",
+  "routes.detail.page.title": "Detalle Ruta",
+  "routes.edit.page.title": "Editar Ruta",
 
-  "routes.link.new.route": "Nueva Ruta"
+  "routes.link.new.route": "Nueva Ruta",
+
+  "routes.field.day": "Dia",
+  "routes.field.name": "Nombre",
+  "routes.field.time.range": "Franja Horaria",
+
+  "routes.action.confirm.delete.title": "Confirmacion de Borrado",
+  "routes.action.confirm.delete.text": "Esta seguro que desea borrar esta ruta"
 }
