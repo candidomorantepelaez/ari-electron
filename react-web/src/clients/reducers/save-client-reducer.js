@@ -1,5 +1,5 @@
 import { requestType, successType, failureType } from "fredux";
-import { SAVE_CLIENT } from "./../actions";
+import { SAVE_CLIENT } from "clients/actions";
 import { combineReducers } from 'redux';
 
 const initialState = {
@@ -27,7 +27,7 @@ export function clientSaved(state=initialState.saveClient.clientSaved, { type, p
     case requestType(SAVE_CLIENT):
       return state;
     case successType(SAVE_CLIENT):
-      return payload;
+      return payload.response;
     case failureType(SAVE_CLIENT):
       return state;
     default:

@@ -1,5 +1,5 @@
 import { requestType, successType, failureType } from "fredux";
-import { SEARCH_CLIENTS_WITH_ROUTE } from "./../actions";
+import { SEARCH_CLIENTS_WITH_ROUTE } from "clients/actions";
 import { combineReducers } from 'redux';
 
 const initialState = {

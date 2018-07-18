@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import { Form } from "informed";
-import { FormattedMessage } from "react-intl";
 import TextField from "core/application/components/forms/fields/text-field";
 import SubmitButton from "core/application/components/forms/buttons/submit-button";
 import VolverButton from "core/application/components/forms/buttons/back-button";

@@ -1,5 +1,5 @@
 import { requestType, successType, failureType } from "fredux";
-import { DELETE_CLIENT } from "./../actions";
+import { DELETE_CLIENT } from "clients/actions";
 import { combineReducers } from 'redux';
 
 const initialState = {

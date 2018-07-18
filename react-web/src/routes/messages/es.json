@@ -13,5 +13,12 @@
   "routes.field.time.range": "Franja Horaria",
 
   "routes.action.confirm.delete.title": "Confirmacion de Borrado",
-  "routes.action.confirm.delete.text": "Esta seguro que desea borrar esta ruta"
+  "routes.action.confirm.delete.text": "Esta seguro que desea borrar esta ruta",
+
+  "routes.alerts.success.save": "Ruta guardada correctamente",
+  "routes.alerts.failure.save": "Error al guardar la ruta",
+  "routes.alerts.success.edit": "Ruta editada correctamente",
+  "routes.alerts.failure.edit": "Error al editar la ruta",
+  "routes.alerts.success.delete": "Ruta borrada correctamente",
+  "routes.alerts.failure.delete": "Error al borrar la ruta"
 }

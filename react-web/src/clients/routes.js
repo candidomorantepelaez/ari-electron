@@ -1,7 +1,7 @@
-import ListClientsPage from "./page/list-clients-page";
-import CreateClientPage from "./page/create-client-page";
-import DetailClientPage from "./page/detail-client-page";
-import EditClientPage from "./page/edit-client-page";
+import ListClientsPage from "clients/page/list-clients-page";
+import CreateClientPage from "clients/page/create-client-page";
+import DetailClientPage from "clients/page/detail-client-page";
+import EditClientPage from "clients/page/edit-client-page";
 
 export default [
   { path: "/clients", exact: true, component: ListClientsPage },

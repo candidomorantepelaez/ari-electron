@@ -1,5 +1,5 @@
 import { requestType, successType, failureType } from "fredux";
-import { SEARCH_CLIENT_WITH_ROUTE } from "./../actions";
+import { SEARCH_CLIENT_WITH_ROUTE } from "clients/actions";
 import { combineReducers } from 'redux';
 
 const initialState = {
@@ -28,7 +28,7 @@ export function searchingClientWithRoute(state = initialState.searchClientWithRo
     case requestType(SEARCH_CLIENT_WITH_ROUTE):
       return {};
     case successType(SEARCH_CLIENT_WITH_ROUTE):
-      return payload;
+      return payload.response;
     case failureType(SEARCH_CLIENT_WITH_ROUTE):
       return {};
     default:

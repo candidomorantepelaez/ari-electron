@@ -3,20 +3,33 @@ import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { saveClient } from "clients/actions";
-import FormCreateClient from "clients/components/form-create-client";
-
+import CreateClient from "clients/components/create-client";
+import { getRoutes, getSearchingRoutes } from "routes/reducers/search-routes-reducer";
+import LoadingIcon from "core/application/components/iconos/loading-icon";
+import { searchRoutes } from "routes/actions";
 class CreateClientPage extends Component {
   static propTypes = {
-    saveClient: PropTypes.func,
+    save: PropTypes.func,
+    getSearchRoutes: PropTypes.func,
+    loading: PropTypes.bool,
+    routes: PropTypes.array,
+  }
+
+  constructor(props) {
+    super(props);
+    this.props.getSearchRoutes();
   }
 
   render() {
+    if (this.props.loading === true) {
+      return <LoadingIcon />
+    }
+
     return (
       <div>
         <h1><FormattedMessage id="clients.create.page.title" /></h1>
-        <FormCreateClient
+        <CreateClient
           routes={this.props.routes}
-          loading={this.props.loading}
           onSave={value => this.props.save(value)}
         />
       </div>
@@ -26,11 +39,12 @@ class CreateClientPage extends Component {
 
 const storeConnect = connect(
   state => ({
-    routes: [],
-    loading: false,
+    routes: getRoutes(state),
+    loading: getSearchingRoutes(state),
   }),
   dispatch => ({
-    save: (client) => dispatch(saveClient(client)),
+    getSearchRoutes: () => dispatch(searchRoutes()),
+    save: client => dispatch(saveClient(client)),
   }),
 );
 

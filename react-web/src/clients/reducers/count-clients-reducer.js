@@ -1,5 +1,5 @@
 import { requestType, successType, failureType } from "fredux";
-import { COUNT_CLIENTS } from "./../actions";
+import { COUNT_CLIENTS } from "clients/actions";
 import { combineReducers } from 'redux';
 
 const initialState = {

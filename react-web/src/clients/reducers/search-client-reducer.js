@@ -1,5 +1,5 @@
 import { requestType, successType, failureType } from "fredux";
-import { SEARCH_CLIENT } from "./../actions";
+import { SEARCH_CLIENT } from "clients/actions";
 import { combineReducers } from 'redux';
 
 const initialState = {
@@ -27,7 +27,7 @@ export function client(state=initialState.searchClient.client, { type, payload }
     case requestType(SEARCH_CLIENT):
       return {};
     case successType(SEARCH_CLIENT):
-      return payload;
+      return payload.response;
     case failureType(SEARCH_CLIENT):
       return {};
     default:

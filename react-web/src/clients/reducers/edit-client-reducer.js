@@ -1,5 +1,5 @@
 import { requestType, successType, failureType } from "fredux";
-import { EDIT_CLIENT } from "./../actions";
+import { EDIT_CLIENT } from "clients/actions";
 import { combineReducers } from 'redux';
 
 const initialState = {
@@ -41,7 +41,7 @@ export function clientEdited(state=initialState.editClient.clientEdited, { type,
     case requestType(EDIT_CLIENT):
       return state;
     case successType(EDIT_CLIENT):
-      return payload;
+      return payload.response;
     case failureType(EDIT_CLIENT):
       return state;
     default:
