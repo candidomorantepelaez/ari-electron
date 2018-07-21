@@ -19,7 +19,7 @@ class TextField extends Component {
     required: PropTypes.bool,
     css: PropTypes.string,
     validate: PropTypes.func,
-    errors: PropTypes.object,
+    errors: PropTypes.string,
     mask: PropTypes.func,
     initialValue: PropTypes.string,
     validateOnBlur: PropTypes.bool,
@@ -48,7 +48,7 @@ class TextField extends Component {
     color: "#dc3545",
   }
 
-  handlerCss() {
+ handlerCss() {
     if (isNil(this.props.errors) === false) {
       return this.style;
     }

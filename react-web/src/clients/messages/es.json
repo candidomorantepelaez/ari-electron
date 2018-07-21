@@ -9,6 +9,7 @@
   "clients.link.new.client": "Nuevo Cliente",
 
   "clients.field.name": "Nombre",
+  "clients.field.name.error": "Nombre no valido",
   "clients.field.dni": "Dni/Cif",
   "clients.field.telefono": "Telefono",
   "clients.field.email": "Email",

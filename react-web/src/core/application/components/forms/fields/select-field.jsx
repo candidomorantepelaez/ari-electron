@@ -20,7 +20,7 @@ class SelectField extends Component {
     required: PropTypes.bool,
     css: PropTypes.string,
     validate: PropTypes.func,
-    errors: PropTypes.object,
+    errors: PropTypes.string,
     mask: PropTypes.func,
     initialValue: PropTypes.string,
     validateOnBlur: PropTypes.bool,

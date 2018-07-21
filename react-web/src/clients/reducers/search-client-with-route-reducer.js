@@ -32,7 +32,7 @@ export function searchingClientWithRoute(state = initialState.searchClientWithRo
     case failureType(SEARCH_CLIENT_WITH_ROUTE):
       return {};
     default:
-      return {};
+      return state;
   }
 }
 

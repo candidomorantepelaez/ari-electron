@@ -31,7 +31,7 @@ export function route(state=initialState.searchRoute.route, { type, payload }) {
     case failureType(SEARCH_ROUTE):
       return {};
     default:
-      return {};
+      return state;
   }
 }
 

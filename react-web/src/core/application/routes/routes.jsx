@@ -9,7 +9,6 @@ const rutas = module.getRoutes().map((ruta, key) => <Route path={ruta.path} comp
 const AppRoutes = () => (
     <Switch>
       {rutas}
-      {console.log(rutas)}
       <Route path="/home" component={ HomePage } exact={ true } />
       <Route path="/" component={ HomePage } exact={ true } />
       <Route component={ WellcomePage } />

@@ -1,5 +1,4 @@
 import React from "react";
-import { map } from "ramda";
 import PropTypes from "prop-types";
 import { Form } from "informed";
 import { injectIntl, intlShape, FormattedMessage } from "react-intl";

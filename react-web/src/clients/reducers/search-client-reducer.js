@@ -31,7 +31,7 @@ export function client(state=initialState.searchClient.client, { type, payload }
     case failureType(SEARCH_CLIENT):
       return {};
     default:
-      return {};
+      return state;
   }
 }
 
