@@ -8,6 +8,7 @@ import { searchClient, editClient } from "clients/actions";
 import EditClient from "clients/components/edit-client";
 import { getRoutes, getSearchingRoutes } from 'routes/reducers/search-routes-reducer';
 import { searchRoutes } from "routes/actions";
+
 class EditClientPage extends Component {
   static propTypes = {
     getSearchClient: PropTypes.func,

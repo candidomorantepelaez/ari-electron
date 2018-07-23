@@ -2,6 +2,7 @@ import React from "react";
 import { injectIntl, intlShape, FormattedMessage } from "react-intl";
 import { FaInfo } from "react-icons/lib/fa";
 import PropTypes from "prop-types";
+import { map, addIndex, values } from "ramda";
 
 const Input = (props) => (
   <div
@@ -27,7 +28,7 @@ const Input = (props) => (
     </label>
     <input
       autoComplete="false"
-      className={`form-control Form-input-control ${(props.error) ? "invalid-input" : ""}`}
+      className={`form-control Form-input-control ${(props.error && props.error.message) ? "invalid-input" : ""}`}
       id={props.name}
       type={props.type}
       value={props.value}
@@ -41,11 +42,14 @@ const Input = (props) => (
     />
     {
       (props.error) ?
-      <div className="invalid-input"><FormattedMessage id={props.error.message} /></div>
+      <div className="invalid-input">
+        <ul>
+          {addIndex(map)((obj, key) => (<li key={key}><FormattedMessage id={obj.message} /></li>),values(props.error))}
+        </ul>
+      </div>
       :
       null
     }
-
   </div>
 );
 
@@ -62,8 +66,6 @@ Input.propTypes = {
   error: PropTypes.object,
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
-  validateOnChange: PropTypes.func,
-  validateOnBlur: PropTypes.func,
   intl: intlShape.isRequired,
 }
 

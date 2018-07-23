@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import ClientList from "clients/components/client-list";
 import { connect } from "react-redux";
-import { searchClientsWithRoute } from "clients/actions";
+import { searchClientsWithRoute, deleteClient } from "clients/actions";
 import { getSearchingClientsWithRoute,
   getClientsWithRoute } from "clients/reducers/search-clients-with-route-reducer";
 import LoadingIcon from "core/application/components/iconos/loading-icon";
@@ -30,8 +30,7 @@ class ListClientsPage extends Component {
         <h3><FormattedMessage id="clients.list.page.title" /></h3>
         <ClientList
           list={this.props.clientsWithRoutes}
-          searching={false}
-          onRemove={() => console.log()}
+          onRemove={value => this.props.onRemove(value)}
         />
       </div>
     );
@@ -45,6 +44,7 @@ const storeConnect = connect(
   }),
   dispatch => ({
     getClients: () => dispatch(searchClientsWithRoute()),
+    onRemove: (id) => dispatch(deleteClient(id)),
   }),
 );
 

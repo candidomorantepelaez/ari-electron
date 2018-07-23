@@ -10,6 +10,7 @@
   "core.actions": "Acciones",
   "core.yes": "Si",
   "core.no": "No",
+  "core.field.required": "Campo requerido",
 
   "core.app.title": "Ari Distribuciones"
 }

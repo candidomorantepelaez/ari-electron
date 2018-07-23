@@ -6,6 +6,7 @@ import LoadingIcon from "core/application/components/iconos/loading-icon";
 import { getSearchClientWithRoute, getClientWithRoute } from "clients/reducers/search-client-with-route-reducer";
 import { searchClientWithRoute, deleteClient } from "clients/actions";
 import DetailClient from "clients/components/detail-client";
+
 class DetailClientPage extends Component {
   static propTypes = {
     getSearchClient: PropTypes.func,
