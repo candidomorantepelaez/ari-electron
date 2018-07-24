@@ -17,7 +17,7 @@ function save(objeto) {
 
 function update(objeto) {
     return new Promise(function(resolve, reject){
-        productoTable.update({ _id: objeto_id }, objeto, {}, function(err, numReplaced){
+        productoTable.update({ _id: objeto._id }, objeto, {}, function(err, numReplaced){
             if(err) {
                 reject(new Error("error: "+err));
             }else{

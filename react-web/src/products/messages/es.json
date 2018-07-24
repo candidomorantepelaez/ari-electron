@@ -1,0 +1,27 @@
+{
+  "product.menu.label": "Productos",
+
+  "products.list.page.title": "Mis Productos",
+  "products.create.page.title": "Nuevo Producto",
+  "products.detail.page.title": "Detalle Producto",
+  "products.edit.page.title": "Editar Producto",
+
+  "products.link.new.product": "Nuevo Producto",
+
+  "products.field.code": "Codigo",
+  "products.field.name": "Nombre",
+  "products.field.price": "Precio",
+  "products.field.iva": "Iva",
+  "products.field.description": "Descripción",
+
+  "products.action.confirm.delete.title": "Borrado de producto",
+  "products.action.confirm.delete.text": "Desea borrar el producto?",
+
+  "products.alerts.success.save": "Producto guardado correctamente",
+  "products.alerts.failure.save": "Error al guardar el producto",
+  "products.alerts.success.edit": "Producto editado correctamente",
+  "products.alerts.failure.edit": "Error al editar el producto",
+  "products.alerts.success.delete": "Producto borrado correctamente",
+  "products.alerts.failure.delete": "Error al borrar el producto",
+  "products.alerts.failure.search": "Error al recuperar los datos"
+}

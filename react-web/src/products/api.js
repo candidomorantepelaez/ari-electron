@@ -17,13 +17,13 @@ const deleteProduct = (id) => new Promise((resolve, reject) => {
 });
 
 const editProduct = (product) => new Promise((resolve, reject) => {
-  put(`${apiPath}/api/producto`, merge(options, { body: JSON.stringify(product) }))
+  put(`${apiPath}/api/producto`, merge(options, { body: product }))
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
 const saveProduct = (product) => new Promise((resolve, reject) => {
-  post(`${apiPath}/api/producto`, merge(options, { body: JSON.stringify(product) }))
+  post(`${apiPath}/api/producto`, merge(options, { body: product }))
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
