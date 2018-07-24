@@ -1,0 +1,22 @@
+{
+  "sales.menu.label": "Ventas",
+
+  "sales.list.page.title": "Mis Ventas",
+  "sales.create.page.title": "Nueva Venta",
+  "sales.detail.page.title": "Detalle Venta",
+  "sales.edit.page.title": "Editar Venta",
+
+  "sales.link.new.route": "Nueva Venta",
+
+  "sales.field.name": "Nombre",
+
+  "sales.action.confirm.delete.title": "Confirmacion de Borrado",
+  "sales.action.confirm.delete.text": "Esta seguro que desea borrar esta venta",
+
+  "sales.alerts.success.save": "Venta guardada correctamente",
+  "sales.alerts.failure.save": "Error al guardar la venta",
+  "sales.alerts.success.edit": "Venta editada correctamente",
+  "sales.alerts.failure.edit": "Error al editar la venta",
+  "sales.alerts.success.delete": "Venta borrada correctamente",
+  "sales.alerts.failure.delete": "Error al borrar la venta"
+}

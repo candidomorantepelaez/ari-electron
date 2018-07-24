@@ -17,13 +17,13 @@ const deleteSale = (id) => new Promise((resolve, reject) => {
 });
 
 const editSale = (sale) => new Promise((resolve, reject) => {
-  put(`${apiPath}/api/venta`, merge(options, { body: JSON.stringify(sale) }))
+  put(`${apiPath}/api/venta`, merge(options, { body: sale }))
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
 const saveSale = (sale) => new Promise((resolve, reject) => {
-  post(`${apiPath}/api/venta`, merge(options, { body: JSON.stringify(sale) }))
+  post(`${apiPath}/api/venta`, merge(options, { body: sale }))
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
