@@ -1,0 +1,33 @@
+{
+  "configs.menu.label": "Configuración",
+
+  "configs.list.page.title": "Mis Clientes",
+  "configs.create.page.title": "Nuevo Cliente",
+  "configs.detail.page.title": "Detalle Cliente",
+  "configs.edit.page.title": "Editar Cliente",
+
+  "configs.link.new.client": "Nuevo Cliente",
+
+  "configs.field.name": "Nombre",
+  "configs.field.name.error": "Nombre no valido",
+  "configs.field.dni": "Dni/Cif",
+  "configs.field.telefono": "Telefono",
+  "configs.field.email": "Email",
+  "configs.field.web": "Web",
+  "configs.field.direction.street": "Calle",
+  "configs.field.direction.square": "Polígono",
+  "configs.field.direction.city": "Poblacion",
+  "configs.field.direction.state": "Provincia",
+  "configs.field.direction.codpostal": "Codigo Postal",
+
+  "configs.action.confirm.delete.title": "Borrado de configuración",
+  "configs.action.confirm.delete.text": "Desea borrar la configuración?",
+
+  "configs.alerts.success.save": "Configuración guardado correctamente",
+  "configs.alerts.failure.save": "Error al guardar la configuración",
+  "configs.alerts.success.edit": "Configuración editado correctamente",
+  "configs.alerts.failure.edit": "Error al editar la configuración",
+  "configs.alerts.success.delete": "Configuración borrado correctamente",
+  "configs.alerts.failure.delete": "Error al borrar la configuración",
+  "configs.alerts.failure.search": "Error al recuperar los datos"
+}
