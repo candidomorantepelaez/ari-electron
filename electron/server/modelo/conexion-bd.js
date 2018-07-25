@@ -47,6 +47,15 @@ db.ventas.loadDatabase ( function ( err ) {
 if(err) { utiles.mostrarMensajeInicializacion('error al cargar ventas.db: '+err); };
 utiles.mostrarMensajeInicializacion('cargada ventas.db');
 });
+/*config table*/
+db.config = new Datastore ({
+    filename: rutaDb+'/config.json',
+    timestampData: true
+});
+db.config.loadDatabase ( function ( err ) {
+if(err) { utiles.mostrarMensajeInicializacion('error al cargar config.db: '+err); };
+utiles.mostrarMensajeInicializacion('cargada config.db');
+});
 
 const getDb = () => db;
 const getClientesTable = () => db.clientes;
@@ -54,6 +63,7 @@ const getRutasTable = () => db.rutas;
 const getProductosTable = () => db.productos;
 const getPromocionesTable = () => db.promociones;
 const getVentasTable = () => db.ventas;
+const getConfigTable = () => db.config;
 
 module.exports = {
     getDb,
@@ -61,5 +71,6 @@ module.exports = {
     getRutasTable,
     getProductosTable,
     getPromocionesTable,
-    getVentasTable
+    getVentasTable,
+    getConfigTable
 };

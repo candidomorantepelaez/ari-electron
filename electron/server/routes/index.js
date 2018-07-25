@@ -6,6 +6,7 @@ var RutasController = require('./../controllers/rutas-controller');
 var ProductosController = require('./../controllers/productos-controller');
 var PromocionesController = require('./../controllers/promociones-controller');
 var VentasController = require('./../controllers/ventas-controller');
+var ConfigController = require('./../controllers/config-controller');
 var FacturaController = require('./../controllers/factura-controller');
 
 /* GET home page. */
@@ -56,6 +57,15 @@ router.delete('/api/venta/:id', VentasController.remove);
 router.post('/api/ventas', VentasController.find);
 router.get('/api/ventas/list', VentasController.list);
 router.get('/api/ventas/count', VentasController.count);
+
+/* RUTAS CONFIG */
+router.post('/api/config', ConfigController.save);
+router.put('/api/config', ConfigController.update);
+router.get('/api/config/:id', ConfigController.findOne);
+router.delete('/api/config/:id', ConfigController.remove);
+router.post('/api/configs', ConfigController.find);
+router.get('/api/configs/list', ConfigController.list);
+router.get('/api/configs/count', ConfigController.count);
 
 /* RUTAS INFORME */
 router.post('/api/factura', FacturaController.prueba);

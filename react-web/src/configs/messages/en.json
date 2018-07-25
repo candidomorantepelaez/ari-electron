@@ -1,12 +1,12 @@
 {
   "configs.menu.label": "Configuración",
 
-  "configs.list.page.title": "Mis Clientes",
-  "configs.create.page.title": "Nuevo Cliente",
-  "configs.detail.page.title": "Detalle Cliente",
+  "configs.list.page.title": "Mis Configuraciones",
+  "configs.create.page.title": "Nueva Configuración",
+  "configs.detail.page.title": "Detalle Configuración",
   "configs.edit.page.title": "Editar Cliente",
 
-  "configs.link.new.client": "Nuevo Cliente",
+  "configs.link.new.config": "Nueva Configuración",
 
   "configs.field.name": "Nombre",
   "configs.field.name.error": "Nombre no valido",

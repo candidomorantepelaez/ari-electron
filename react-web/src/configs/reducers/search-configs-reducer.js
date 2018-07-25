@@ -5,7 +5,7 @@ import { combineReducers } from 'redux';
 const initialState = {
   searchConfigs: {
     searching: false,
-    configs: {},
+    configs: [],
   },
 };
 
@@ -25,11 +25,11 @@ export function searching(state = initialState.searchConfigs.searching, { type }
 export function configs(state=initialState.searchConfigs.configs, { type, payload }) {
   switch(type){
     case requestType(SEARCH_CONFIGS):
-      return {};
+      return [];
     case successType(SEARCH_CONFIGS):
       return payload.response;
     case failureType(SEARCH_CONFIGS):
-      return {};
+      return [];
     default:
       return state;
   }
