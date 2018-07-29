@@ -1,7 +1,7 @@
-var xl = require('excel4node');
-var modulos = require('./modulos-informe');
+const xl = require('excel4node');
+const modulos = include("server/reports/reports-modules");
 
-function crearFactura(factura){
+function createInvoice(factura){
     //creamos libro
     factura.libro = new xl.Workbook({dateFormat : 'd / m  hh: mm: ss: '});
     //creamos la primera pagina
@@ -39,5 +39,5 @@ function crearFactura(factura){
 }
 
 module.exports = {
-    crearFactura
+    createInvoice
 }

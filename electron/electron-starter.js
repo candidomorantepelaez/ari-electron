@@ -1,14 +1,19 @@
 /**
  * Electron
  */
+global.base_dir = __dirname;
+global.abs_path = function(path) {
+  return base_dir + path;
+}
+global.include = function(file) {
+  return require(abs_path('/' + file));
+}
+
 const electron = require('electron');
-var app = electron.app;
+const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
-const utiles = require('./server/utils/utiles');
 const bodyParser = require('body-parser');
 const autoUpdater = require("electron-updater").autoUpdater
-
-utiles.mostrarMensajeInicializacion('cargado electron.');
 
 autoUpdater.checkForUpdatesAndNotify();
 
@@ -16,10 +21,11 @@ autoUpdater.checkForUpdatesAndNotify();
  * nodejs server
  */
 const express = require("express");
+const cookieParser = require('cookie-parser')
 const path = require('path');
 const routes = require('./server/routes');
 const appExpres = express();
-
+appExpres.use(cookieParser());
 appExpres.use(express.static(__dirname + '/public'));
 
 appExpres.use(bodyParser.json());
@@ -41,7 +47,7 @@ appExpres.use(function(req, res, next) {
 });
 
 appExpres.listen(8080, function () {
-  utiles.mostrarMensajeInicializacion('servidor listo en el puerto 8080');
+  console.log('servidor listo en el puerto 8080');
 });
 
 /**

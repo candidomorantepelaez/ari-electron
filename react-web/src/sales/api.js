@@ -1,47 +1,38 @@
-import { get, post, put, del} from "fredux-api-utils";
+import { get, post, put, del} from "core/application/api/index";
 import { apiPath } from "core/application/constans";
-import { merge } from "ramda";
-
-const options = {
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  mode: "cors",
-  cache: "no-store"
-};
 
 const deleteSale = (id) => new Promise((resolve, reject) => {
-  del(`${apiPath}/api/venta/${id}`, options)
+  del(`${apiPath}/api/sale/${id}`)
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
 const editSale = (sale) => new Promise((resolve, reject) => {
-  put(`${apiPath}/api/venta`, merge(options, { body: sale }))
+  put(`${apiPath}/api/sale`, { body: sale })
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
 const saveSale = (sale) => new Promise((resolve, reject) => {
-  post(`${apiPath}/api/venta`, merge(options, { body: sale }))
+  post(`${apiPath}/api/sale`, { body: sale })
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
 const searchSale = (id) => new Promise((resolve, reject) => {
-  get(`${apiPath}/api/venta/${id}`, options)
+  get(`${apiPath}/api/sale/${id}`)
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
 const searchSales = () => new Promise((resolve, reject) => {
-  get(`${apiPath}/api/ventas/list`, options)
+  get(`${apiPath}/api/sales/list`)
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
 const countSales = () => new Promise((resolve, reject) => {
-  get(`${apiPath}/api/ventas/count`, options)
+  get(`${apiPath}/api/sales/count`)
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });

@@ -4,24 +4,20 @@ import Alert from "./alert";
 import { connect } from "react-redux";
 import { getAlerts } from "./../../reducers/alert-reducer";
 
-class AlertPage extends Component {
-  static propTypes = {
-    alerts: PropTypes.array,
-  };
+const AlertPage = (props) => (
+  (props.alerts.length > 0) ?
+    <div>
+      {this.props.alerts.map((alert, key) =>
+        <Alert type={alert.type} id={key} message={alert.message} key={key} />
+      )}
+    </div>
+    :
+    null
+);
 
-  render() {
-    if (this.props.alerts.length > 0) {
-      return (
-        <div>
-          {this.props.alerts.map((alert, key) =>
-            <Alert type={alert.type} id={key} message={alert.message} key={key} />
-          )}
-        </div>
-      );
-    }
-    return null;
-  }
-}
+AlertPage.propTypes = {
+  alerts: PropTypes.array,
+};
 
 const storeConnect = connect(
   (state) => ({
