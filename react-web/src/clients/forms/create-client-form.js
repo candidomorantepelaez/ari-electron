@@ -6,11 +6,14 @@ const createClientForm = {
   actions: [<SubmitButton />, <BackButton />],
   fields: [
     {
-      name: "nombre",
+      name: "name",
       label: "clients.field.name",
       type: "text",
       className: "col-xl-12 col-lg-12 col-md-12 col-sm-12",
       required: true,
+      validateOnBlur: value => {
+
+      }
     }, {
       name: "cif",
       label: "clients.field.dni",

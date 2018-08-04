@@ -1,25 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 
-class Alert extends Component {
-  static propTypes = {
-    type: PropTypes.string,
-    message: PropTypes.string,
-    id: PropTypes.number,
-  };
+const Alert = (props) => (
+  <div className={`alert alert-${props.type} alert-dismissible fade show`} role="alert">
+    <strong>{props.type}</strong>
+    <FormattedMessage id={props.message} />
+    <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+);
 
-  render() {
-    return (
-      <div className={`alert alert-${this.props.type} alert-dismissible fade show`} role="alert">
-        <strong>{this.props.type}</strong>
-        <FormattedMessage id={this.props.message} />
-        <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    );
-  }
-}
+Alert.propTypes = {
+  type: PropTypes.string,
+  message: PropTypes.string,
+  id: PropTypes.number,
+};
 
 export default Alert;

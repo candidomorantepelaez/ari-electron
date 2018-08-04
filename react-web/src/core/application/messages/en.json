@@ -1,16 +1,20 @@
 {
-  "core.delete": "Delete",
-  "core.save": "Save",
-  "core.detail": "Detail",
-  "core.edit": "Edit",
-  "core.back": "Back",
-  "core.cancel": "Cancel",
-  "core.confirm": "Confirm",
-  "core.loading": "Loading...",
-  "core.actions": "Actions",
-  "core.yes": "Yes",
+  "core.delete": "Borrar",
+  "core.save": "Guardar",
+  "core.detail": "Detalle",
+  "core.edit": "Editar",
+  "core.back": "Volver",
+  "core.cancel": "Cancelar",
+  "core.confirm": "Confirmar",
+  "core.loading": "Cargando...",
+  "core.actions": "Acciones",
+  "core.name": "Nombre",
+  "core.pass": "Password",
+  "core.yes": "Si",
   "core.no": "No",
   "core.field.required": "Campo requerido",
 
-  "core.app.title": "Ari Distribuciones"
+  "core.app.title": "Ari Distribuciones",
+  "core.app.wellcome": "Bienvenidos a Ari-Distri",
+  "core.app.description": "Su app de gestión de empresa"
 }

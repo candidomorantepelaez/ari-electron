@@ -12,10 +12,12 @@ const InvoiceController = include("server/controllers/invoice-controller");
 const UserController = include("server/controllers/user-controller");
 
 // Middlewares
-const JwtMiddleware = include("server/middlewares/jwt-middleware");
+const AuthMiddleware = include("server/middlewares/auth-middleware");
+const UserValidations = include("server/validations/user-validations");
+const ClientValidations = include("server/validations/client-validations");
 
 /* RUTAS CLIENTE */
-router.post("/api/client", ClientController.save);
+router.post("/api/client", ClientValidations.validateClientForCreate, ClientController.save);
 router.put("/api/client", ClientController.update);
 router.get("/api/client/:id", ClientController.findOne);
 router.get("/api/client/:id/route", ClientController.findOneWithRuta);
@@ -31,7 +33,7 @@ router.put("/api/route", RouteController.update);
 router.get("/api/route/:id", RouteController.findOne);
 router.delete("/api/route/:id", RouteController.remove);
 router.post("/api/routes", RouteController.find);
-router.get("/api/routes/list", JwtMiddleware.verifyToken, RouteController.list);
+router.get("/api/routes/list", RouteController.list);
 router.get("/api/routes/count", RouteController.count);
 
 /* RUTAS PRODUCTOS */
@@ -74,7 +76,7 @@ router.get("/api/configs/count",  ConfigController.count);
 router.post("/api/invoice", InvoiceController.test);
 
 /* RUTAS USER */
-router.post("/credentials", JwtMiddleware.createToken, UserController.find);
-router.get("/logout", JwtMiddleware.deleteToken, UserController.find);
+router.post("/credentials", AuthMiddleware.createToken);
+router.get("/logout", AuthMiddleware.deleteToken);
 
 module.exports = router;//exportamos las routes

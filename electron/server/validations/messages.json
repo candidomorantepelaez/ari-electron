@@ -1,0 +1,8 @@
+{
+  "required": "Found null value in fields required",
+  "alpha_numeric": "The format is not valid for a type alpha_numeric",
+  "min": "The long of field is not valid",
+  "max": "The long of field is not valid",
+  "confirmed": "The fields are not equals",
+  "email": "The field email is not valid"
+}

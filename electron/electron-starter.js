@@ -12,7 +12,6 @@ global.include = function(file) {
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
-const bodyParser = require('body-parser');
 const autoUpdater = require("electron-updater").autoUpdater
 
 autoUpdater.checkForUpdatesAndNotify();
@@ -21,11 +20,12 @@ autoUpdater.checkForUpdatesAndNotify();
  * nodejs server
  */
 const express = require("express");
-const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser');
+// const cookieParser = require('cookie-parser');
 const path = require('path');
 const routes = require('./server/routes');
 const appExpres = express();
-appExpres.use(cookieParser());
+// appExpres.use(cookieParser());
 appExpres.use(express.static(__dirname + '/public'));
 
 appExpres.use(bodyParser.json());
