@@ -1,6 +1,7 @@
 import React from "react";
 import SubmitButton from "core/application/components/forms/buttons/submit-button";
 import BackButton from "core/application/components/forms/buttons/back-button";
+import { alphaNumeric, numeric, email } from "indicative/builds/raw";
 
 const createClientForm = {
   actions: [<SubmitButton />, <BackButton />],
@@ -12,8 +13,15 @@ const createClientForm = {
       className: "col-xl-12 col-lg-12 col-md-12 col-sm-12",
       required: true,
       validateOnBlur: value => {
-
-      }
+        const alphaNumericRegex = /^[a-z0-9 ]+$/;
+        if(!alphaNumericRegex.test(value)){
+          return { status: "error", message: "core.validations.alphanumeric" };
+        }
+        if(value.lenght >= 200){
+          return { status: "error", message: "core.validations.maxlong" };
+        }
+        return;
+      },
     }, {
       name: "cif",
       label: "clients.field.dni",

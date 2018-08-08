@@ -16,5 +16,10 @@
 
   "core.app.title": "Ari Distribuciones",
   "core.app.wellcome": "Bienvenidos a Ari-Distri",
-  "core.app.description": "Su app de gestión de empresa"
+  "core.app.description": "Su app de gestión de empresa",
+
+  "core.validations.alphanumeric": "Formato no valido, debe ser alfanumerico.",
+  "core.validations.numeric": "Formate no valido, debe ser numerico",
+  "core.validations.email": "Formato no valido, debe ser un email valido",
+  "core.validations.maxlong": "Formato no valido, debe ser texto mas corto"
 }
