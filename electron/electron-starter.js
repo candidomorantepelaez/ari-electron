@@ -17,6 +17,13 @@ const autoUpdater = require("electron-updater").autoUpdater
 autoUpdater.checkForUpdatesAndNotify();
 
 /**
+ * config para el build.
+ */
+const desarrollo = true;
+
+
+
+/**
  * nodejs server
  */
 const express = require("express");
@@ -25,6 +32,10 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const routes = require('./server/routes');
 const appExpres = express();
+
+require('electron-reload')(__dirname,{
+  electron: require(`${__dirname}/node_modules/electron`)
+});
 // appExpres.use(cookieParser());
 appExpres.use(express.static(__dirname + '/public'));
 
@@ -50,10 +61,6 @@ appExpres.listen(8080, function () {
   console.log('servidor listo en el puerto 8080');
 });
 
-/**
- * config para el build.
- */
-const desarrollo = true;
 
 /**
  * Creamos la ventana del navegador

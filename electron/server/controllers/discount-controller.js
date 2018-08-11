@@ -1,6 +1,6 @@
 const withBasicController = include("server/controllers/with-basic-controller");
-const discountRepository = include("server/model/discount-repository");
+const discountService = include("server/services/discount-service");
 
-const discountController = withBasicController({}, discountRepository);
+const discountController = withBasicController({}, discountService);
 
 module.exports = discountController;

@@ -31,14 +31,20 @@ exports.verifyToken = (req, res, next) => {
 };
 
 exports.createToken = (req, res) => {
+  console.log("hola que tal");
   const credentials = req.body;
+  const token = jwt.sign(credentials, secretkey);
   session.defaultSession.cookies.set({
     url: cookieUrl,
     name: cookieName,
-    value: jwt.sign(credentials, secretkey),
+    value: token,
     path: cookiePath,
-  }, (err) => (err) ? console.log(err) : null);
-  res.send("ok");
+  },err => {
+    if (err) {
+      console.log(err);
+    }
+  });
+  res.send("token: "+token);
 };
 
 exports.deleteToken = (req, res, next) => {

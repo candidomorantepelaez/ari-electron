@@ -1,7 +1,6 @@
 import React from "react";
 import SubmitButton from "core/application/components/forms/buttons/submit-button";
 import BackButton from "core/application/components/forms/buttons/back-button";
-import { alphaNumeric, numeric, email } from "indicative/builds/raw";
 
 const createClientForm = {
   actions: [<SubmitButton />, <BackButton />],

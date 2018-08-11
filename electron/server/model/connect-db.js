@@ -4,13 +4,15 @@ const rutaDb = "/.ariDb";
 
 const tables = [
   "clients",
-  "routes",
+  "sellers",
+  "wharehouses",
   "products",
   "discounts",
   "sales",
-  "configs",
+  "buys",
   "invoices",
-  "users"
+  "routes",
+  "apps",
 ];
 
 const withLoadTable = (wrapper, nameTable) => {

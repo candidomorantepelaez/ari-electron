@@ -1,8 +1,8 @@
 const invoiceUtils = include("server/reports/invoice");
 const withBasicController = include("server/controllers/with-basic-controller");
-const invoiceRepository = include("server/model/invoice-repository");
+const invoiceService = include("server/services/invoice-service");
 
-const invoiceController = withBasicController({}, invoiceRepository);
+const invoiceController = withBasicController({}, invoiceService);
 
 invoiceController.test = (req, res) => {
   invoiceUtils.crearFactura(req.body);

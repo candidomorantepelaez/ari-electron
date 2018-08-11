@@ -1,8 +1,8 @@
 const db = include("server/model/connect-db");
 const withBasicRepository = include("server/model/with-basic-repository");
 
-const userTable = db.users;
+const appTable = db.apps;
 
-const userRepository = withBasicRepository({}, userTable);
+const appRepository = withBasicRepository({}, appTable);
 
-module.exports = userRepository;
+module.exports = appRepository;

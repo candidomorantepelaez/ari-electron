@@ -1,6 +1,6 @@
 const withBasicController = include("server/controllers/with-basic-controller");
-const routeRepository = include("server/model/route-repository");
+const routeService = include("server/services/route-service");
 
-const routeController = withBasicController({}, routeRepository);
+const routeController = withBasicController({}, routeService);
 
 module.exports = routeController;
