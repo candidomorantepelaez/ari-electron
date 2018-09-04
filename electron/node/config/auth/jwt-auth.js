@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 const generateToken = (credentials) => {
   return new Promise((resolve, reject) => {
-    jwt.sign(credentials, constans.auth.secretkey, (err, token) =>{
+    jwt.sign(credentials, constants.auth.secretkey, (err, token) =>{
       if (err) {
         reject(err);
       }
@@ -13,7 +13,7 @@ const generateToken = (credentials) => {
 
 const verifyToken = (token) => {
   return new Promise((resolve, reject) => {
-    jwt.verify(token, constans.auth.secretkey, (err, credentials) => {
+    jwt.verify(token, constants.auth.secretkey, (err, credentials) => {
       if (err) {
         reject(err);
       }

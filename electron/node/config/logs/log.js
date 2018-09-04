@@ -8,8 +8,8 @@ const logger = winston.createLogger({
     // - Write to all logs with level `info` and below to `combined.log`
     // - Write all logs error (and below) to `error.log`.
     //
-    new winston.transports.File({ filename: "/.ariLog/error.log", level: 'error' }),
-    new winston.transports.File({ filename: "/.ariLog/combined.log" })
+    new winston.transports.File({ filename: constants.logger.pathError, level: 'error' }),
+    new winston.transports.File({ filename: constants.logger.pathLog })
   ]
 });
 

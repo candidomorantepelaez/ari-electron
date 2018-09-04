@@ -11,11 +11,6 @@ const auth = {
   secretkey: "secretkey",
 };
 
-const logger = {
-  pathLog: "/.ariLog/combined.log",
-  pathError: "/.ariLog/error.log"
-}
-
 const cookies = {
   domain: "ari",
   path: "/",
@@ -23,7 +18,12 @@ const cookies = {
   name: "session-id"
 };
 
-const pathBbdd = "/.ariDb";
+const logger = {
+  pathLog: "/.ariTemp/combined.log",
+  pathError: "/.ariTemp/error.log"
+}
+
+const pathBbdd = "/.ariDbTemp";
 
 const development = {
   electron: false,

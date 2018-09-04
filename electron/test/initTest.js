@@ -3,11 +3,11 @@ global.abs_path = function(path) {
   return base_dir + path;
 }
 global.include = function(file) {
-  return require(abs_path('/' + file));
+  return require("./../"+ file);
 }
 
 // load constants
-global.constants = include("node/config/constants/index");
+global.constants = include("node/config/constants/test");
 
 // create logger
 global.logger = include("node/config/logs/log");
@@ -15,10 +15,13 @@ global.logger = include("node/config/logs/log");
 // create db
 global.db = include("node/config/models/connect-db");
 
-// create electron app
-if (constants.development.electron === true) {
-  include("electron/index.js");
-}
-
 // create node server
 include("node/index.js");
+
+const appTests = require("./api/app");
+const AccountTests = require("./api/account");
+
+describe("tests Ari-Distri: ", () => {
+	describe("app-tests: ", appTests),
+	describe("account-tests: ", AccountTests)
+});
