@@ -1,10 +1,13 @@
 const express = require("express");
 const NodeApp = express();
+const helmet = require('helmet')
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const includeCors = include("node/config/http/cors");
 const router = include("node/config/routes/index");
 const handler404 = include("node/config/routes/handler404");
+
+NodeApp.use(helmet())
 
 NodeApp.use(cookieParser());
 
