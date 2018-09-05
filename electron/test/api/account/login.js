@@ -3,7 +3,7 @@ const test = require("./../../helpers/basic-test-api-helper");
 module.exports = () => {
   it("{} : ", function(done) {
     test
-      .requestWithoutVersion
+      .request
       .post("/credentials")
       .send({})
       .end((err, res) => {
@@ -17,7 +17,7 @@ module.exports = () => {
     password: "",
   }: `, function(done) {
     test
-      .requestWithoutVersion
+      .request
       .post("/credentials")
       .send({
         nif: "",
@@ -34,7 +34,7 @@ module.exports = () => {
     password: "123456",
   }: `, function(done) {
     test
-      .requestWithoutVersion
+      .request
       .post("/credentials")
       .send({
         nif: "manolo",
@@ -51,7 +51,7 @@ module.exports = () => {
     password: "Adkin@123",
   }: `, function(done) {
     test
-      .requestWithoutVersion
+      .request
       .post("/credentials")
       .send({
         nif: "12345648Z",
@@ -68,7 +68,7 @@ module.exports = () => {
     password: "Admin@123",
   }: `, function(done) {
     test
-      .requestWithoutVersion
+      .request
       .post("/credentials")
       .send({
         nif: "12345678Z",

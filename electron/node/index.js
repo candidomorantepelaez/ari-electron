@@ -3,7 +3,7 @@ const NodeApp = express();
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const includeCors = include("node/config/http/cors");
-const routes = include("app/routes/index");
+const router = include("node/config/routes/index");
 const handler404 = include("node/config/routes/handler404");
 
 NodeApp.use(cookieParser());
@@ -15,7 +15,7 @@ NodeApp.use(bodyParser.urlencoded({extended:true}));
 
 NodeApp.use(includeCors);
 
-NodeApp.use("/", routes);
+NodeApp.use("/", router);
 
 NodeApp.use(handler404);
 

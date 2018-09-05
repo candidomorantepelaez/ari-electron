@@ -1,18 +1,16 @@
-const withMiddlewareAction = include("node/config/actions/middleware-action");
-const loginAccountAction = withMiddlewareAction({});
 const credentialSchema = include("app/data-types/credentials-schema");
 const account = include("node/config/account/index");
 const auth = include("node/config/auth/jwt-auth");
 const cookiesManager = include("node/config/cookies/index");
 
-loginAccountAction.validate = (req, res, next) => {
+const validate = (req, res, next) => {
   if (credentialSchema.isValidate(req.body) === true) {
     next();
   }
   res.status(400).send({ message: "invalid data" });
 }
 
-loginAccountAction.execute = (req, res, next) => {
+const execute = (req, res, next) => {
   const credentials = { nif: req.body.nif, password: req.body.password };
   account
     .checkCredentials(credentials)
@@ -28,4 +26,7 @@ loginAccountAction.execute = (req, res, next) => {
     .catch(err => res.status(401).send({ message: err }));
 };
 
-module.exports = loginAccountAction;
+module.exports = {
+  validate,
+  execute,
+};
