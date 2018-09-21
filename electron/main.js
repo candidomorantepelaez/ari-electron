@@ -6,17 +6,16 @@ global.include = function(file) {
   return require(abs_path('/' + file));
 }
 
-// load constants
-global.constants = include("node/config/constants/index");
+global.config = include("node/config/index").development;
 
 // create logger
-global.logger = include("node/config/logs/log");
+global.logger = include("node/core/log-manager");
 
 // create db
-global.db = include("node/config/models/connect-db");
+global.db = include("node/core/persistent-manager").loadDb;
 
 // create electron app
-if (constants.development.electron === true) {
+if (config.app.electron === true) {
   include("electron/index.js");
 }
 

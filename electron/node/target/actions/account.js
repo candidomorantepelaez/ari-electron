@@ -1,4 +1,4 @@
-const withMiddlewareAction = include("node/config/actions/middleware-action");
+const withMiddlewareAction = include("node/core/actions/middleware-action");
 const r = require("ramda");
 
 const customLoginAction = include("app/actions/account/login-action");

@@ -1,7 +1,7 @@
 const appAction = include("node/target/actions/app");
 const customAppRoute = include("app/routes/app");
-const ActionSchema = include("node/config/data-types/default-action");
-const RouteSchema = include("node/config/data-types/routes");
+const ActionSchema = include("node/core/data-types/default-action");
+const RouteSchema = include("node/core/data-types/routes");
 const r = require("ramda");
 const assert = require("assert");
 

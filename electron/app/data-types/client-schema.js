@@ -10,6 +10,4 @@ module.exports = clientSchema = Joi.object().keys({
   emails: Joi.array().items(types.email),
   webs: Joi.array().items(types.http),
   nif: types.dni_nif.required(),
-  password: types.password.required(),
-  role: Joi.any().valid(constants.roles.client),
 });

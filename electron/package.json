@@ -47,6 +47,7 @@
     "chai-http": "^4.0.0",
     "electron": "^2.0.8",
     "electron-builder": "^20.15.1",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "mock-express-response": "^0.2.2"
   }
 }
