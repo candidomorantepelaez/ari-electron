@@ -3,11 +3,12 @@ const accountFunctions = include("app/account/functions");
 const authManager = include("node/core/auth-manager");
 const cookieManager = include("node/core/cookie-manager");
 
-const validate = (req, res, next) => {
-  if (accountSchema.isValidate(req.body) === true) {
+const authenticate = (req, res, next) => {
+  if (accountSchema.isValid(req.body) === true) {
     next();
+  } else {
+    res.status(400).send({ message: "invalid data" });
   }
-  res.status(400).send({ message: "invalid data" });
 }
 
 const execute = (req, res, next) => {
@@ -18,7 +19,7 @@ const execute = (req, res, next) => {
       authManager
         .generateToken(credentials)
         .then(token => {
-          cookieManager.setCookie(res, constants.cookies.name, token);
+          cookieManager.setCookie(res, config.cookies.name, token);
           res.status(200).send({ message: "login ok" });
         })
         .catch(err => res.status(500).send({ message: err }));
@@ -27,6 +28,6 @@ const execute = (req, res, next) => {
 };
 
 module.exports = {
-  validate,
-  execute,
+  authenticate,
+  execute
 };

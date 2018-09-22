@@ -1,4 +1,4 @@
-const accountActions = include("app/actions/account/actions");
+const accountActions = include("app/account/actions");
 
 const accountRoutes = [
   {

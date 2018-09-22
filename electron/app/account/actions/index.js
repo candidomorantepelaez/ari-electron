@@ -1,7 +1,7 @@
-const LoginAction = include("app/account/actions/login-action");
-const LogoutAction = include("app/account/actions/logout-action");
+const loginAction = include("app/account/actions/login-action");
+const logoutAction = include("app/account/actions/logout-action");
 
 module.exports = {
-  LoginAction,
-  LogoutAction
+  loginAction,
+  logoutAction
 }

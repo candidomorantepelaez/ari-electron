@@ -2,7 +2,7 @@ const authManager = include("node/core/auth-manager");
 const cookieManager = include("node/core/cookie-manager");
 
 const authenticate = (req, res, next) => {
-  let token = cookieManager.getCookie(req, constants.cookies.name);
+  let token = cookieManager.getCookie(req, config.cookies.name);
   authManager
     .verifyToken(token)
     .then(credentials => next())
@@ -10,11 +10,11 @@ const authenticate = (req, res, next) => {
 };
 
 const execute = (req, res, next) => {
-  cookieManager.clearCookie(res, constants.cookies.name);
+  cookieManager.clearCookie(res, config.cookies.name);
   res.status(200).send({ message: "logout ok!!!"})
 };
 
 module.exports = {
   authenticate,
-  execute,
+  execute
 };

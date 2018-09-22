@@ -7,6 +7,7 @@ const fileTests = require("./file-test");
 const middlewareTests = require("./middleware-test");
 const persistentTests = require("./persistent-test");
 const routesTests = require("./routes-test");
+const appTests = require("./app-test");
 
 module.exports = () => {
   describe("Auth Test: ", authTests),
@@ -17,5 +18,6 @@ module.exports = () => {
   describe("File test: ", fileTests),
   describe("Middleware test: ", middlewareTests),
   describe("Persistent test: ", persistentTests),
-  describe("Routes test: ", routesTests)
+  describe("Routes test: ", routesTests),
+  describe("App test: ", appTests)
 };

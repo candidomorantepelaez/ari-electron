@@ -1,7 +1,6 @@
-const ramda = require("ramda");
-const defaultData = include("node/core/app-manager").defaultData;
+const r = require("ramda");
 
-const checkVoidTable = (db, nameTable) => new Promise((resolve, reject) => {
+const checkEmptyTable = (db, nameTable) => new Promise((resolve, reject) => {
   db[nameTable].count({}, (err, count) => {
     if (err) {
       logger.log("error", `check data ${nameTable} default`, err);
@@ -14,9 +13,9 @@ const checkVoidTable = (db, nameTable) => new Promise((resolve, reject) => {
   });
 });
 
-const chargeDefaultData = (db, nameTable, obj) => {
+const loadData = (db, nameTable, obj) => {
   logger.log("info", `check default data in table ${nameTable}!`);
-  checkVoidTable(db, nameTable)
+  checkEmptyTable(db, nameTable)
     .then(result => {
       if (result === true) {
         db[nameTable].insert(obj, (err, newDoc) => {
@@ -29,11 +28,17 @@ const chargeDefaultData = (db, nameTable, obj) => {
     });
 };
 
-const insertDefaultData = (db, nameTable) => {
-  if (ramda.has(nameTable, defaultData) === true) {
-    chargeDefaultData(db, nameTable, defaultData[nameTable]);
+const handlerLoadData = (table, db, defaultData) => {
+  if (r.has(table, defaultData) === true) {
+    loadData(db, table, defaultData[table]);
   }
 }
 
-module.exports = insertDefaultData;
+const loadDefaultData = (db, appManager) => {
+  const defaultData = appManager.defaultData;
+  const tables = appManager.tables;
+  r.forEach(table => handlerLoadData(table, db, defaultData), tables);
+}
+
+module.exports = loadDefaultData;
 

@@ -4,7 +4,8 @@ const helmet = require('helmet')
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const httpManager = include("node/core/http-manager");
-const routerManager = include("node/core/routes-manager");
+const routesManager = include("node/core/routes-manager");
+const appManager = include("node/core/app-manager");
 
 NodeApp.use(helmet())
 
@@ -17,9 +18,9 @@ NodeApp.use(bodyParser.urlencoded({extended:true}));
 
 NodeApp.use(httpManager.getCors);
 
-NodeApp.use("/", routerManager.router);
+NodeApp.use("/", routesManager.createRouter(appManager));
 
-NodeApp.use(routerManager.handler404);
+NodeApp.use(routesManager.handler404);
 
 NodeApp.listen(8080, function () {
   logger.log('info', "Server listen in localhost:8080");

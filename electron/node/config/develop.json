@@ -39,8 +39,5 @@
   "persistent": {
     "type": "nedb",
     "pathBbdd": "/.ariDb"
-  },
-  "routes": {
-    "routeTest": true
   }
 }

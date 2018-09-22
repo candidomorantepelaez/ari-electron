@@ -1,11 +1,11 @@
 const Joi = require("joi");
 const types = include("app/data-types/single-types");
-const getBasicSchema = include("node/config/data-types/basic-schema");
+const schemaManager = include("node/core/schema-manager");
 
 const schema = Joi.object().keys({
   nif: types.dni_nif.required(),
   password: types.password.required(),
-  role: Joi.any().valid(config.roles.client, config.roles.seller, confing.roles.admin),
+  role: Joi.any().valid(config.roles.client, config.roles.seller, config.roles.admin),
 });
 
-module.exports = getBasicSchema(schema);
+module.exports = schemaManager.withBasicSchema(schema);

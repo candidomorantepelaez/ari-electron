@@ -2,6 +2,7 @@ const routesManager = require("./../../../node/core/routes-manager");
 const test = require("./../../helpers/basic-test-helper");
 const MockExpressResponse = require('mock-express-response');
 const MockExpressRequest = require('mock-express-request');
+const middlewareManager = include("node/core/middleware-manager");
 
 module.exports = () => {
   it("export routesManager: ", function() {
@@ -10,7 +11,7 @@ module.exports = () => {
 
   it("export routesManager is correct: ", function() {
     test.expect(routesManager).to.have.property("handler404");
-    test.expect(routesManager).to.have.property("routesManager");
+    test.expect(routesManager).to.have.property("createRouter");
   });
 
   it("export routesManager.handler404 rocks: ", function() {
@@ -21,14 +22,24 @@ module.exports = () => {
     test.expect(response.statusCode).to.be.equal(404);
   });
 
-  it("export routesManager.routesManager rocks: ", function() {
+  it("export routesManager.createRouter rocks: ", function() {
     const request = new MockExpressRequest({
         method: "GET",
         url: "/test",
     });
+    const appManager = {
+      customRoutes: [
+        {
+          url: "/test",
+          method: "get",
+          action: middlewareManager.withBasicMiddlewareAction({}),
+        },
+      ],
+    };
     const response = new MockExpressResponse();
     const next = (req, res, next) => res;
-    routesManager.routesManager(request, response, next);
+    const router = routesManager.createRouter(appManager);
+    router(request, response, next);
     test.expect(response.statusCode).to.be.equal(200);
     test.expect(response._getJSON()).to.have.property("message");
   });
