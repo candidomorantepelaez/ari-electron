@@ -27,18 +27,16 @@ module.exports = () => {
         method: "GET",
         url: "/test",
     });
-    const appManager = {
-      customRoutes: [
-        {
-          url: "/test",
-          method: "get",
-          action: middlewareManager.withBasicMiddlewareAction({}),
-        },
-      ],
-    };
+    const customRoutes = [
+      {
+        url: "/test",
+        method: "get",
+        action: middlewareManager.withBasicMiddlewareAction({}),
+      },
+    ];
     const response = new MockExpressResponse();
     const next = (req, res, next) => res;
-    const router = routesManager.createRouter(appManager);
+    const router = routesManager.createRouter(customRoutes);
     router(request, response, next);
     test.expect(response.statusCode).to.be.equal(200);
     test.expect(response._getJSON()).to.have.property("message");

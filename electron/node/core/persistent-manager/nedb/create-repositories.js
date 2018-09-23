@@ -1,16 +1,16 @@
 const withBasicRepository = include("node/core/persistent-manager/nedb/with-basic-repository");
 const r = require("ramda");
 
-const createRepository = (table, appManager, db) => {
+const createRepository = (table, customRepositories, db) => {
   const repository = r.objOf(table)(withBasicRepository({}, db[table]));
-  if (r.isNil(appManager.customRepositories)
-    || r.isNil(appManager.customRepositories[table])) {
+  if (r.isNil(customRepositories)
+    || r.isNil(customRepositories[table])) {
     return repository;
   }
-  return r.merge(repository, appManager.customRepositories[table]);
+  return r.objOf(table)(r.merge(repository.test, customRepositories[table]));
 }
 
-const createRepositories = (db, appManager) => r.reduce((acc, table) => r.merge(acc, createRepository(table, appManager, db)), {}, appManager.tables);
+const createRepositories = (db, customRepositories, tables) => r.reduce((acc, table) => r.merge(acc, createRepository(table, customRepositories, db)), {}, tables);
 
 module.exports = createRepositories;
 

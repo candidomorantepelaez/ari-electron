@@ -34,11 +34,7 @@ const handlerLoadData = (table, db, defaultData) => {
   }
 }
 
-const loadDefaultData = (db, appManager) => {
-  const defaultData = appManager.defaultData;
-  const tables = appManager.tables;
-  r.forEach(table => handlerLoadData(table, db, defaultData), tables);
-}
+const loadDefaultData = (db, defaultData, tables) => r.forEach(table => handlerLoadData(table, db, defaultData), tables);
 
 module.exports = loadDefaultData;
 

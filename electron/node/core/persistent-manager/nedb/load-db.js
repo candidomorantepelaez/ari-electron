@@ -13,6 +13,6 @@ const withLoadTable = (wrapper, nameTable) => {
   return wrapper;
 };
 
-const loadDb = (appManager) => r.reduce(withLoadTable, {}, appManager.tables);
+const loadDb = (tables) => r.reduce(withLoadTable, {}, tables);
 
 module.exports = loadDb;

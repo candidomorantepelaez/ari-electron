@@ -5,7 +5,9 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const httpManager = include("node/core/http-manager");
 const routesManager = include("node/core/routes-manager");
+const modules = include("app/modules");
 const appManager = include("node/core/app-manager");
+const routes = appManager.getRoutes(modules);
 
 NodeApp.use(helmet())
 
@@ -18,7 +20,7 @@ NodeApp.use(bodyParser.urlencoded({extended:true}));
 
 NodeApp.use(httpManager.getCors);
 
-NodeApp.use("/", routesManager.createRouter(appManager));
+NodeApp.use("/", routesManager.createRouter(routes));
 
 NodeApp.use(routesManager.handler404);
 

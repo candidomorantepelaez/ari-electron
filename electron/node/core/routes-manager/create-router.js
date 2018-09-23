@@ -16,8 +16,8 @@ const createRoute = (wrapper, route) => {
   wrapper[route.method](route.url, c[p1], c[p2], c[p3], c[p4], c[p5], c[p6]);
 };
 
-const createRouter = (appManager) => {
-  r.forEach(route => createRoute(router, route), appManager.customRoutes);
+const createRouter = (customRoutes) => {
+  r.forEach(route => createRoute(router, route), customRoutes);
   return router;
 }
 

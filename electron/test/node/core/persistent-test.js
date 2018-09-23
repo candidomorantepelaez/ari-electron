@@ -12,10 +12,8 @@ module.exports = () => {
   });
 
   it("persistentManager.loadDb rocks: ", function() {
-    const appManager = {
-      tables: ["test"],
-    };
-    const db = persistentManager.loadDb(appManager);
+    const tables = ["test"];
+    const db = persistentManager.loadDb(tables);
     test.expect(db).to.have.property("test");
   });
 
@@ -36,16 +34,14 @@ module.exports = () => {
   });
 
   it("persistentManager.loadDefaultData rocks: ", function(done) {
-    const appManager = {
-      tables: ["test"],
-      defaultData: {
-        test: {
-          name: "test"
-        }
+    const tables = ["test"];
+    const defaultData = {
+      test: {
+        name: "test"
       }
     };
-    const db = persistentManager.loadDb(appManager);
-    persistentManager.loadDefaultData(db, appManager);
+    const db = persistentManager.loadDb(tables);
+    persistentManager.loadDefaultData(db, defaultData, tables);
     const repository = persistentManager.withBasicRepository({}, db.test);
     repository.count().then(result => {
       test.expect(result).to.be.a("object");
@@ -61,21 +57,44 @@ module.exports = () => {
   });
 
   it("persistentManager.createRepositories basic rocks: ", function(done) {
-    const appManager = {
-      tables: ["test"],
-      defaultData: {
-        test: {
-          name: "test"
-        }
-      },
+    const tables = ["test"];
+    const defaultData = {
+      test: {
+        name: "test"
+      }
     };
-    const db = persistentManager.loadDb(appManager);
-    persistentManager.loadDefaultData(db, appManager);
-    const repository = persistentManager.createRepositories(db, appManager);
+    const db = persistentManager.loadDb(tables);
+    persistentManager.loadDefaultData(db, defaultData, tables);
+    const repository = persistentManager.createRepositories(db, null, tables);
     repository.test.count().then(result => {
       test.expect(result).to.be.a("object");
       test.expect(result).to.have.property("numberFiles");
       test.expect(result.numberFiles).to.be.equal(1);
+      done();
+    });
+  });
+
+  it("persistentManager.createRepositories custom rocks: ", function(done) {
+    const tables = ["test"];
+    const defaultData = {
+      test: {
+        name: "test"
+      }
+    };
+    const customRepositories = {
+      test: {
+        testOne: () => new Promise((resolve, reject) => {
+          resolve({ "message": "test custom rocks!!" });
+        }),
+      },
+    };
+    const db = persistentManager.loadDb(tables);
+    persistentManager.loadDefaultData(db, defaultData, tables);
+    const repository = persistentManager.createRepositories(db, customRepositories, tables);
+    repository.test.testOne().then(result => {
+      test.expect(result).to.be.a("object");
+      test.expect(result).to.have.property("message");
+      test.expect(result.message).to.be.equal("test custom rocks!!");
       done();
     });
   });
