@@ -1,4 +1,3 @@
-const cookieManager = include("node/core/cookie-manager");
 const checkAuthentication = include("app/globals/functions/check-authentication");
 
 const authenticate = (req, res, next) => {
@@ -8,8 +7,11 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  cookieManager.clearCookie(res, config.cookies.name);
-  res.status(200).send({ message: "logout ok!!!"})
+  repositories
+    .sales
+    .list()
+    .then(result => res.status(200).send(result))
+    .catch(err => res.status(500).send({ message: err }));
 };
 
 module.exports = {

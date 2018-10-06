@@ -1,4 +1,4 @@
-const cookieManager = include("node/core/cookie-manager");
+const r = require("ramda");
 const checkAuthentication = include("app/globals/functions/check-authentication");
 
 const authenticate = (req, res, next) => {
@@ -8,8 +8,16 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  cookieManager.clearCookie(res, config.cookies.name);
-  res.status(200).send({ message: "logout ok!!!"})
+  const seller = req.body.search;
+  if(r.isNil(seller) === false){
+    repositories
+      .sellers
+      .search(seller)
+      .then(result => res.status(200).send(result))
+      .catch(err => res.status(500).send({ message: err }));
+  } else {
+    res.status(400).send({ message: "invalid data" });
+  };
 };
 
 module.exports = {

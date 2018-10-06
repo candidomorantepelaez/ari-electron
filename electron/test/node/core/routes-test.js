@@ -42,4 +42,17 @@ module.exports = () => {
     test.expect(response._getJSON()).to.have.property("message");
   });
 
+  it("export routesManager.createRouter withCustomRoutes rocks: ", function() {
+    const request = new MockExpressRequest({
+        method: "GET",
+        url: "/test",
+    });
+    const customRoutes = [];
+    const response = new MockExpressResponse();
+    const next = (req, res, next) => res;
+    const router = routesManager.createRouter(customRoutes);
+    router(request, response, next);
+    test.expect(response.statusCode).to.be.equal(200);
+    test.expect(response._getJSON()).to.have.property("message");
+  });
 };

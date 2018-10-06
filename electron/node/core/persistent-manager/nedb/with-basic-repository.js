@@ -19,11 +19,11 @@ module.exports = withBasicRepository = (wrapper, table) => {
         } else {
           resolve({ "filesModified": numberFilesModified });
         }
-      })
+      });
     })
   );
 
-  wrapper.find = (obj) => (
+  wrapper.search = (obj) => (
     new Promise((resolve, reject) => {
       table.find(obj, (err, docs) => {
         if (err) {
@@ -31,7 +31,7 @@ module.exports = withBasicRepository = (wrapper, table) => {
         } else {
           resolve(docs);
         }
-      })
+      });
     })
   );
 
@@ -43,7 +43,7 @@ module.exports = withBasicRepository = (wrapper, table) => {
         } else {
           resolve(doc);
         }
-      })
+      });
     })
   );
 
@@ -55,7 +55,24 @@ module.exports = withBasicRepository = (wrapper, table) => {
         } else {
           resolve(docs);
         }
-      })
+      });
+    })
+  );
+
+  wrapper.paginate = (obj, count, offset, sort) => (
+    new Promise((resolve, reject) => {
+      table
+        .find(obj)
+        .sort(sort)
+        .skip(offset)
+        .limit(count)
+        .exec(function (err, docs) {
+          if(err) {
+            reject(err);
+          } else {
+            resolve(docs);
+          }
+        });
     })
   );
 
@@ -79,7 +96,7 @@ module.exports = withBasicRepository = (wrapper, table) => {
         } else {
           resolve({ "numberFiles": numberFiles });
         }
-      })
+      });
     })
   );
 
