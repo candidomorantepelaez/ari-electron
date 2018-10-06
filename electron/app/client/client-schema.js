@@ -6,7 +6,7 @@ const schemaManager = include("node/core/schema-manager");
 const schema = Joi.object().keys({
   _id: types.alphaNumeric,
   name: types.customAlphaNumeric.required(),
-  address: Joi.array().items(AddressSchema.required()),
+  address: Joi.array().items(AddressSchema.schema.required()),
   phones: Joi.array().items(types.phone.required()),
   emails: Joi.array().items(types.email),
   webs: Joi.array().items(types.http),

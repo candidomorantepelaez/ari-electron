@@ -8,8 +8,8 @@ const schema = Joi.object().keys({
   _id: types.alphaNumeric,
   name: types.customAlphaNumeric.required(),
   timerange: types.customAlphaNumeric.required(),
-  clients: Joi.array().items(ClientSchema),
-  sellers: Joi.array().items(SellerSchema),
+  clients: Joi.array().items(ClientSchema.schema),
+  sellers: Joi.array().items(SellerSchema.schema),
   streets: Joi.array().items(types.customAlphaNumeric),
 });
 

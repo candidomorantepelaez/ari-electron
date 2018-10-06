@@ -10,7 +10,7 @@ const schema = Joi.object().keys({
   description: types.customAlphaNumeric,
   salePrice: types.price.required(),
   buyPrice: types.price,
-  warehouse: types.WarehouseSchema,
+  warehouse: WarehouseSchema.schema,
   stock: types.number,
 });
 

@@ -5,9 +5,9 @@ const schemaManager = include("node/core/schema-manager");
 
 const schema = Joi.object().keys({
   _id: types.alphaNumeric,
-  sellers: Joi.array().items(SellerSchema),
+  sellers: Joi.array().items(SellerSchema.schema),
   name: types.customAlphaNumeric.required(),
-  admin: SellerSchema.required(),
+  admin: SellerSchema.schema.required(),
 });
 
 module.exports = schemaManager.withBasicSchema(schema);

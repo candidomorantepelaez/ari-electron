@@ -1,7 +1,8 @@
 const Joi = require("joi");
-const types = include("app/data-types/single-types");
+const types = include("app/globals/data-types/single-types");
+const schemaManager = include("node/core/schema-manager");
 
-module.exports = addressSchema = Joi.object().keys({
+const schema = Joi.object().keys({
   street: types.customAlphaNumeric.required(),
   number: types.customAlphaNumeric.required(),
   letter: types.customAlphaNumeric,
@@ -11,3 +12,5 @@ module.exports = addressSchema = Joi.object().keys({
   country: types.customAlphaNumeric.required(),
   codPostal: types.codPostal
 });
+
+module.exports = schemaManager.withBasicSchema(schema);
