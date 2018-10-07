@@ -27,7 +27,7 @@ export function numberOfClients(state = initialState.countClients.numberOfClient
     case requestType(COUNT_CLIENTS):
       return 0;
     case successType(COUNT_CLIENTS):
-      return payload.numeroClientes;
+      return payload.numberFiles;
     case failureType(COUNT_CLIENTS):
       return 0;
     default:

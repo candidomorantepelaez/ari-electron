@@ -17,7 +17,7 @@ module.exports = withBasicRepository = (wrapper, table) => {
         if (err) {
           reject(err);
         } else {
-          resolve({ "filesModified": numberFilesModified });
+          resolve({ "filesUpdated": numberFilesModified });
         }
       });
     })

@@ -8,11 +8,7 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const store = {
-    sellers: req.body.sellers,
-    name: req.body.name,
-    admin: req.body.admin,
-  };
+  const store = req.body.store;
   if (storeSchema.isValid(store) === true) {
     repositories
       .stores

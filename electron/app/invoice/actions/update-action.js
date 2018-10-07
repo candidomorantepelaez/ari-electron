@@ -9,13 +9,11 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const invoice = {
-    _id: req.body.id,
-    sale: req.body.sale,
-    date: req.body.date,
-    number: req.body.number,
-  };
-  if (invoiceSchema.isValid(store) === true && r.isNil(invoice["_id"]) === false) {
+  const invoice = req.body.invoice;
+  const id = req.params.id;
+  if (invoiceSchema.isValid(store) === true
+    && r.isNil(invoice["_id"]) === false
+    && id === invoice["_id"]) {
     repositories
       .invoices
       .update(invoice)

@@ -9,18 +9,11 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const sale = {
-    _id: req.body.id,
-    products: req.body.products,
-    discounts: req.body.discounts,
-    date: req.body.date,
-    client: req.body.client,
-    seller: req.body.seller,
-    price: req.body.price,
-    tax: req.body.tax,
-    totalPrice: req.body.totalPrice,
-  };
-  if (saleSchema.isValid(store) === true && r.isNil(sale["_id"]) === false) {
+  const sale = req.body.sale;
+  const id = req.params.id;
+  if (saleSchema.isValid(store) === true
+    && r.isNil(sale["_id"]) === false
+    && id === sale["_id"]) {
     repositories
       .sales
       .update(sale)

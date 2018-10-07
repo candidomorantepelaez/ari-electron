@@ -1,61 +1,61 @@
 import { get, post, put, del} from "core/application/api/index";
 import { apiPath } from "core/application/constans";
 
-const deleteClient = (id) => new Promise((resolve, reject) => {
-  del(`${apiPath}/api/client/${id}`)
-    .then(res => res.json().then(data => resolve(data)))
-    .catch(res => reject(res));
-});
-
-const editClient = (cliente) => new Promise((resolve, reject) => {
-  put(`${apiPath}/api/client`, { body: cliente })
-    .then(res => res.json().then(data => resolve(data)))
-    .catch(res => reject(res));
-});
-
 const saveClient = (cliente) => new Promise((resolve, reject) => {
-  post(`${apiPath}/api/client`, { body: cliente })
+  post(`${apiPath}/client`, { body: cliente })
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
-const searchClient = (id) => new Promise((resolve, reject) => {
-  get(`${apiPath}/api/client/${id}`)
+const updateClient = (id, cliente) => new Promise((resolve, reject) => {
+  put(`${apiPath}/client/${id}`, { body: cliente })
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
-const searchClients = () => new Promise((resolve, reject) => {
-  get(`${apiPath}/api/clients/list`)
+const findOneClient = (id) => new Promise((resolve, reject) => {
+  get(`${apiPath}/client/${id}`)
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
-const searchClientWithRoute = (id) => new Promise((resolve, reject) => {
-  get(`${apiPath}/api/client/${id}/route`)
+const removeClient = (id) => new Promise((resolve, reject) => {
+  del(`${apiPath}/client/${id}`)
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
-const searchClientsWithRoute = () => new Promise((resolve, reject) => {
-  get(`${apiPath}/api/clients/list/route`)
+const searchClients = (search) => new Promise((resolve, reject) => {
+  post(`${apiPath}/clients/search`, { body: search })
+    .then(res => res.json().then(data => resolve(data)))
+    .catch(res => reject(res));
+});
+
+const listClients = () => new Promise((resolve, reject) => {
+  get(`${apiPath}/clients/list`)
+    .then(res => res.json().then(data => resolve(data)))
+    .catch(res => reject(res));
+});
+
+const paginateClients = (page) => new Promise((resolve, reject) => {
+  post(`${apiPath}/clients/paginate`, { body: page })
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
 const countClients = () => new Promise((resolve, reject) => {
-  get(`${apiPath}/api/clients/count`)
+  get(`${apiPath}/clients/count`)
     .then(res => res.json().then(data => resolve(data)))
     .catch(res => reject(res));
 });
 
 export default {
-  deleteClient,
-  editClient,
   saveClient,
-  searchClient,
+  updateClient,
+  findOneClient,
+  removeClient,
   searchClients,
-  searchClientWithRoute,
-  searchClientsWithRoute,
+  listClients,
+  paginateClients,
   countClients,
 };

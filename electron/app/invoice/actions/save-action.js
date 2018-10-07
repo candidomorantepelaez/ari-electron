@@ -8,11 +8,7 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const invoice = {
-    sale: req.body.sale,
-    date: req.body.date,
-    number: req.body.number,
-  };
+  const invoice = req.body.invoice;
   if (invoiceSchema.isValid(invoice) === true) {
     repositories
       .invoices

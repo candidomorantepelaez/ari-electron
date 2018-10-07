@@ -10,8 +10,8 @@ const AppRoutes = () => (
     <Switch>
       {rutas}
       <Route path="/home" component={ HomePage } exact={ true } />
-      <Route path="/" component={ HomePage } exact={ true } />
-      <Route component={ LoginPage } />
+      <Route path="/login" component={ LoginPage } exact={ true } />
+      <Route component={ HomePage } />
     </Switch>
 );
 

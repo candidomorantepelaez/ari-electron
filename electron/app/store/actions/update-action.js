@@ -9,13 +9,11 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const store = {
-    _id: req.body.id,
-    sellers: req.body.sellers,
-    name: req.body.name,
-    admin: req.body.admin,
-  };
-  if (storeSchema.isValid(store) === true && r.isNil(store["_id"]) === false) {
+  const store = req.body.store;
+  const id = req.params.id;
+  if (storeSchema.isValid(store) === true
+    && r.isNil(store["_id"]) === false
+    && id === store["_id"]) {
     repositories
       .stores
       .update(store)

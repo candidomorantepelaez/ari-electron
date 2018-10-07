@@ -8,13 +8,7 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const route = {
-    name: req.body.name,
-    timerange: req.body.timerange,
-    clients: req.body.clients,
-    sellers: req.body.sellers,
-    streets: req.body.streets,
-  };
+  const route = req.body.route;
   if (routeSchema.isValid(route) === true) {
     repositories
       .routes

@@ -8,14 +8,7 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const warehouse = {
-    name: req.body.name,
-    address: req.body.address,
-    phones: req.body.phones,
-    emails: req.body.emails,
-    webs: req.body.webs,
-    nif: req.body.nif,
-  };
+  const warehouse = req.body.warehouse;
   if (warehouseSchema.isValid(warehouse) === true) {
     repositories
       .warehouses

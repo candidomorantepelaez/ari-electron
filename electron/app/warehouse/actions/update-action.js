@@ -9,16 +9,11 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const warehouse = {
-    _id: req.body.id,
-    name: req.body.name,
-    address: req.body.address,
-    phones: req.body.phones,
-    emails: req.body.emails,
-    webs: req.body.webs,
-    nif: req.body.nif,
-  };
-  if (warehouseSchema.isValid(store) === true && r.isNil(warehouse["_id"]) === false) {
+  const warehouse = req.body.warehouse;
+  const id = req.params.id;
+  if (warehouseSchema.isValid(store) === true
+    && r.isNil(warehouse["_id"]) === false
+    && id === warehouse["_id"]) {
     repositories
       .warehouses
       .update(warehouse)

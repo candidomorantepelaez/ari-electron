@@ -9,16 +9,11 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const client = {
-    _id: req.body.id,
-    name: req.body.name,
-    address: req.body.address,
-    phones: req.body.phones,
-    emails: req.body.emails,
-    webs: req.body.webs,
-    nif: req.body.nif,
-  };
-  if (clientSchema.isValid(store) === true && r.isNil(client["_id"]) === false) {
+  const client = req.body.client;
+  const id = req.params.id;
+  if (clientSchema.isValid(store) === true
+    && r.isNil(client["_id"]) === false
+    && id === client["_id"]) {
     repositories
       .clients
       .update(client)

@@ -1,48 +1,48 @@
 import { PROMISE_CALL } from "fredux";
 import api from "clients/api";
 
-export const DELETE_CLIENT = "clients/deleteClient";
-export const EDIT_CLIENT = "clients/editClient";
 export const SAVE_CLIENT = "clients/saveClient";
-export const SEARCH_CLIENT = "clients/searchClient";
+export const UPDATE_CLIENT = "clients/updateClient";
+export const FIND_ONE_CLIENT = "clients/findOneClient";
+export const REMOVE_CLIENT = "clients/removeClient";
 export const SEARCH_CLIENTS = "clients/searchClients";
-export const SEARCH_CLIENT_WITH_ROUTE = "clients/searchClientWithRoute";
-export const SEARCH_CLIENTS_WITH_ROUTE = "clients/searchClientsWithRoute";
+export const LIST_CLIENTS = "clients/listsClients";
+export const PAGINATE_CLIENTS = "clients/paginateClients";
 export const COUNT_CLIENTS = "clients/countClients";
-
-export const deleteClient = (id) => ({
-  type: DELETE_CLIENT,
-  [PROMISE_CALL]: () => api.deleteClient(id),
-});
-
-export const editClient = (cliente) => ({
-  type: EDIT_CLIENT,
-  [PROMISE_CALL]: () => api.editClient(cliente),
-});
 
 export const saveClient = (cliente) => ({
   type: SAVE_CLIENT,
   [PROMISE_CALL]: () => api.saveClient(cliente),
 });
 
-export const searchClient = (id) => ({
-  type: SEARCH_CLIENT,
-  [PROMISE_CALL]: () => api.searchClient(id),
+export const updateClient = (id, cliente) => ({
+  type: UPDATE_CLIENT,
+  [PROMISE_CALL]: () => api.updateClient(id, cliente),
 });
 
-export const searchClients = () => ({
+export const findOneClient = (id) => ({
+  type: FIND_ONE_CLIENT,
+  [PROMISE_CALL]: () => api.findOneClient(cliente),
+});
+
+export const removeClient = (id) => ({
+  type: REMOVE_CLIENT,
+  [PROMISE_CALL]: () => api.removeClient(id),
+});
+
+export const searchClients = (search) => ({
   type: SEARCH_CLIENTS,
-  [PROMISE_CALL]: () => api.searchClients(),
+  [PROMISE_CALL]: () => api.searchClients(search),
 });
 
-export const searchClientWithRoute = (id) => ({
-  type: SEARCH_CLIENT_WITH_ROUTE,
-  [PROMISE_CALL]: () => api.searchClientWithRoute(id),
+export const listsClients = () => ({
+  type: LIST_CLIENTS,
+  [PROMISE_CALL]: () => api.listsClients(),
 });
 
-export const searchClientsWithRoute = () => ({
-  type: SEARCH_CLIENTS_WITH_ROUTE,
-  [PROMISE_CALL]: () => api.searchClientsWithRoute(),
+export const paginateClients = (page) => ({
+  type: PAGINATE_CLIENTS,
+  [PROMISE_CALL]: () => api.paginateClients(page),
 });
 
 export const countClients = () => ({

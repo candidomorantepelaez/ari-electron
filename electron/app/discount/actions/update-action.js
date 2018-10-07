@@ -9,18 +9,11 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const discount = {
-    _id: req.body.id,
-    products: req.body.products,
-    price: req.body.price,
-    tax: req.body.tax,
-    description: req.body.description,
-    discount: req.body.discount,
-    name: req.body.name,
-    initialDate: req.body.initialDate,
-    finishDate: req.body.finishDate
-  };
-  if (discountSchema.isValid(store) === true && r.isNil(discount["_id"]) === false) {
+  const discount = req.body.discount;
+  const id = req.params.id;
+  if (discountSchema.isValid(store) === true
+    && r.isNil(discount["_id"]) === false
+    && id === discount["_id"]) {
     repositories
       .discounts
       .update(discount)

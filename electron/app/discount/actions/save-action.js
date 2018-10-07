@@ -8,16 +8,7 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const discount = {
-    products: req.body.products,
-    price: req.body.price,
-    tax: req.body.tax,
-    description: req.body.description,
-    discount: req.body.discount,
-    name: req.body.name,
-    initialDate: req.body.initialDate,
-    finishDate: req.body.finishDate
-  };
+  const discount = req.body.discount;
   if (discountSchema.isValid(discount) === true) {
     repositories
       .discounts

@@ -8,16 +8,7 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const sale = {
-    products: req.body.products,
-    discounts: req.body.discounts,
-    date: req.body.date,
-    client: req.body.client,
-    seller: req.body.seller,
-    price: req.body.price,
-    tax: req.body.tax,
-    totalPrice: req.body.totalPrice,
-  };
+  const sale = req.body.sale;
   if (saleSchema.isValid(sale) === true) {
     repositories
       .sales

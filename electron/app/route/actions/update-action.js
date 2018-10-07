@@ -9,15 +9,11 @@ const authenticate = (req, res, next) => {
 }
 
 const execute = (req, res, next) => {
-  const route = {
-    _id: req.body.id,
-    name: req.body.name,
-    timerange: req.body.timerange,
-    clients: req.body.clients,
-    sellers: req.body.sellers,
-    streets: req.body.streets,
-  };
-  if (routeSchema.isValid(store) === true && r.isNil(route["_id"]) === false) {
+  const route = req.body.route;
+  const id = req.params.id;
+  if (routeSchema.isValid(store) === true
+    && r.isNil(route["_id"]) === false
+    && id === route["_id"]) {
     repositories
       .routes
       .update(route)
