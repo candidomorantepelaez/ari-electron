@@ -21,8 +21,8 @@ function createWindow () {
 
   logger.log('info', "electron ready!!!");
 
-  if(constants.development.development === true){
-    mainWindow.loadURL(constants.development.frontUrl);
+  if(config.app.profile === "development"){
+    mainWindow.loadURL(config.app.frontUrl);
     mainWindow.webContents.openDevTools();
   }else{
     mainWindow.loadURL(url.format({
