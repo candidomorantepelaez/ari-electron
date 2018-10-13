@@ -20,7 +20,13 @@ const execute = (req, res, next) => {
         .generateToken(credentials)
         .then(token => {
           cookieManager.setCookie(res, config.cookies.name, token);
-          res.status(200).send({ message: "login ok" });
+          res.status(200).send({
+            user: {
+              nif: seller.nif,
+              role: seller.role,
+              sessionId: token,
+            }
+          });
         })
         .catch(err => res.status(500).send({ message: err }));
     })

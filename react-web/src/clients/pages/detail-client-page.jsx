@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import LoadingIcon from "core/application/components/iconos/loading-icon";
-import { getSearchClientWithRoute, getClientWithRoute } from "clients/reducers/search-client-with-route-reducer";
-import { searchClientWithRoute, deleteClient } from "clients/actions";
 import DetailClient from "clients/components/detail-client";
 
 class DetailClientPage extends Component {
@@ -39,12 +37,10 @@ class DetailClientPage extends Component {
 
 const storeConnect = connect(
   state => ({
-    client: getClientWithRoute(state),
-    loading: getSearchClientWithRoute(state),
+
   }),
   dispatch => ({
-    getSearchClient: id => dispatch(searchClientWithRoute(id)),
-    removeClient: id => dispatch(deleteClient(id)),
+
   }),
 );
 

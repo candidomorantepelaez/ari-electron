@@ -17,13 +17,13 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({fullscreen: "true", icon: path.join(__dirname, "server/assets/favicon.ico")})
+  mainWindow = new BrowserWindow({fullscreen: true, icon: path.join(__dirname, "server/assets/favicon.ico")})
 
   logger.log('info', "electron ready!!!");
 
   if(config.app.profile === "development"){
     mainWindow.loadURL(config.app.frontUrl);
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
   }else{
     mainWindow.loadURL(url.format({
       pathname: path.join(__dirname, "front/index.html"),

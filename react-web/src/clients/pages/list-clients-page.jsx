@@ -3,9 +3,6 @@ import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import ClientList from "clients/components/client-list";
 import { connect } from "react-redux";
-import { searchClientsWithRoute, deleteClient } from "clients/actions";
-import { getSearchingClientsWithRoute,
-  getClientsWithRoute } from "clients/reducers/search-clients-with-route-reducer";
 import LoadingIcon from "core/application/components/iconos/loading-icon";
 
 class ListClientsPage extends Component {
@@ -39,12 +36,10 @@ class ListClientsPage extends Component {
 
 const storeConnect = connect(
   state => ({
-    searching: getSearchingClientsWithRoute(state),
-    clientsWithRoutes: getClientsWithRoute(state),
+
   }),
   dispatch => ({
-    getClients: () => dispatch(searchClientsWithRoute()),
-    onRemove: (id) => dispatch(deleteClient(id)),
+
   }),
 );
 

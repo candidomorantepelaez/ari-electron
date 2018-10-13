@@ -2,11 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
-import { saveClient } from "clients/actions";
 import CreateClient from "clients/components/create-client";
-import { getRoutes, getSearchingRoutes } from "routes/reducers/search-routes-reducer";
 import LoadingIcon from "core/application/components/iconos/loading-icon";
-import { searchRoutes } from "routes/actions";
 
 
 class CreateClientPage extends Component {
@@ -19,7 +16,7 @@ class CreateClientPage extends Component {
 
   constructor(props) {
     super(props);
-    this.props.getSearchRoutes();
+    console.log("hola");
   }
 
   render() {
@@ -38,12 +35,10 @@ class CreateClientPage extends Component {
 
 const storeConnect = connect(
   state => ({
-    routes: getRoutes(state),
-    loading: getSearchingRoutes(state),
+
   }),
   dispatch => ({
-    getSearchRoutes: () => dispatch(searchRoutes()),
-    save: client => dispatch(saveClient(client)),
+
   }),
 );
 

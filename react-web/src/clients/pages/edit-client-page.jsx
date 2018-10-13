@@ -3,11 +3,7 @@ import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import LoadingIcon from "core/application/components/iconos/loading-icon";
-import { getSearchingClient, getClient } from "clients/reducers/search-client-reducer";
-import { searchClient, editClient } from "clients/actions";
 import EditClient from "clients/components/edit-client";
-import { getRoutes, getSearchingRoutes } from 'routes/reducers/search-routes-reducer';
-import { searchRoutes } from "routes/actions";
 
 class EditClientPage extends Component {
   static propTypes = {
@@ -47,15 +43,10 @@ class EditClientPage extends Component {
 
 const storeConnect = connect(
   state => ({
-    client: getClient(state),
-    loadingClient: getSearchingClient(state),
-    loadingRoutes: getSearchingRoutes(state),
-    routes: getRoutes(state),
+
   }),
   dispatch => ({
-    getSearchClient: id => dispatch(searchClient(id)),
-    getEditClient: value => dispatch(editClient(value)),
-    getSearchRoutes: () => dispatch(searchRoutes()),
+
   }),
 );
 

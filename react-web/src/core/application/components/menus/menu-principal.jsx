@@ -1,15 +1,38 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
+import cookie from "react-cookies";
+import { Link } from "react-router-dom";
 import FaBars from "react-icons/lib/fa/bars";
-import history from "./../../routes/history";
-import module from "./../../module/index";
-import { FormattedMessage } from 'react-intl';
+import history from "core/application/routes/history";
+import module from "core/application/module/index";
+import { FormattedMessage } from "react-intl";
+import { isNil } from "ramda";
+import { logout, saveCurrentUser } from "core/application/actions/login-action";
+import { connect } from "react-redux";
+import { getCurrentUser } from "core/application/reducers/login-reducer";
 
 class Menu extends Component {
+  static propTypes = {
+    currentUser: PropTypes.object,
+    onLogout: PropTypes.func,
+  }
 
   constructor(props){
     super(props);
     this.crearEstilo = this.crearEstilo.bind(this);
+    this.initUser = this.initUser.bind(this);
+    this.initUser();
+  }
+
+  initUser() {
+    if (isNil(this.props.currentUser.nif) === false){
+      return;
+    }
+    const currentUserCookie = cookie.load("user_app");
+    if (isNil(currentUserCookie) === false) {
+      this.props.saveUser(currentUserCookie);
+      return;
+    }
   }
 
   crearEstilo(ruta){
@@ -23,6 +46,10 @@ class Menu extends Component {
   }
 
   render() {
+    if (isNil(this.props.currentUser.nif)) {
+      return null;
+    }
+
     return (
       <nav className="navbar navbar-expand-lg estilo-nav">
         <Link className="navbar-brand" to="/">
@@ -49,6 +76,15 @@ class Menu extends Component {
                 <Link key={key} className="nav-link" to={obj.to}>{obj.label}</Link>
               </li>
             ))}
+            <li className="nav-item active">
+              <button
+                className="btn btn-outline-secondary btn-sm"
+                onClick={() => this.props.onLogout()}
+                type="button"
+              >
+                <FormattedMessage id="core.logout" />
+              </button>
+            </li>
           </ul>
         </div>
       </nav>
@@ -56,4 +92,14 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+const storeConnect = connect(
+	state => ({
+    currentUser: getCurrentUser(state),
+  }),
+	dispatch => ({
+    saveUser: (value) => dispatch(saveCurrentUser(value)),
+    onLogout: () => dispatch(logout()),
+  })
+);
+
+export default storeConnect(Menu);

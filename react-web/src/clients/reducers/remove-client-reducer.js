@@ -9,7 +9,7 @@ const initialState = {
   },
 };
 
-export function removing(state=initialState.deleteClient.removing, { type }) {
+export function removing(state=initialState.removeClient.removing, { type }) {
   switch(type){
     case requestType(REMOVE_CLIENT):
       return true;
@@ -22,7 +22,7 @@ export function removing(state=initialState.deleteClient.removing, { type }) {
   }
 }
 
-export function filesRemoved(state=initialState.deleteClient.filesRemoved, { type, payload }) {
+export function filesRemoved(state=initialState.removeClient.filesRemoved, { type, payload }) {
   switch(type){
     case requestType(REMOVE_CLIENT):
       return state;

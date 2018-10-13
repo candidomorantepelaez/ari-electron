@@ -29,6 +29,7 @@ class Form extends Component {
     }
     if (this.isValidForm(this.state.errors)){
       this.props.onSubmit(this.state.formData);
+      this.setState({ formData: this.props.initialValue || {} });
     }
   }
 

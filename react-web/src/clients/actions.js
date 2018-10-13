@@ -22,7 +22,7 @@ export const updateClient = (id, cliente) => ({
 
 export const findOneClient = (id) => ({
   type: FIND_ONE_CLIENT,
-  [PROMISE_CALL]: () => api.findOneClient(cliente),
+  [PROMISE_CALL]: () => api.findOneClient(id),
 });
 
 export const removeClient = (id) => ({

@@ -24,7 +24,7 @@ function buildFetchRequest(
     options: {
       body,
       cache = "default",
-      credentials = "same-origin",
+      credentials = "include",
       headers = {},
       formData,
       method = "GET",

@@ -9,14 +9,14 @@ import store from "./core/application/store/store";
 import history from "./core/application/routes/history";
 import { IntlProvider } from "react-intl";
 import { addLocale, language, messages } from "./core/application/i18/index";
-import AlertPage from './core/application/components/alerts/alert-page';
-import Menu from "./core/application/components/menus/menu-principal";
-import AppRoutes from "./core/application/routes/routes";
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './../node_modules/jquery/dist/jquery.min.js';
 import './../node_modules/popper.js/dist/esm/popper.min.js';
 import './../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import './assets/css/index.css';
+import AlertPage from "core/application/components/alerts/alert-page";
+import Menu from "core/application/components/menus/menu-principal";
+import AppRoutes from "core/application/routes/routes";
 
 window.Promise = Bluebird;
 Bluebird.config({ warnings: false});

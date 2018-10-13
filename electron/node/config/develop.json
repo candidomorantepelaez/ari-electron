@@ -2,9 +2,9 @@
   "app": {
     "profile": "development",
     "basePath": "http://localhost:8080",
-    "frontUrl": "http://localhost:3030",
+    "frontUrl": "http://localhost:3000",
     "apiVersion": "/api/v1",
-    "electron": true
+    "electron": false
   },
   "actions": {
     "type": "basic"
@@ -31,7 +31,8 @@
   },
   "http": {
     "cors": true,
-    "AccessControlAllowOrigin": "*",
+    "AccessControlAllowOrigin": "http://localhost:3000",
+    "AccessControlAllowCredentials": true,
     "AccessControlAllowHeaders": "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method",
     "AccessControlAllowMethods": "GET, POST, OPTIONS, PUT, DELETE",
     "Allow": "GET, POST, OPTIONS, PUT, DELETE"

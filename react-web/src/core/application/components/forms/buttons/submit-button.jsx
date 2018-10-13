@@ -1,12 +1,15 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { defaultTo } from "ramda";
 
-const SubmitButton = () => (
+const defaultLabel = defaultTo("core.save")
+
+const SubmitButton = (props) => (
   <button
-    className="btn btn-primary boton-tarjeta"
+    className={"btn btn-primary "+props.className}
     type="submit"
   >
-    <FormattedMessage id="core.save" />
+    <FormattedMessage id={defaultLabel(props.label)} />
   </button>
 );
 

@@ -5,20 +5,21 @@ import { FormattedMessage } from "react-intl";
 import Form from "core/application/components/forms/form";
 import SubmitButton from "core/application/components/forms/buttons/submit-button";
 import { credentials } from "core/application/actions/login-action";
+import "assets/css/login-page.css";
 
 const loginForm = {
-  actions: [<SubmitButton />],
+  actions: [<SubmitButton className="col-xl-12 col-lg-12 col-md-12 col-sm-12" label="core.send" />],
   fields: [
     {
-      name: "Nombre",
-      label: "core.name",
+      name: "nif",
+      label: "core.nif",
       type: "text",
       className: "col-xl-12 col-lg-12 col-md-12 col-sm-12",
       required: true,
     }, {
-      name: "Password",
+      name: "password",
       label: "core.pass",
-      type: "text",
+      type: "password",
       className: "col-xl-12 col-lg-12 col-md-12 col-sm-12",
       required: true,
     },
@@ -26,7 +27,7 @@ const loginForm = {
 }
 
 const LoginPage = (props) => (
-  <div>
+  <div className="login-page offset-xl-4 offset-lg-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
     <h1><FormattedMessage id="core.app.wellcome" /></h1>
     <h2><FormattedMessage id="core.app.description" /></h2>
     <Form
