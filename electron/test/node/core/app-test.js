@@ -155,7 +155,7 @@ module.exports = () => {
   });
 
   it("appManager.getTests with data is correct: ", function() {
-    const routesTests = include("app/account/test/routes-test");
+    const routesTests = include("app/account/tests/routes-test");
     const modules = [
       {
         tests: () => {

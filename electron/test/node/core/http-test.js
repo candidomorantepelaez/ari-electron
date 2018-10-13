@@ -17,7 +17,7 @@ module.exports = () => {
     const response = new MockExpressResponse();
     const next = (req, res, next) => res;
     httpManager.getCors(request, response, next);
-    test.expect(response.get("Access-Control-Allow-Origin")).to.be.equal("*");
+    test.expect(response.get("Access-Control-Allow-Origin")).to.be.equal("http://localhost:3000");
   });
 
 };
