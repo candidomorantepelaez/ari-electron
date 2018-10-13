@@ -22,6 +22,5 @@ Redux para la gestión de los datos.
 Ramda para uso funcional.
 Bootstrap para el estilo.
 PropTypes para la validación de tipos.
-Informed para los formularios.
 Fredux para la gestión de creacion de acciones.
 
