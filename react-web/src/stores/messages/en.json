@@ -1,0 +1,25 @@
+{
+  "stores.menu.label": "Tiendas",
+
+  "stores.list.page.title": "Listado de tiendas",
+  "stores.edit.page.title": "Editar tienda",
+  "stores.detail.page.title": "Detalle de la tienda",
+  "stores.create.page.title": "Crear nueva tienda",
+
+  "stores.review.title": "Tiendas",
+  "stores.review.secondary.title": "Estado Actual.",
+
+  "stores.link.new.store": "Crear Tienda",
+
+  "stores.field.name": "Nombre",
+
+  "stores.action.confirm.delete.title": "Confirmación",
+  "stores.action.confirm.delete.text": "Seguro que deseas borrar esta tienda",
+
+  "stores.alerts.success.delete": "Tienda Eliminada correctamente",
+  "stores.alerts.failure.delete": "Error al eliminar la tienda",
+  "stores.alerts.success.save": "Tienda creada correctamente",
+  "stores.alerts.failure.save": "Error al crear la tienda",
+  "stores.alerts.success.edit": "Tienda modificada correntamente",
+  "stores.alerts.failure.edit": "Error al modificar la tienda"
+}

@@ -3,6 +3,7 @@ import routes from "products/routes";
 import reducer from "products/reducers/index";
 import menu from "products/menu";
 import reactions from "products/reactions";
+import PageReview from "products/page-review";
 
 export default {
   key: "products",
@@ -11,4 +12,5 @@ export default {
   routes,
   reducer,
   reactions,
+  pageReview: PageReview,
 };

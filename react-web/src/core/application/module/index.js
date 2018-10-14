@@ -22,10 +22,14 @@ const getReducer = () => combineReducers(mergeAll(map(obj => objOf(obj.key)(obj.
 // the reactions
 const getReactions = () => chain(obj => obj.reactions, filter(obj => isNil(obj.reactions) === false, modulesApp));
 
+// the menus
+const getPageRewiew = () => chain(obj => obj.pageReview, filter(obj => isNil(obj.pageReview) === false, modulesApp));
+
 export default {
   getMenu,
   getMessages,
   getRoutes,
   getReducer,
-  getReactions
+  getReactions,
+  getPageRewiew,
 }

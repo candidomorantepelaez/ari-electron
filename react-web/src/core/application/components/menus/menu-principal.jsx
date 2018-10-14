@@ -6,7 +6,7 @@ import FaBars from "react-icons/lib/fa/bars";
 import history from "core/application/routes/history";
 import module from "core/application/module/index";
 import { FormattedMessage } from "react-intl";
-import { isNil } from "ramda";
+import { isNil, is, contains } from "ramda";
 import { logout, saveCurrentUser } from "core/application/actions/login-action";
 import { connect } from "react-redux";
 import { getCurrentUser } from "core/application/reducers/login-reducer";
@@ -21,6 +21,7 @@ class Menu extends Component {
     super(props);
     this.crearEstilo = this.crearEstilo.bind(this);
     this.initUser = this.initUser.bind(this);
+    this.isAuthorizated = this.isAuthorizated.bind(this);
     this.initUser();
   }
 
@@ -45,11 +46,26 @@ class Menu extends Component {
     }
   }
 
+  isAuthorizated(obj) {
+    if (isNil(this.props.currentUser.role)) {
+      return false;
+    }
+    if (isNil(obj.role)) {
+      return true;
+    }
+    if (is(Array, obj.role)) {
+      return contains(this.props.currentUser.role, obj.role);
+    }
+    if (is(String, obj.role)) {
+      return (obj.role === this.props.currentUser.role);
+    }
+    return false;
+  }
+
   render() {
     if (isNil(this.props.currentUser.nif)) {
       return null;
     }
-
     return (
       <nav className="navbar navbar-expand-lg estilo-nav">
         <Link className="navbar-brand" to="/">
@@ -70,13 +86,18 @@ class Menu extends Component {
           className="collapse navbar-collapse"
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav mr-auto">
-            {module.getMenu().map((obj, key) => (
-              <li key={key} className={this.crearEstilo(obj.to)} >
-                <Link key={key} className="nav-link" to={obj.to}>{obj.label}</Link>
-              </li>
-            ))}
-            <li className="nav-item active">
+          <ul className="navbar-nav ml-auto">
+            {module.getMenu().map((obj, key) => {
+              if (this.isAuthorizated(obj)) {
+                return (
+                  <li key={key} className={this.crearEstilo(obj.to)} >
+                    <Link key={key} className="nav-link" to={obj.to}>{obj.label}</Link>
+                  </li>
+                );
+              }
+              return null;
+            })}
+            <li className="nav-item active menu-session-button">
               <button
                 className="btn btn-outline-secondary btn-sm"
                 onClick={() => this.props.onLogout()}

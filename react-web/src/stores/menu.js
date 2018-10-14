@@ -3,8 +3,8 @@ import { FormattedMessage } from 'react-intl';
 
 const menu = [
   {
-    label: <FormattedMessage id="client.menu.label" />,
-    to: "/clients",
+    label: <FormattedMessage id="stores.menu.label" />,
+    to: "/stores",
     role: "ADMIN_ROLE"
   }
 ];

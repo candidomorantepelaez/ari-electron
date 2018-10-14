@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getCurrentUser } from "core/application/reducers/login-reducer";
-import { defaultTo } from "ramda";
+import { isNil, contains, is } from "ramda";
 import LoginPage from "core/application/pages/login/login-page";
 import { FormattedMessage } from "react-intl";
 
-function withAuthentication(WrappedComponent, options) {
+function withAuthentication(WrappedComponent, options = {}) {
   const storeConnect = connect(
     state => ({
       currentUser: getCurrentUser(state),
@@ -22,6 +22,7 @@ function withAuthentication(WrappedComponent, options) {
     constructor(props) {
       super(props);
       this.getReturn = this.getReturn.bind(this);
+      this.isAuthorizated = this.isAuthorizated.bind(this);
     }
 
     getReturn() {
@@ -34,8 +35,24 @@ function withAuthentication(WrappedComponent, options) {
       return null;
     }
 
+    isAuthorizated() {
+      if (isNil(this.props.currentUser.role)) {
+        return false;
+      }
+      if (isNil(options.role)) {
+        return true;
+      }
+      if (is(Array, options.role)) {
+        return contains(this.props.currentUser.role, options.role);
+      }
+      if (is(String, options.role)) {
+        return (options.role === this.props.currentUser.role);
+      }
+      return false;
+    }
+
     render() {
-      if (defaultTo("")(options.role) === this.props.currentUser.role) {
+      if (this.isAuthorizated()) {
         return <WrappedComponent currentUser={this.props.currentUser} {...this.props} />;
       }
       return this.getReturn();

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import module from "core/application/module/index";
 import withAuthentication from "core/application/hoc/withAuthentication";
 
 class HomePage extends Component{
 	static propTypes = {
 		data: PropTypes.any,
+		currentUser: PropTypes.object,
 	}
 
 	constructor(props){
@@ -17,12 +19,7 @@ class HomePage extends Component{
 		return(
 			<div>
 				<h1>Bienvenido a Ari Distribuciones</h1>
-				<h3>Ahora mismo disponemos de...</h3>
-				<p>Numero de Clientes: 0</p>
-				<p>Numero de Rutas: 0</p>
-				<p>Numero de Productos: 0</p>
-				<p>Numero de Ventas: 0</p>
-				<p>Numero de Promociones: 0</p>
+				{module.getPageRewiew().map((obj, key) => React.createElement(obj, { key }))}
 			</div>
 		);
 	}
@@ -37,4 +34,4 @@ const storeConnect = connect(
 	})
 );
 
-export default withAuthentication(storeConnect(HomePage), { role: "ADMIN_ROLE", onFalse: "login" });
+export default withAuthentication(storeConnect(HomePage), { onFalse: "login" });
