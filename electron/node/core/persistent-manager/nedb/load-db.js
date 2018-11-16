@@ -7,7 +7,7 @@ const withLoadTable = (wrapper, nameTable) => {
     timestampData: true
   });
   wrapper[nameTable].loadDatabase((err) => {
-    if (err) {logger.log("error", `error load table ${nameTable}`)};
+    if (err) {logger.log("error", `error load table ${nameTable}: ${err}`)};
     logger.log("info", `table ${nameTable} load`);
   });
   return wrapper;

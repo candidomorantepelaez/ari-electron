@@ -39,7 +39,7 @@
   },
   "persistent": {
     "type": "nedb",
-    "pathBbdd": "/.ariDb"
+    "pathBbdd": "/home/kan/.ariDb"
   },
   "crypto": {
     "seed": "3zTvzr3p67VC61jmV54rIYu1545x4TlY",
