@@ -1,34 +1,27 @@
 {
   "name": "ari-distribuciones",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "bluebird": "^3.5.1",
-    "bootstrap": "^4.0.0",
-    "fredux": "^2.0.0",
-    "isomorphic-fetch": "^2.2.1",
-    "jquery": "^3.3.1",
-    "npm": "^6.0.1",
-    "popper.js": "^1.14.3",
-    "prop-types": "^15.6.1",
-    "query-string": "^6.0.0",
-    "ramda": "^0.25.0",
-    "react": "^16.3.1",
-    "react-cookies": "^0.1.0",
-    "react-dom": "^16.3.1",
-    "react-icons": "^2.2.7",
-    "react-intl": "^2.4.0",
-    "react-redux": "^5.0.7",
-    "react-responsive-modal": "^3.0.3",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
-    "redux": "^3.7.2",
-    "redux-immutable-state-invariant": "^2.1.0",
-    "redux-promise-middleware": "^5.0.0",
-    "redux-thunk": "^2.2.0"
+  "descripcion": "Aplicación de gestion de ari-distribuciones",
+  "main": "index.js",
+  "author": "Candido Morante Pelaez",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/candidomorantepelaez/ari-electron.git"
   },
   "homepage": "./",
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
+    "prop-types": "^15.7.2",
+    "ramda": "^0.26.1",
+    "react": "^16.3.1",
+    "react-icons": "^2.2.7",
+    "react-scripts": "1.1.4",
+    "touka": "^0.7.0",
+    "touka-forms": "^1.0.4",
+    "typeface-roboto": "^0.0.54"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -36,6 +29,12 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-watch": "^4.0.2",
     "redux-devtools-extension": "^2.13.5"
   }
 }
