@@ -24,8 +24,8 @@ const execute = (req, res, next) => {
             user: {
               nif: seller.nif,
               role: seller.role,
-              sessionId: token,
-            }
+            },
+            sessionId: token,
           });
         })
         .catch(err => res.status(500).send({ message: err }));

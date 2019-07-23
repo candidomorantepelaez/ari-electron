@@ -6876,7 +6876,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8537,10 +8537,10 @@ touka-forms@^1.0.4:
     prop-types "^15.6.2"
     ramda "^0.26.1"
 
-touka@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/touka/-/touka-0.7.0.tgz#1c37782175f0af244c428a2c38ee4b5d49fd1142"
-  integrity sha512-NyNJV+3g5qOgu35wbwmwAU89hLnVJa/715OL2cyMZI3BtWedQJQ6R50ZeViVEOoodUs1uNOqoKUwwUP2aQdFxA==
+touka@^0.43.0:
+  version "0.43.0"
+  resolved "https://registry.yarnpkg.com/touka/-/touka-0.43.0.tgz#aa4c11d446c365efe8ba760b88f76e898831801f"
+  integrity sha512-qi+0RYDHbq/3O1PEQNYiBZgvqgMi9U2s4gWIvTDTW+fbMC5xnYwRnZTdMtUdRGmrPS0pBeljuE3e30q20cOg/Q==
   dependencies:
     babel-polyfill "^6.26.0"
     fredux "^2.0.1"

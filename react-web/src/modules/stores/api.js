@@ -1,8 +1,11 @@
-import {
-  get, post, put, del,
-} from 'touka/build/api'
-import { apiPath } from 'touka/build/config/get-global-data'
+import { api, getGlobaldata } from 'touka'
 
+
+const {
+  get, post, put, del,
+} = api
+
+const { apiPath } = getGlobaldata
 
 const saveStore = store => new Promise((resolve, reject) => {
   post(`${apiPath}/store`, { body: store })

@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { PropTypes } from 'touka'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import basicTheme from 'themes/basic-theme'
 import AppNavBar from 'components/menus/app-nav-bar'

@@ -1,50 +1,50 @@
-import { requestType, successType, failureType } from "fredux";
-import { REMOVE_STORE } from "stores/actions";
-import { combineReducers } from 'redux';
+import { fredux, redux } from 'touka'
+import { REMOVE_STORE } from 'stores/actions'
+
+
+const { requestType, successType, failureType } = fredux
+const { combineReducers } = redux
 
 const initialState = {
   removeStore: {
     removing: false,
     filesRemoved: 0,
   },
-};
+}
 
-export function removing(state=initialState.removeStore.removing, { type }) {
-  switch(type){
+export function removing(state = initialState.removeStore.removing, { type }) {
+  switch (type) {
     case requestType(REMOVE_STORE):
-      return true;
+      return true
     case successType(REMOVE_STORE):
-      return false;
+      return false
     case failureType(REMOVE_STORE):
-      return false;
+      return false
     default:
-      return state;
+      return state
   }
 }
 
-export function filesRemoved(state=initialState.removeStore.filesRemoved, { type, payload }) {
-  switch(type){
+export function filesRemoved(state = initialState.removeStore.filesRemoved, { type, payload }) {
+  switch (type) {
     case requestType(REMOVE_STORE):
-      return state;
+      return state
     case successType(REMOVE_STORE):
-      return payload.filesRemoved;
+      return payload.filesRemoved
     case failureType(REMOVE_STORE):
-      return state;
+      return state
     default:
-      return state;
+      return state
   }
 }
 
-const getRemoveStoreState = (state) => state.stores.removeStore;
+const getRemoveStoreState = state => state.stores.removeStore
 
-export const getRemoving = state => {
-  return getRemoveStoreState(state).removing;
-}
-export const getFilesRemoved = state => {
-  return getRemoveStoreState(state).filesRemoved;
-}
+export const getRemoving = state => getRemoveStoreState(state).removing
+
+export const getFilesRemoved = state => getRemoveStoreState(state).filesRemoved
 
 export default combineReducers({
   removing,
   filesRemoved,
-});
+})

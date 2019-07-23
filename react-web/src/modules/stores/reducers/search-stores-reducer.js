@@ -1,46 +1,49 @@
-import { requestType, successType, failureType } from "fredux";
-import { SEARCH_STORES } from "stores/actions";
-import { combineReducers } from 'redux';
+import { fredux, redux } from 'touka'
+import { SEARCH_STORES } from 'stores/actions'
+
+
+const { requestType, successType, failureType } = fredux
+const { combineReducers } = redux
 
 const initialState = {
   searchStores: {
     searchingStores: false,
     stores: [],
   },
-};
+}
 
 export function searchingStores(state = initialState.searchStores.searchingStores, { type }) {
-  switch(type){
+  switch (type) {
     case requestType(SEARCH_STORES):
-      return true;
+      return true
     case successType(SEARCH_STORES):
-      return false;
+      return false
     case failureType(SEARCH_STORES):
-      return false;
+      return false
     default:
-      return state;
+      return state
   }
 }
 
-export function stores(state=initialState.searchStores.stores, { type, payload }) {
-  switch(type){
+export function stores(state = initialState.searchStores.stores, { type, payload }) {
+  switch (type) {
     case requestType(SEARCH_STORES):
-      return [];
+      return []
     case successType(SEARCH_STORES):
-      return payload.response;
+      return payload.response
     case failureType(SEARCH_STORES):
-      return [];
+      return []
     default:
-      return state;
+      return state
   }
 }
 
-const getSearchStoresState = (state) => state.stores.searchStores;
+const getSearchStoresState = state => state.stores.searchStores
 
-export const getSearchingStores = state => getSearchStoresState(state).searchingStores;
-export const getStores = state => getSearchStoresState(state).stores;
+export const getSearchingStores = state => getSearchStoresState(state).searchingStores
+export const getStores = state => getSearchStoresState(state).stores
 
 export default combineReducers({
   searchingStores,
-  stores
-});
+  stores,
+})

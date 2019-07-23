@@ -1,3 +1,11 @@
 {
-  "global.app.title": "Ari-Distribuciones"
+  "global.app.title": "Ari-Distribuciones",
+  "global.app.page.no.found.title": "Pagina no encontrada",
+  "global.app.page.no.found.text.home": "Pulsa en este enlace para volver al inicio",
+  "global.app.page.no.found.text.back": "Pulsa en este enlace para volver atras",
+
+  "global.login.title": "Identificate",
+  "global.login.field.nif": "Dni/Nif",
+  "global.login.field.password": "Contraseña",
+  "global.login.field.sign.in": "Entrar"
 }

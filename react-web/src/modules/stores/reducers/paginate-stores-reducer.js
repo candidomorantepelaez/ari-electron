@@ -1,46 +1,49 @@
-import { requestType, successType, failureType } from "fredux";
-import { PAGINATE_STORES } from "stores/actions";
-import { combineReducers } from 'redux';
+import { fredux, redux } from 'touka'
+import { PAGINATE_STORES } from 'stores/actions'
+
+
+const { requestType, successType, failureType } = fredux
+const { combineReducers } = redux
 
 const initialState = {
   paginateStores: {
     paginatingStores: false,
     stores: [],
   },
-};
+}
 
 export function paginatingStores(state = initialState.paginateStores.paginatingStores, { type }) {
-  switch(type){
+  switch (type) {
     case requestType(PAGINATE_STORES):
-      return true;
+      return true
     case successType(PAGINATE_STORES):
-      return false;
+      return false
     case failureType(PAGINATE_STORES):
-      return false;
+      return false
     default:
-      return state;
+      return state
   }
 }
 
-export function stores(state=initialState.paginateStores.stores, { type, payload }) {
-  switch(type){
+export function stores(state = initialState.paginateStores.stores, { type, payload }) {
+  switch (type) {
     case requestType(PAGINATE_STORES):
-      return [];
+      return []
     case successType(PAGINATE_STORES):
-      return payload.response;
+      return payload.response
     case failureType(PAGINATE_STORES):
-      return [];
+      return []
     default:
-      return state;
+      return state
   }
 }
 
-const getPaginateStoresState = (state) => state.stores.paginateStores;
+const getPaginateStoresState = state => state.stores.paginateStores
 
-export const getPaginatingStores = state => getPaginateStoresState(state).paginatingStores;
-export const getStores = state => getPaginateStoresState(state).stores;
+export const getPaginatingStores = state => getPaginateStoresState(state).paginatingStores
+export const getStores = state => getPaginateStoresState(state).stores
 
 export default combineReducers({
   paginatingStores,
   stores,
-});
+})

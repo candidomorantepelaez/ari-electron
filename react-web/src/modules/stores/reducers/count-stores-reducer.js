@@ -1,7 +1,9 @@
-import { requestType, successType, failureType } from 'fredux'
+import { fredux, redux } from 'touka'
 import { COUNT_STORES } from 'modules/stores/actions'
-import { combineReducers } from 'redux'
 
+
+const { requestType, successType, failureType } = fredux
+const { combineReducers } = redux
 
 const initialState = {
   countStores: {

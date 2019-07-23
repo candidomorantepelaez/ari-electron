@@ -1,10 +1,11 @@
-import { successType, failureType } from 'fredux'
+import { fredux, alertAction, history } from 'touka'
 import {
   REMOVE_STORE, SAVE_STORE, UPDATE_STORE,
 } from 'modules/stores/actions'
-import { openAlert } from 'touka/build/actions/alert-actions'
-import { history } from 'touka/build/routes'
 
+
+const { openAlert } = alertAction
+const { successType, failureType } = fredux
 
 const reactions = [
   {

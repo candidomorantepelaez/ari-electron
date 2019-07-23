@@ -1,46 +1,49 @@
-import { requestType, successType, failureType } from "fredux";
-import { UPDATE_STORE } from "stores/actions";
-import { combineReducers } from 'redux';
+import { fredux, redux } from 'touka'
+import { UPDATE_STORE } from 'stores/actions'
+
+
+const { requestType, successType, failureType } = fredux
+const { combineReducers } = redux
 
 const initialState = {
   updateStore: {
     updating: false,
     filesUpdated: {},
   },
-};
+}
 
-export function updating(state=initialState.updateStore.updating, { type }) {
-  switch(type){
+export function updating(state = initialState.updateStore.updating, { type }) {
+  switch (type) {
     case requestType(UPDATE_STORE):
-      return true;
+      return true
     case successType(UPDATE_STORE):
-      return false;
+      return false
     case failureType(UPDATE_STORE):
-      return false;
+      return false
     default:
-      return state;
+      return state
   }
 }
 
-export function filesUpdated(state=initialState.updateStore.filesUpdated, { type, payload }) {
-  switch(type){
+export function filesUpdated(state = initialState.updateStore.filesUpdated, { type, payload }) {
+  switch (type) {
     case requestType(UPDATE_STORE):
-      return state;
+      return state
     case successType(UPDATE_STORE):
-      return payload.filesUpdated;
+      return payload.filesUpdated
     case failureType(UPDATE_STORE):
-      return state;
+      return state
     default:
-      return state;
+      return state
   }
 }
 
-const getUpdateStoreState = (state) => state.stores.updateStore;
+const getUpdateStoreState = state => state.stores.updateStore
 
-export const getUpdating = state => getUpdateStoreState(state).updating;
-export const getFilesUpdated = state => getUpdateStoreState(state).filesupdated;
+export const getUpdating = state => getUpdateStoreState(state).updating
+export const getFilesUpdated = state => getUpdateStoreState(state).filesupdated
 
 export default combineReducers({
   updating,
   filesUpdated,
-});
+})

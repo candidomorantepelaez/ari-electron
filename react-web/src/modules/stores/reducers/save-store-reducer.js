@@ -1,46 +1,49 @@
-import { requestType, successType, failureType } from "fredux";
-import { SAVE_STORE } from "stores/actions";
-import { combineReducers } from 'redux';
+import { fredux, redux } from 'touka'
+import { SAVE_STORE } from 'stores/actions'
+
+
+const { requestType, successType, failureType } = fredux
+const { combineReducers } = redux
 
 const initialState = {
   saveStore: {
     saving: false,
     storeSaved: {},
   },
-};
+}
 
-export function saving(state=initialState.saveStore.saving, { type }) {
-  switch(type){
+export function saving(state = initialState.saveStore.saving, { type }) {
+  switch (type) {
     case requestType(SAVE_STORE):
-      return true;
+      return true
     case successType(SAVE_STORE):
-      return false;
+      return false
     case failureType(SAVE_STORE):
-      return false;
+      return false
     default:
-      return state;
+      return state
   }
 }
 
-export function storeSaved(state=initialState.saveStore.storeSaved, { type, payload }) {
-  switch(type){
+export function storeSaved(state = initialState.saveStore.storeSaved, { type, payload }) {
+  switch (type) {
     case requestType(SAVE_STORE):
-      return state;
+      return state
     case successType(SAVE_STORE):
-      return payload.response;
+      return payload.response
     case failureType(SAVE_STORE):
-      return state;
+      return state
     default:
-      return state;
+      return state
   }
 }
 
-const getSaveStoreState = (state) => state.stores.saveStore;
+const getSaveStoreState = state => state.stores.saveStore
 
-export const getSaving = state => getSaveStoreState(state).saving;
-export const getStoreSaved = state => getSaveStoreState(state).storeSaved;
+export const getSaving = state => getSaveStoreState(state).saving
+export const getStoreSaved = state => getSaveStoreState(state).storeSaved
 
 export default combineReducers({
   saving,
-  storeSaved
-});
+  storeSaved,
+})

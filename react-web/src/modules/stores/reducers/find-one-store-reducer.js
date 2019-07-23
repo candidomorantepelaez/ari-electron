@@ -1,46 +1,49 @@
-import { requestType, successType, failureType } from "fredux";
-import { FIND_ONE_STORE } from "stores/actions";
-import { combineReducers } from 'redux';
+import { fredux, redux } from 'touka'
+import { FIND_ONE_STORE } from 'stores/actions'
+
+
+const { requestType, successType, failureType } = fredux
+const { combineReducers } = redux
 
 const initialState = {
   findOneStore: {
     findingStore: false,
     store: {},
   },
-};
+}
 
 export function findingStore(state = initialState.findOneStore.findingStore, { type }) {
-  switch(type){
+  switch (type) {
     case requestType(FIND_ONE_STORE):
-      return true;
+      return true
     case successType(FIND_ONE_STORE):
-      return false;
+      return false
     case failureType(FIND_ONE_STORE):
-      return false;
+      return false
     default:
-      return state;
+      return state
   }
 }
 
-export function store(state=initialState.findOneStore.store, { type, payload }) {
-  switch(type){
+export function store(state = initialState.findOneStore.store, { type, payload }) {
+  switch (type) {
     case requestType(FIND_ONE_STORE):
-      return [];
+      return []
     case successType(FIND_ONE_STORE):
-      return payload.response;
+      return payload.response
     case failureType(FIND_ONE_STORE):
-      return [];
+      return []
     default:
-      return state;
+      return state
   }
 }
 
-const getFindOneStoreState = (state) => state.stores.findOneStore;
+const getFindOneStoreState = state => state.stores.findOneStore
 
-export const getFindingStore = state => getFindOneStoreState(state).findingStore;
-export const getStores = state => getFindOneStoreState(state).store;
+export const getFindingStore = state => getFindOneStoreState(state).findingStore
+export const getStores = state => getFindOneStoreState(state).store
 
 export default combineReducers({
   findingStore,
   store,
-});
+})

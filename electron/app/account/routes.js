@@ -2,7 +2,7 @@ const accountActions = include("app/account/actions");
 
 const accountRoutes = [
   {
-    url: "/credentials",
+    url: "/login",
     method: "post",
     action: accountActions.loginAction
   },

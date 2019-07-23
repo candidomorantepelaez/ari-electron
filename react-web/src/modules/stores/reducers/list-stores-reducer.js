@@ -1,46 +1,49 @@
-import { requestType, successType, failureType } from "fredux";
-import { LIST_STORES } from "stores/actions";
-import { combineReducers } from 'redux';
+import { fredux, redux } from 'touka'
+import { LIST_STORES } from 'stores/actions'
+
+
+const { requestType, successType, failureType } = fredux
+const { combineReducers } = redux
 
 const initialState = {
   listStores: {
     listingStores: false,
     stores: [],
   },
-};
+}
 
 export function listingStores(state = initialState.listStores.listingStores, { type }) {
-  switch(type){
+  switch (type) {
     case requestType(LIST_STORES):
-      return true;
+      return true
     case successType(LIST_STORES):
-      return false;
+      return false
     case failureType(LIST_STORES):
-      return false;
+      return false
     default:
-      return state;
+      return state
   }
 }
 
-export function stores(state=initialState.listStores.stores, { type, payload }) {
-  switch(type){
+export function stores(state = initialState.listStores.stores, { type, payload }) {
+  switch (type) {
     case requestType(LIST_STORES):
-      return [];
+      return []
     case successType(LIST_STORES):
-      return payload.response;
+      return payload.response
     case failureType(LIST_STORES):
-      return [];
+      return []
     default:
-      return state;
+      return state
   }
 }
 
-const getListStoresState = (state) => state.stores.listStores;
+const getListStoresState = state => state.stores.listStores
 
-export const getListingStores = state => getListStoresState(state).listingStores;
-export const getStores = state => getListStoresState(state).stores;
+export const getListingStores = state => getListStoresState(state).listingStores
+export const getStores = state => getListStoresState(state).stores
 
 export default combineReducers({
   listingStores,
   stores,
-});
+})

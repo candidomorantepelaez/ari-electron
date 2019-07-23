@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { map, addIndex } from 'ramda'
-import { history } from 'touka/build/routes'
+import { PropTypes, history } from 'touka'
+import { addIndex, map } from 'ramda'
 import { withStyles } from '@material-ui/core/styles'
 import IconButton from '@material-ui/core/IconButton'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -27,8 +26,8 @@ class IconWithMenu extends Component {
 
   static defaultProps = {
     menu: [{
-      label: 'Clientes',
-      to: '/clientes',
+      label: 'Logout',
+      to: '/logout',
     }],
   }
 

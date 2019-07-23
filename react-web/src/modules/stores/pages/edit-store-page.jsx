@@ -11,8 +11,8 @@ class EditStorePage extends Component {
   }
 
   constructor(props) {
-    super(props);
-    console.log("hola");
+    super(props)
+    console.log('hola')
   }
 
   render() {
@@ -20,7 +20,7 @@ class EditStorePage extends Component {
       <div>
         <h1><FormattedMessage id="stores.edit.page.title" /></h1>
       </div>
-    );
+    )
   }
 }
 
@@ -31,6 +31,6 @@ const storeConnect = connect(
   dispatch => ({
 
   }),
-);
+)
 
 export default withAuthentication(storeConnect(EditStorePage), { role: "ADMIN_ROLE" });

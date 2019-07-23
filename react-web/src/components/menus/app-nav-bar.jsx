@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { PropTypes, IntlText } from 'touka'
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import MenuIcon from '@material-ui/icons/Menu'
 import IconWithMenu from 'components/menus/icon-with-menu'
-import { intlText as IntlText } from 'touka/build/i18n'
 import LateralPanelBar from 'components/menus/lateral-panel-bar'
 
 
@@ -22,13 +21,12 @@ const styles = {
 
 class AppNavBar extends React.Component {
   state = {
-    auth: true,
     open: false,
   };
 
   render() {
     const { classes, menu } = this.props
-    const { auth, open } = this.state
+    const { open } = this.state
 
     return (
       <div className={classes.root}>
@@ -43,11 +41,9 @@ class AppNavBar extends React.Component {
             >
               <IntlText id="global.app.title" />
             </Typography>
-            {auth && (
-              <IconWithMenu>
-                <AccountCircle />
-              </IconWithMenu>
-            )}
+            <IconWithMenu>
+              <AccountCircle />
+            </IconWithMenu>
           </Toolbar>
         </AppBar>
       </div>

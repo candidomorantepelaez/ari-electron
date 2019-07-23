@@ -1,5 +1,5 @@
 import React from 'react'
-import { IntlText } from 'touka/build/i18n'
+import { IntlText } from 'touka'
 
 
 const menu = [

@@ -24,7 +24,7 @@ const ClientFile = ({ client, action, intl}) => (
       />
     </td>
   </tr>
-);
+)
 
 ClientFile.propTypes = {
   client: PropTypes.object,
